@@ -31,6 +31,11 @@ Only official team sheets count: the club's own account, the Premier League matc
 - If it is today but more than ~2 hours before kickoff, it is too early: leave lineupStatus as "projected" and do not guess.
 - NEVER downgrade lineupStatus from "confirmed" back to "projected".
 
+## TIMESTAMPS (do this whenever you change a fixture)
+- Set that fixture's lastUpdated to a readable date, e.g. "August 22, 2026". If you changed something meaningful on a matchday, include the time: "August 24, 2026, 1:05 PM CT".
+- When you set lineupStatus to "confirmed", ALSO set lineupConfirmedAt to the time you replaced the projection, e.g. "1:05 PM CT". This makes the projected-to-official handoff visible on the page.
+- Only stamp fixtures you actually changed. Leave every other fixture's lastUpdated alone.
+
 ## RULES
 Only touch fields that are null, "TBD", or a supersedable projection. Never overwrite confirmed data. Never invent a number, name, or source. If you found nothing new, make no changes at all.
 

@@ -90,7 +90,7 @@ function gamePage(fx){
 
   let lineupSection;
   if (fx.lineupStatus === 'confirmed' && fx.lineupXI && fx.lineupXI.length){
-    lineupSection = `<div class="lineup-head"><span class="badge-confirmed">Confirmed</span><span style="font-family:'Roboto Mono',monospace;font-size:12px;color:var(--muted)">Official starting XI</span></div>
+    lineupSection = `<div class="lineup-head"><span class="badge-confirmed">Confirmed</span><span style="font-family:'Roboto Mono',monospace;font-size:12px;color:var(--muted)">Official starting XI${fx.lineupConfirmedAt ? ` &middot; replaced the projection at ${fx.lineupConfirmedAt}` : ''}</span></div>
       ${xiList(fx.lineupXI)}
       ${fx.lineupNote ? `<div class="verdict">${fx.lineupNote}</div>` : ''}
       ${fx.lineupSource ? `<p class="lineup-source">Source: ${fx.lineupSource}</p>` : ''}`;
@@ -139,7 +139,7 @@ ${topnav(fx)}
 ${notes ? `<section>${notes}</section>` : ''}
 
 <footer>
-  <b>Matchweek ${fx.gw} of 38.</b> Fixture per the Premier League's official 2026/27 release; subject to change for broadcast selection or cup involvement. Updated automatically as new information is confirmed.
+  <b>Matchweek ${fx.gw} of 38.</b> ${fx.lastUpdated ? `This page last updated <b>${fx.lastUpdated}</b>.` : `No updates to this page yet &mdash; nothing beyond the fixture itself has been confirmed.`} Fixture per the Premier League's official 2026/27 release; subject to change for broadcast selection or cup involvement. Updated automatically as new information is confirmed.
 </footer>
 ` + FOOT_CLOSE;
 }
@@ -182,7 +182,7 @@ function homePage(){
 <header class="season-hero">
   <p class="crest">Premier League 2026/27</p>
   <h1>Chelsea<br>Season Briefing</h1>
-  <p>All 38 matches. Kickoff times in Central time, US broadcast info, odds and the projected lineup — filled in and updated as each matchday approaches. Compiled ${prettyDate(new Date().toISOString().slice(0,10))}.</p>
+  <p>All 38 matches. Kickoff times in Central time, US broadcast info, odds and the projected lineup — filled in and updated as each matchday approaches. Site last updated ${prettyDate(new Date().toISOString().slice(0,10))}; each match page shows its own last-updated date.</p>
   ${nextBlock}
 </header>
 
@@ -196,7 +196,7 @@ function homePage(){
 </section>
 
 <footer>
-  <b>Compiled ${prettyDate(new Date().toISOString().slice(0,10))}.</b> Source: Chelsea FC and Premier League official fixture announcements. Fixtures subject to change for broadcast selection, weather, or cup-competition rescheduling. This site updates automatically as new information (kickoff times, US broadcaster, odds, and projected lineups) is confirmed closer to each match.
+  <b>Site last updated ${prettyDate(new Date().toISOString().slice(0,10))}.</b> This date reflects the last time any match page changed, not a daily rebuild &mdash; individual match pages carry their own last-updated dates. Source: Chelsea FC and Premier League official fixture announcements. Fixtures subject to change for broadcast selection, weather, or cup-competition rescheduling. This site updates automatically as new information (kickoff times, US broadcaster, odds, and projected lineups) is confirmed closer to each match.
 </footer>
 ` + FOOT_CLOSE;
 }

@@ -18,7 +18,9 @@
     "fairDraw": 26,
     "fairOpp": 32,
     "lineupReady": true,
-    "notes": "Xabi Alonso's first competitive match as Chelsea manager. Sky's first Monday Night Football of the season."
+    "notes": "Xabi Alonso's first competitive match as Chelsea manager. Sky's first Monday Night Football of the season.",
+    "lastUpdated": "July 29, 2026",
+    "lineupConfirmedAt": null
   },
   {
     "gw": 2,
@@ -38,7 +40,9 @@
     "lineupStatus": "unknown",
     "lineupXI": [],
     "lineupSource": null,
-    "lineupNote": null
+    "lineupNote": null,
+    "lastUpdated": null,
+    "lineupConfirmedAt": null
   },
   {
     "gw": 3,
@@ -58,7 +62,9 @@
     "lineupStatus": "unknown",
     "lineupXI": [],
     "lineupSource": null,
-    "lineupNote": null
+    "lineupNote": null,
+    "lastUpdated": null,
+    "lineupConfirmedAt": null
   },
   {
     "gw": 4,
@@ -78,7 +84,9 @@
     "lineupStatus": "unknown",
     "lineupXI": [],
     "lineupSource": null,
-    "lineupNote": null
+    "lineupNote": null,
+    "lastUpdated": null,
+    "lineupConfirmedAt": null
   },
   {
     "gw": 5,
@@ -98,7 +106,9 @@
     "lineupStatus": "unknown",
     "lineupXI": [],
     "lineupSource": null,
-    "lineupNote": null
+    "lineupNote": null,
+    "lastUpdated": null,
+    "lineupConfirmedAt": null
   },
   {
     "gw": 6,
@@ -118,7 +128,9 @@
     "lineupStatus": "unknown",
     "lineupXI": [],
     "lineupSource": null,
-    "lineupNote": null
+    "lineupNote": null,
+    "lastUpdated": null,
+    "lineupConfirmedAt": null
   },
   {
     "gw": 7,
@@ -138,7 +150,9 @@
     "lineupStatus": "unknown",
     "lineupXI": [],
     "lineupSource": null,
-    "lineupNote": null
+    "lineupNote": null,
+    "lastUpdated": null,
+    "lineupConfirmedAt": null
   },
   {
     "gw": 8,
@@ -158,7 +172,9 @@
     "lineupStatus": "unknown",
     "lineupXI": [],
     "lineupSource": null,
-    "lineupNote": null
+    "lineupNote": null,
+    "lastUpdated": null,
+    "lineupConfirmedAt": null
   },
   {
     "gw": 9,
@@ -178,7 +194,9 @@
     "lineupStatus": "unknown",
     "lineupXI": [],
     "lineupSource": null,
-    "lineupNote": null
+    "lineupNote": null,
+    "lastUpdated": null,
+    "lineupConfirmedAt": null
   },
   {
     "gw": 10,
@@ -198,7 +216,9 @@
     "lineupStatus": "unknown",
     "lineupXI": [],
     "lineupSource": null,
-    "lineupNote": null
+    "lineupNote": null,
+    "lastUpdated": null,
+    "lineupConfirmedAt": null
   },
   {
     "gw": 11,
@@ -218,7 +238,9 @@
     "lineupStatus": "unknown",
     "lineupXI": [],
     "lineupSource": null,
-    "lineupNote": null
+    "lineupNote": null,
+    "lastUpdated": null,
+    "lineupConfirmedAt": null
   },
   {
     "gw": 12,
@@ -238,7 +260,9 @@
     "lineupStatus": "unknown",
     "lineupXI": [],
     "lineupSource": null,
-    "lineupNote": null
+    "lineupNote": null,
+    "lastUpdated": null,
+    "lineupConfirmedAt": null
   },
   {
     "gw": 13,
@@ -258,7 +282,9 @@
     "lineupStatus": "unknown",
     "lineupXI": [],
     "lineupSource": null,
-    "lineupNote": null
+    "lineupNote": null,
+    "lastUpdated": null,
+    "lineupConfirmedAt": null
   },
   {
     "gw": 14,
@@ -278,7 +304,9 @@
     "lineupStatus": "unknown",
     "lineupXI": [],
     "lineupSource": null,
-    "lineupNote": null
+    "lineupNote": null,
+    "lastUpdated": null,
+    "lineupConfirmedAt": null
   },
   {
     "gw": 15,
@@ -298,7 +326,9 @@
     "lineupStatus": "unknown",
     "lineupXI": [],
     "lineupSource": null,
-    "lineupNote": null
+    "lineupNote": null,
+    "lastUpdated": null,
+    "lineupConfirmedAt": null
   },
   {
     "gw": 16,
@@ -318,7 +348,9 @@
     "lineupStatus": "unknown",
     "lineupXI": [],
     "lineupSource": null,
-    "lineupNote": null
+    "lineupNote": null,
+    "lastUpdated": null,
+    "lineupConfirmedAt": null
   },
   {
     "gw": 17,
@@ -338,7 +370,9 @@
     "lineupStatus": "unknown",
     "lineupXI": [],
     "lineupSource": null,
-    "lineupNote": null
+    "lineupNote": null,
+    "lastUpdated": null,
+    "lineupConfirmedAt": null
   },
   {
     "gw": 18,
@@ -358,7 +392,9 @@
     "lineupStatus": "unknown",
     "lineupXI": [],
     "lineupSource": null,
-    "lineupNote": null
+    "lineupNote": null,
+    "lastUpdated": null,
+    "lineupConfirmedAt": null
   },
   {
     "gw": 19,
@@ -378,7 +414,9 @@
     "lineupStatus": "unknown",
     "lineupXI": [],
     "lineupSource": null,
-    "lineupNote": null
+    "lineupNote": null,
+    "lastUpdated": null,
+    "lineupConfirmedAt": null
   },
   {
     "gw": 20,
@@ -398,7 +436,9 @@
     "lineupStatus": "unknown",
     "lineupXI": [],
     "lineupSource": null,
-    "lineupNote": null
+    "lineupNote": null,
+    "lastUpdated": null,
+    "lineupConfirmedAt": null
   },
   {
     "gw": 21,
@@ -418,7 +458,9 @@
     "lineupStatus": "unknown",
     "lineupXI": [],
     "lineupSource": null,
-    "lineupNote": null
+    "lineupNote": null,
+    "lastUpdated": null,
+    "lineupConfirmedAt": null
   },
   {
     "gw": 22,
@@ -438,7 +480,9 @@
     "lineupStatus": "unknown",
     "lineupXI": [],
     "lineupSource": null,
-    "lineupNote": null
+    "lineupNote": null,
+    "lastUpdated": null,
+    "lineupConfirmedAt": null
   },
   {
     "gw": 23,
@@ -458,7 +502,9 @@
     "lineupStatus": "unknown",
     "lineupXI": [],
     "lineupSource": null,
-    "lineupNote": null
+    "lineupNote": null,
+    "lastUpdated": null,
+    "lineupConfirmedAt": null
   },
   {
     "gw": 24,
@@ -478,7 +524,9 @@
     "lineupStatus": "unknown",
     "lineupXI": [],
     "lineupSource": null,
-    "lineupNote": null
+    "lineupNote": null,
+    "lastUpdated": null,
+    "lineupConfirmedAt": null
   },
   {
     "gw": 25,
@@ -498,7 +546,9 @@
     "lineupStatus": "unknown",
     "lineupXI": [],
     "lineupSource": null,
-    "lineupNote": null
+    "lineupNote": null,
+    "lastUpdated": null,
+    "lineupConfirmedAt": null
   },
   {
     "gw": 26,
@@ -518,7 +568,9 @@
     "lineupStatus": "unknown",
     "lineupXI": [],
     "lineupSource": null,
-    "lineupNote": null
+    "lineupNote": null,
+    "lastUpdated": null,
+    "lineupConfirmedAt": null
   },
   {
     "gw": 27,
@@ -538,7 +590,9 @@
     "lineupStatus": "unknown",
     "lineupXI": [],
     "lineupSource": null,
-    "lineupNote": null
+    "lineupNote": null,
+    "lastUpdated": null,
+    "lineupConfirmedAt": null
   },
   {
     "gw": 28,
@@ -558,7 +612,9 @@
     "lineupStatus": "unknown",
     "lineupXI": [],
     "lineupSource": null,
-    "lineupNote": null
+    "lineupNote": null,
+    "lastUpdated": null,
+    "lineupConfirmedAt": null
   },
   {
     "gw": 29,
@@ -578,7 +634,9 @@
     "lineupStatus": "unknown",
     "lineupXI": [],
     "lineupSource": null,
-    "lineupNote": null
+    "lineupNote": null,
+    "lastUpdated": null,
+    "lineupConfirmedAt": null
   },
   {
     "gw": 30,
@@ -598,7 +656,9 @@
     "lineupStatus": "unknown",
     "lineupXI": [],
     "lineupSource": null,
-    "lineupNote": null
+    "lineupNote": null,
+    "lastUpdated": null,
+    "lineupConfirmedAt": null
   },
   {
     "gw": 31,
@@ -618,7 +678,9 @@
     "lineupStatus": "unknown",
     "lineupXI": [],
     "lineupSource": null,
-    "lineupNote": null
+    "lineupNote": null,
+    "lastUpdated": null,
+    "lineupConfirmedAt": null
   },
   {
     "gw": 32,
@@ -638,7 +700,9 @@
     "lineupStatus": "unknown",
     "lineupXI": [],
     "lineupSource": null,
-    "lineupNote": null
+    "lineupNote": null,
+    "lastUpdated": null,
+    "lineupConfirmedAt": null
   },
   {
     "gw": 33,
@@ -658,7 +722,9 @@
     "lineupStatus": "unknown",
     "lineupXI": [],
     "lineupSource": null,
-    "lineupNote": null
+    "lineupNote": null,
+    "lastUpdated": null,
+    "lineupConfirmedAt": null
   },
   {
     "gw": 34,
@@ -678,7 +744,9 @@
     "lineupStatus": "unknown",
     "lineupXI": [],
     "lineupSource": null,
-    "lineupNote": null
+    "lineupNote": null,
+    "lastUpdated": null,
+    "lineupConfirmedAt": null
   },
   {
     "gw": 35,
@@ -698,7 +766,9 @@
     "lineupStatus": "unknown",
     "lineupXI": [],
     "lineupSource": null,
-    "lineupNote": null
+    "lineupNote": null,
+    "lastUpdated": null,
+    "lineupConfirmedAt": null
   },
   {
     "gw": 36,
@@ -718,7 +788,9 @@
     "lineupStatus": "unknown",
     "lineupXI": [],
     "lineupSource": null,
-    "lineupNote": null
+    "lineupNote": null,
+    "lastUpdated": null,
+    "lineupConfirmedAt": null
   },
   {
     "gw": 37,
@@ -738,7 +810,9 @@
     "lineupStatus": "unknown",
     "lineupXI": [],
     "lineupSource": null,
-    "lineupNote": null
+    "lineupNote": null,
+    "lastUpdated": null,
+    "lineupConfirmedAt": null
   },
   {
     "gw": 38,
@@ -758,6 +832,8 @@
     "lineupStatus": "unknown",
     "lineupXI": [],
     "lineupSource": null,
-    "lineupNote": null
+    "lineupNote": null,
+    "lastUpdated": null,
+    "lineupConfirmedAt": null
   }
 ]
