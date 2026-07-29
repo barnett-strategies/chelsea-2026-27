@@ -113,6 +113,7 @@ ${topnav(fx)}
   <h1 class="fixture">${vs}</h1>
   <p class="subline">${where} · <strong>${prettyDate(fx.date)}${fx.day ? ' ('+fx.day+')' : ''}</strong> · Chelsea ${haWord}</p>
   ${kickBlock}
+  <p class="stamp">${fx.lastUpdated ? `Last updated ${fx.lastUpdated}` : `Not yet updated &mdash; fixture only`}</p>
 </header>
 
 <section>

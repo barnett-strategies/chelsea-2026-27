@@ -272,6 +272,12 @@ footer b{color:#C3D0E6}
   display:flex;gap:18px;flex-wrap:wrap;margin:16px 0 0;
   font-family:"Roboto Mono",monospace;font-size:11.5px;color:var(--muted);
 }
+.stamp{
+  font-family:"Roboto Mono",monospace;font-size:11px;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--muted);margin:14px 0 0;
+}
+.stamp.fresh{color:var(--amber)}
+
 .legend span{display:inline-flex;align-items:center;gap:6px}
 
 /* ---------- lineup status badges + simple XI list (template pages) ---------- */
