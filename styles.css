@@ -292,4 +292,9 @@ footer b{color:#C3D0E6}
   font-family:"Roboto Mono",monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--blue);text-align:center;
 }
 .xi-row .xi-name{font-size:15px;color:#fff;font-weight:600}
+.xi-row .xi-stat{display:block;font-family:"Roboto Mono",monospace;font-size:11.5px;color:var(--muted);font-weight:400;margin-top:2px}
 .lineup-source{font-family:"Roboto Mono",monospace;font-size:11.5px;color:var(--muted);margin-top:10px}
+.stat-season{
+  display:block;font-family:"Roboto Mono",monospace;font-size:9.5px;letter-spacing:.06em;
+  text-transform:uppercase;color:var(--muted);margin-bottom:2px;
+}

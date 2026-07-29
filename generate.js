@@ -85,7 +85,7 @@ function gamePage(fx){
     : `<div class="tbd-block"><b>Odds not yet posted.</b><br>Mainstream books generally open markets on a match one to two weeks out. Check back as matchday approaches.</div>`;
 
   function xiList(xi){
-    return `<div class="xi-list">${xi.map(p => `<div class="xi-row"><div class="xi-pos">${p.pos}</div><div class="xi-name">${p.name}</div></div>`).join('')}</div>`;
+    return `<div class="xi-list">${xi.map(p => `<div class="xi-row"><div class="xi-pos">${p.pos}</div><div class="xi-name">${p.name}${p.stat ? `<span class="xi-stat">${p.stat}</span>` : ''}</div></div>`).join('')}</div>`;
   }
 
   let lineupSection;

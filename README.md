@@ -22,6 +22,30 @@ line). If gw01 ever needs a refresh, edit it directly.
 2. Run `node generate.js`.
 3. Commit and push. If this repo is connected to Netlify, that's it — the site redeploys automatically.
 
+## Text alerts
+
+Carrier email-to-SMS gateways (tmomail.net and equivalents) were discontinued across all major
+US carriers in late 2024/2025 — sending to `number@tmomail.net` no longer delivers, silently.
+Real automated texting now needs an actual SMS API. **Twilio** is the standard choice: a phone
+number costs about $1/month and each text is roughly $0.0079.
+
+**One-time setup (not done yet):**
+1. Create a free Twilio account, buy one phone number (~$1/mo).
+2. Grab the Account SID and Auth Token from the Twilio console.
+3. Give those two values to the scheduled task (see below) — same handling as the GitHub token:
+   pasted into the task's own saved prompt, **never committed to this repo**, since this repo is
+   public.
+
+**Recipient phone numbers also do not belong in this repo** for the same reason — they're
+configured only inside the scheduled task's private instructions in Cowork, not in `fixtures.json`
+or anywhere else that gets pushed to GitHub.
+
+**Alert behavior:** after each scheduled run (see below), if anything in `fixtures.json` actually
+changed — a new broadcast channel, odds posted, a lineup switching from projected to confirmed —
+send one short text (via the Twilio REST API, a plain HTTPS POST, no SDK needed) to each configured
+recipient summarizing what changed and linking the updated page. If a run made no changes, send
+no text at all — silence is expected on most runs.
+
 ## Scheduled task (Claude Cowork)
 
 ### Why this needs two runs a day, not one
@@ -56,10 +80,30 @@ your Cowork setup supports that) pointing at the same prompt.
 > (NBC, USA Network, or Peacock — use general web search, not support.claude.com), and match odds
 > (Chelsea/draw/opponent, American format) from a mainstream sportsbook or odds aggregator. Also
 > check for team news or a press-conference hint about the likely XI. If you find one, set
-> `lineupStatus` to `"projected"`, fill `lineupXI` as a list of `{"pos": "...", "name": "..."}`
+> `lineupStatus` to `"projected"`, fill `lineupXI` as a list of `{"pos": "...", "name": "...", "stat": "..."}`
 > objects, and add a 1–2 sentence `lineupNote` explaining the basis (e.g. "Based on Alonso's
 > pre-match press conference and this week's training reports"). Set `lineupSource` to whatever
 > you based it on. This is a guess and must read like one — never present it as official.
+>
+> **Key stats — one per player, intelligently chosen.** For the `stat` field on each `lineupXI`
+> entry, pick the two numbers that best tell that player's season so far, formatted like
+> `"10 goals, 4 assists"` or `"9 clean sheets, 32 apps"` — always with the season and club labeled,
+> e.g. `"2025–26, Chelsea"` or `"2025–26, Crystal Palace"` for a new signing's stats from their
+> previous club. Rules:
+>   - **Early season (Chelsea have played fewer than ~5 games this campaign):** use each player's
+>     final 2025–26 stats — from Chelsea if they were already at the club, or from their previous
+>     club if they're a new arrival (Lacroix, Palestra, Rogers, etc.). Always label which season and
+>     club the numbers are from — never let a stat appear unlabeled or look like it's from the
+>     current Chelsea campaign when it isn't.
+>   - **Once Chelsea have played ~5 games this season:** switch each player over to their 2026–27
+>     Chelsea stats so far, and update the label accordingly (e.g. `"2026–27, Chelsea"`). Do this
+>     player-by-player as they individually cross a reasonable minutes/appearances threshold — don't
+>     wait for the whole squad to hit game 5 if one player already has a clear current-season record.
+>   - Pick stats that fit the position and the story: appearances for an injury-prone or new player,
+>     goals/assists for attackers, clean sheets/tackles for defenders, save data for goalkeepers.
+>     Two numbers max. If a player has no current-season minutes yet (unused new signing), it's fine
+>     to keep last season's club stats even past the 5-game mark, clearly labeled.
+>   - Never fabricate a number. If you can't verify a stat, leave `stat` blank rather than guess.
 >
 > **Step 3 — matchday itself: replace the guess with the real thing.** If the match is TODAY, your
 > job changes. Actively search for the OFFICIALLY ANNOUNCED starting XI — search terms like
@@ -68,10 +112,12 @@ your Cowork setup supports that) pointing at the same prompt.
 > the confirmed team sheet. Do not confuse a pundit's prediction with a confirmed lineup — only
 > official team-sheet confirmations count.
 >   - If you find the official confirmed XI: set `lineupStatus` to `"confirmed"`, replace `lineupXI`
->     with the real starting XI, set `lineupSource` to where you got it (e.g. "Chelsea FC official
->     account, 12:32 PM CT"), and write a `lineupNote` flagging anything notable — especially if it
->     differs from whatever was previously projected (e.g. "Enzo Fernández starts ahead of the
->     projected Caicedo-only holding role" or "Confirms the back-three shape projected earlier this week").
+>     with the real starting XI (carrying over each player's `stat` field from the projection where
+>     the player is unchanged, or filling it fresh per the key-stats rules above for any surprise
+>     inclusion), set `lineupSource` to where you got it (e.g. "Chelsea FC official account, 12:32 PM
+>     CT"), and write a `lineupNote` flagging anything notable — especially if it differs from
+>     whatever was previously projected (e.g. "Enzo Fernández starts ahead of the projected
+>     Caicedo-only holding role" or "Confirms the back-three shape projected earlier this week").
 >   - If it's today but too early for the official lineup yet (this run is more than ~2 hours before
 >     kickoff), leave `lineupStatus` as `"projected"` and don't overwrite it with a guess about a guess —
 >     the later run today should catch the real announcement instead.
@@ -85,6 +131,14 @@ your Cowork setup supports that) pointing at the same prompt.
 > If you changed anything, run `node generate.js`, then commit with a message like
 > "GW[n] vs [opponent]: confirmed lineup" or "GW[n] vs [opponent]: broadcast + odds added" and
 > push to the main branch.
+>
+> **Then send the alert.** If (and only if) you made a real change this run, send one short text
+> to each configured recipient via the Twilio REST API (POST to
+> `https://api.twilio.com/2010-04-01/Accounts/{AccountSid}/Messages.json`, Basic Auth with the
+> Account SID and Auth Token, body params `From`, `To`, `Body`). Keep the text under ~300
+> characters: what changed, which match, and the page link (e.g.
+> "Chelsea alerts: GW9 vs Man Utd — official lineup confirmed, Enzo starts. chelsea-fc-2026-27.netlify.app/gw09-manchester-united").
+> If nothing changed this run, send no text.
 >
 > Give me a one-line summary of what you did (or "no updates this run").
 
