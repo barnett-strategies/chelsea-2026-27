@@ -1,0 +1,295 @@
+@import url("fonts.css");
+
+:root{
+  color-scheme:dark;
+  --bg:#0B1526;
+  --panel:#152340;
+  --panel-2:#1C2E52;
+  --text:#EBF0F8;
+  --muted:#9AAAC6;
+  --blue:#6FA8F0;
+  --blue-mid:#2E6FC4;
+  --amber:#FFB92E;
+  --rule:#2C3F63;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;background:var(--bg)}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:"Inter Tight",system-ui,sans-serif;
+  font-size:17px;
+  line-height:1.6;
+}
+.wrap{max-width:960px;margin:0 auto;padding:0 18px 72px}
+a{color:var(--blue)}
+b,strong{color:#fff}
+em{color:#C3D0E6}
+p{margin:0 0 13px;color:var(--text)}
+ul{margin:0 0 13px;padding-left:20px}
+li{margin-bottom:7px}
+
+/* ---------- top nav ---------- */
+.topnav{
+  display:flex;justify-content:space-between;align-items:center;gap:12px;
+  padding:14px 18px;margin:0 -18px;
+  border-bottom:1px solid var(--rule);
+  font-family:"Roboto Mono",monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;
+}
+.topnav a{color:var(--muted);text-decoration:none}
+.topnav a:hover{color:var(--amber)}
+.topnav .crest{color:var(--amber);font-weight:700}
+.topnav .next{color:#fff}
+
+/* ---------- floodlit header ---------- */
+header.hero{
+  margin:0 -18px 30px;
+  padding:34px 18px 26px;
+  background:
+    radial-gradient(120% 90% at 15% -10%, rgba(255,185,46,.20), rgba(11,21,38,0) 62%),
+    radial-gradient(120% 90% at 88% -5%, rgba(110,168,240,.18), rgba(11,21,38,0) 58%),
+    linear-gradient(175deg,#0E2148,#0B1830 70%,#0B1526);
+  border-bottom:4px solid var(--amber);
+}
+.eyebrow{
+  font-family:"Roboto Mono",monospace;
+  font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--amber);margin:0 0 14px;
+}
+.fixture{
+  font-family:"Big Shoulders Display",sans-serif;
+  font-weight:800;text-transform:uppercase;
+  line-height:.86;letter-spacing:-.005em;
+  font-size:clamp(40px,13vw,96px);
+  margin:0;color:#FFFFFF;
+}
+.fixture .v{
+  display:block;font-size:.30em;font-weight:500;
+  color:var(--amber);letter-spacing:.2em;margin:.18em 0;
+}
+.subline{
+  margin:18px 0 0;font-size:15.5px;color:#C3D0E6;
+  font-family:"Roboto Mono",monospace;
+}
+.subline strong{color:#fff;font-weight:500}
+
+.kick{
+  display:flex;flex-wrap:wrap;align-items:flex-end;gap:10px 26px;
+  margin-top:24px;padding:16px 18px;
+  background:rgba(255,185,46,.10);
+  border:1px solid rgba(255,185,46,.38);
+}
+.kick.tbd{background:rgba(154,170,198,.08);border-color:var(--rule)}
+.kick .big span,.kick .alt span{
+  display:block;font-family:"Roboto Mono",monospace;
+  font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);
+}
+.kick .big b{
+  display:block;font-family:"Big Shoulders Display",sans-serif;font-weight:800;
+  font-size:clamp(34px,9vw,52px);line-height:1;color:var(--amber);margin-top:4px;
+}
+.kick.tbd .big b{color:#C3D0E6}
+.kick .alt b{
+  display:block;font-family:"Big Shoulders Display",sans-serif;font-weight:700;
+  font-size:24px;line-height:1;color:#C3D0E6;margin-top:4px;
+}
+
+/* ---------- sections ---------- */
+section{margin:42px 0 0}
+h2{
+  font-family:"Big Shoulders Display",sans-serif;
+  font-weight:700;text-transform:uppercase;letter-spacing:.03em;
+  font-size:clamp(24px,5.2vw,32px);
+  margin:0 0 8px;color:#FFFFFF;
+}
+.kicker{
+  font-family:"Roboto Mono",monospace;font-size:11.5px;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--blue);margin:0 0 10px;
+}
+.verdict{
+  border-left:4px solid var(--amber);
+  background:var(--panel);
+  padding:15px 17px;margin:18px 0 0;
+  font-size:16px;color:var(--text);
+}
+.verdict b{color:var(--amber)}
+
+/* ---------- info rows (watch / venue / etc) ---------- */
+.info{background:var(--panel);border:1px solid var(--rule)}
+.info-row{display:flex;gap:14px;padding:15px 17px;border-bottom:1px solid var(--rule);align-items:baseline;flex-wrap:wrap}
+.info-row:last-child{border-bottom:0}
+.info-row dt{
+  flex:0 0 100px;font-family:"Roboto Mono",monospace;font-size:10.5px;
+  letter-spacing:.13em;text-transform:uppercase;color:var(--muted);margin:0;
+}
+.info-row dd{margin:0;flex:1;font-size:15.5px;min-width:180px}
+.yes{
+  display:inline-block;background:var(--amber);color:#0B1526;
+  font-family:"Roboto Mono",monospace;font-size:10px;letter-spacing:.1em;font-weight:700;
+  padding:2px 7px;text-transform:uppercase;vertical-align:2px;margin-left:6px;
+}
+.pending{color:var(--muted);font-style:italic}
+
+/* ---------- odds ---------- */
+.odds{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:16px 0 0}
+.odd{background:var(--panel);border:1px solid var(--rule);padding:15px;text-align:center}
+.odd.che{border-color:var(--blue);border-width:2px;background:var(--panel-2)}
+.odd .team{
+  font-family:"Roboto Mono",monospace;font-size:10.5px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--muted);
+}
+.odd .price{
+  font-family:"Big Shoulders Display",sans-serif;font-weight:800;
+  font-size:clamp(28px,7.5vw,44px);line-height:1;margin:6px 0 2px;color:#fff;
+}
+.odd.che .price{color:var(--blue)}
+.odd .pc{font-family:"Roboto Mono",monospace;font-size:12px;color:var(--muted)}
+.bar{display:flex;height:12px;margin:16px 0 8px;border:1px solid var(--rule)}
+.bar i{display:block}
+.bar .b-che{background:var(--blue)}
+.bar .b-drw{background:#5B6D8E}
+.bar .b-ful{background:#E8ECF4}
+.bar-key{font-family:"Roboto Mono",monospace;font-size:12px;color:var(--muted);margin:0 0 13px}
+
+/* ---------- placeholder / TBD block ---------- */
+.tbd-block{
+  background:var(--panel);border:1px dashed var(--rule);padding:22px 18px;
+  text-align:center;color:var(--muted);font-family:"Roboto Mono",monospace;font-size:13px;
+  letter-spacing:.03em;line-height:1.8;
+}
+.tbd-block b{color:#C3D0E6;font-family:"Inter Tight",sans-serif;font-weight:600}
+
+/* ---------- teamsheet ---------- */
+.shape{
+  font-family:"Roboto Mono",monospace;font-size:12.5px;letter-spacing:.09em;
+  color:var(--muted);margin:0 0 16px;text-transform:uppercase;
+}
+table{width:100%;border-collapse:collapse;margin:0;background:transparent}
+caption{
+  caption-side:top;text-align:left;font-family:"Roboto Mono",monospace;
+  font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--blue);padding-bottom:12px;line-height:1.7;
+}
+thead th{
+  font-family:"Roboto Mono",monospace;font-size:10px;letter-spacing:.13em;
+  text-transform:uppercase;text-align:left;color:#0B1526;background:var(--amber);
+  padding:10px;font-weight:700;
+}
+tbody tr{border-bottom:1px solid var(--rule);background:var(--panel)}
+tbody tr:nth-child(even){background:#12203B}
+tbody td{padding:11px 10px;vertical-align:top;font-size:15px;color:var(--text)}
+.num{
+  font-family:"Big Shoulders Display",sans-serif;font-weight:800;
+  font-size:36px;line-height:.85;color:var(--blue);width:56px;
+}
+.num small{display:block;font-family:"Roboto Mono",monospace;font-size:9.5px;color:var(--muted);letter-spacing:.08em;font-weight:400}
+.who b{display:block;font-weight:600;font-size:16.5px;color:#fff}
+.who span{display:block;font-family:"Roboto Mono",monospace;font-size:10.5px;color:var(--muted);letter-spacing:.06em;text-transform:uppercase}
+.new{display:inline-block;background:var(--amber);color:#0B1526;font-family:"Roboto Mono",monospace;font-size:9.5px;font-weight:700;letter-spacing:.08em;padding:1px 6px;margin-top:4px}
+
+@media (max-width:800px){
+  thead{display:none}
+  tbody tr{display:grid;grid-template-columns:56px 1fr;padding:14px 13px 16px;margin-bottom:12px;border:1px solid var(--rule)}
+  tbody td{padding:0;border:0}
+  td.num{grid-row:span 2}
+  td.who{margin-bottom:9px}
+  td[data-l]{grid-column:2;padding-top:10px}
+  td[data-l]::before{
+    content:attr(data-l);display:block;
+    font-family:"Roboto Mono",monospace;font-size:9.5px;letter-spacing:.13em;
+    text-transform:uppercase;color:var(--amber);margin-bottom:2px;
+  }
+}
+
+.depth{background:var(--panel);border:1px solid var(--rule);padding:17px}
+.depth h3{font-family:"Big Shoulders Display",sans-serif;text-transform:uppercase;letter-spacing:.04em;font-size:21px;margin:0 0 10px;color:var(--amber)}
+.depth p{font-size:15.5px;margin:0 0 10px}
+.depth p:last-child{margin:0}
+
+footer{
+  margin-top:46px;padding-top:18px;border-top:2px solid var(--amber);
+  font-family:"Roboto Mono",monospace;font-size:11.5px;line-height:1.8;color:var(--muted);
+}
+footer b{color:#C3D0E6}
+
+/* ================= HOMEPAGE ================= */
+.season-hero{
+  margin:0 -18px 8px;padding:38px 18px 28px;
+  background:
+    radial-gradient(120% 90% at 12% -10%, rgba(255,185,46,.22), rgba(11,21,38,0) 62%),
+    radial-gradient(120% 90% at 90% -8%, rgba(110,168,240,.20), rgba(11,21,38,0) 58%),
+    linear-gradient(175deg,#0E2148,#0B1830 70%,#0B1526);
+  border-bottom:4px solid var(--amber);
+}
+.season-hero .crest{
+  font-family:"Roboto Mono",monospace;font-size:11.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--amber);margin:0 0 12px;
+}
+.season-hero h1{
+  font-family:"Big Shoulders Display",sans-serif;font-weight:800;text-transform:uppercase;
+  font-size:clamp(38px,11vw,72px);line-height:.92;margin:0 0 12px;color:#fff;
+}
+.season-hero p{color:#C3D0E6;font-family:"Roboto Mono",monospace;font-size:14px;max-width:640px}
+
+.nextup{
+  display:block;text-decoration:none;
+  background:var(--panel-2);border:2px solid var(--amber);
+  margin:22px 0 0;padding:18px;
+}
+.nextup .tag{font-family:"Roboto Mono",monospace;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--amber)}
+.nextup .match{font-family:"Big Shoulders Display",sans-serif;font-weight:800;text-transform:uppercase;font-size:clamp(26px,7vw,36px);color:#fff;margin:6px 0}
+.nextup .meta{font-family:"Roboto Mono",monospace;font-size:13px;color:#C3D0E6}
+.nextup .cta{margin-top:10px;font-family:"Roboto Mono",monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--amber)}
+
+.month-head{
+  font-family:"Roboto Mono",monospace;font-size:12px;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--muted);margin:34px 0 10px;padding-bottom:6px;border-bottom:1px solid var(--rule);
+}
+.month-head:first-of-type{margin-top:36px}
+
+.gamelist{display:flex;flex-direction:column;gap:8px}
+.gamerow{
+  display:grid;grid-template-columns:44px 1fr auto;gap:12px;align-items:center;
+  background:var(--panel);border:1px solid var(--rule);
+  padding:12px 14px;text-decoration:none;color:var(--text);
+}
+.gamerow:hover{border-color:var(--blue)}
+.gamerow .gwno{
+  font-family:"Big Shoulders Display",sans-serif;font-weight:800;font-size:22px;color:var(--muted);text-align:center;
+}
+.gamerow.done .gwno{color:var(--amber)}
+.gamerow .mid b{display:block;font-size:15.5px;color:#fff;font-weight:600}
+.gamerow .mid span{display:block;font-family:"Roboto Mono",monospace;font-size:11px;color:var(--muted);margin-top:2px}
+.gamerow .side{font-family:"Roboto Mono",monospace;font-size:11px;color:var(--muted);text-align:right;white-space:nowrap}
+.gamerow .ha{
+  display:inline-block;width:20px;height:20px;line-height:20px;text-align:center;
+  border-radius:2px;font-family:"Roboto Mono",monospace;font-size:10px;font-weight:700;margin-right:6px;
+}
+.ha.h{background:rgba(255,185,46,.18);color:var(--amber);border:1px solid var(--amber)}
+.ha.a{background:rgba(110,168,240,.12);color:var(--blue);border:1px solid var(--blue)}
+
+.legend{
+  display:flex;gap:18px;flex-wrap:wrap;margin:16px 0 0;
+  font-family:"Roboto Mono",monospace;font-size:11.5px;color:var(--muted);
+}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+
+/* ---------- lineup status badges + simple XI list (template pages) ---------- */
+.lineup-head{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:0 0 14px}
+.badge-confirmed,.badge-projected{
+  font-family:"Roboto Mono",monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;
+  padding:3px 9px;font-weight:700;
+}
+.badge-confirmed{background:var(--amber);color:#0B1526}
+.badge-projected{background:transparent;color:var(--muted);border:1px solid var(--rule)}
+.lineup-caveat{
+  font-family:"Roboto Mono",monospace;font-size:12.5px;color:var(--muted);
+  border:1px dashed var(--rule);padding:10px 14px;margin:0 0 16px;
+}
+.xi-list{display:flex;flex-direction:column;gap:1px;background:var(--rule);border:1px solid var(--rule)}
+.xi-row{display:grid;grid-template-columns:44px 1fr;gap:12px;align-items:center;background:var(--panel);padding:9px 12px}
+.xi-row .xi-pos{
+  font-family:"Roboto Mono",monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--blue);text-align:center;
+}
+.xi-row .xi-name{font-size:15px;color:#fff;font-weight:600}
+.lineup-source{font-family:"Roboto Mono",monospace;font-size:11.5px;color:var(--muted);margin-top:10px}
