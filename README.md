@@ -22,29 +22,39 @@ line). If gw01 ever needs a refresh, edit it directly.
 2. Run `node generate.js`.
 3. Commit and push. If this repo is connected to Netlify, that's it — the site redeploys automatically.
 
-## Text alerts
+## Text alerts (iMessage, via your Mac)
 
-Carrier email-to-SMS gateways (tmomail.net and equivalents) were discontinued across all major
-US carriers in late 2024/2025 — sending to `number@tmomail.net` no longer delivers, silently.
-Real automated texting now needs an actual SMS API. **Twilio** is the standard choice: a phone
-number costs about $1/month and each text is roughly $0.0079.
+No Twilio, no signup, no monthly cost — this reuses the same approach already proven for the
+KDC AI Quiz invites: an AppleScript, driven from a shell script, that tells Messages.app on your
+Mac to send a text. `scripts/send-alert.sh` in this repo does exactly that.
 
-**One-time setup (not done yet):**
-1. Create a free Twilio account, buy one phone number (~$1/mo).
-2. Grab the Account SID and Auth Token from the Twilio console.
-3. Give those two values to the scheduled task (see below) — same handling as the GitHub token:
-   pasted into the task's own saved prompt, **never committed to this repo**, since this repo is
-   public.
+**This is why the scheduled task has to run locally, not in the cloud.** iMessage only works
+where Messages.app is actually signed in — that's your Mac, not Anthropic's servers. So the
+Chelsea scheduled task needs to run via **Cowork Dispatch** (the mode that runs on your desktop),
+which means your Mac needs to be awake and Claude Desktop open at the two run times (8:00 AM and
+1:00 PM Central). Since Dispatch already runs locally, doing the `git` push from there too is no
+extra cost — the whole task, git push included, runs on your Mac in this design.
 
-**Recipient phone numbers also do not belong in this repo** for the same reason — they're
-configured only inside the scheduled task's private instructions in Cowork, not in `fixtures.json`
-or anywhere else that gets pushed to GitHub.
+**One-time test before trusting this in the automation** (I can't run or verify AppleScript myself
+— my environment doesn't have Messages.app — so please test it once yourself):
 
-**Alert behavior:** after each scheduled run (see below), if anything in `fixtures.json` actually
-changed — a new broadcast channel, odds posted, a lineup switching from projected to confirmed —
-send one short text (via the Twilio REST API, a plain HTTPS POST, no SDK needed) to each configured
-recipient summarizing what changed and linking the updated page. If a run made no changes, send
-no text at all — silence is expected on most runs.
+```bash
+cd ~/path/to/this/repo/scripts
+./send-alert.sh "+13129618960" "Test from the Chelsea briefing script"
+```
+
+The first run will likely trigger a macOS permission prompt — **System Settings → Privacy &
+Security → Automation** → allow whatever ran the script (Terminal, or Claude Desktop/Cowork) to
+control **Messages**. Approve it, then re-run the test. You should see the text arrive as a normal
+blue-bubble iMessage.
+
+**Recipient phone numbers still don't belong in this repo** (it's public) — keep them only in the
+scheduled task's own saved prompt in Cowork, not in `fixtures.json` or committed anywhere here.
+
+**Alert behavior:** after each scheduled run, if `fixtures.json` actually changed — a new
+broadcast channel, odds posted, a lineup switching from projected to confirmed — call
+`scripts/send-alert.sh` once per recipient with a short summary and the updated page's link.
+No change, no text.
 
 ## Scheduled task (Claude Cowork)
 
@@ -133,12 +143,11 @@ your Cowork setup supports that) pointing at the same prompt.
 > push to the main branch.
 >
 > **Then send the alert.** If (and only if) you made a real change this run, send one short text
-> to each configured recipient via the Twilio REST API (POST to
-> `https://api.twilio.com/2010-04-01/Accounts/{AccountSid}/Messages.json`, Basic Auth with the
-> Account SID and Auth Token, body params `From`, `To`, `Body`). Keep the text under ~300
-> characters: what changed, which match, and the page link (e.g.
+> to each configured recipient by running `scripts/send-alert.sh "<number>" "<message>"` for each
+> one (you have local shell access in this run, since this task runs via Dispatch on the Mac).
+> Keep the message under ~300 characters: what changed, which match, and the page link (e.g.
 > "Chelsea alerts: GW9 vs Man Utd — official lineup confirmed, Enzo starts. chelsea-fc-2026-27.netlify.app/gw09-manchester-united").
-> If nothing changed this run, send no text.
+> If nothing changed this run, don't run the script at all.
 >
 > Give me a one-line summary of what you did (or "no updates this run").
 
