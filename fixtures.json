@@ -19,7 +19,23 @@
     "fairOpp": 32,
     "lineupReady": true,
     "notes": "Xabi Alonso's first competitive match as Chelsea manager. Sky's first Monday Night Football of the season.",
-    "lastUpdated": "July 29, 2026",
+    "lineupStatus": "projected",
+    "lineupXI": [
+      { "pos": "GK", "name": "Robert Sánchez", "stat": "9 clean sheets, 32 apps (2025-26, Chelsea)" },
+      { "pos": "RCB", "name": "Reece James", "stat": "27 apps, 4 assists (2025-26, Chelsea)" },
+      { "pos": "CB", "name": "Maxence Lacroix", "stat": "35 apps, 11 clean sheets (2025-26, Crystal Palace)" },
+      { "pos": "LCB", "name": "Levi Colwill", "stat": "4 apps (2025-26, Chelsea) — ACL recovery" },
+      { "pos": "RWB", "name": "Pedro Neto", "stat": "5 goals, 6 assists (2025-26, Chelsea)" },
+      { "pos": "CM", "name": "Moisés Caicedo", "stat": "31 apps, 3 goals (2025-26, Chelsea)" },
+      { "pos": "CM", "name": "Enzo Fernández", "stat": "10 goals, 4 assists (2025-26, Chelsea)" },
+      { "pos": "LWB", "name": "Marco Palestra", "stat": "37 Serie A apps, 4 assists (2025-26, Cagliari, loan)" },
+      { "pos": "AM", "name": "Cole Palmer", "stat": "10 goals, 1 assist (2025-26, Chelsea)" },
+      { "pos": "AM", "name": "Morgan Rogers", "stat": "10 goals, 6 assists (2025-26, Aston Villa)" },
+      { "pos": "ST", "name": "João Pedro", "stat": "15 goals, 5 assists (2025-26, Chelsea)" }
+    ],
+    "lineupSource": "Yahoo Sport UK projected XI, 17 August 2026, cross-checked against the 3-4-3 Alonso started in the 3-1 pre-season win over Real Sociedad on 15 August and Wesley Fofana's carried-over suspension. A projection, not team news.",
+    "lineupNote": "Wesley Fofana is suspended for this match — a one-game ban carried over from his final-day red card at Sunderland, which pre-season friendlies do not clear — so Reece James is expected to drop out of the midfield two, where he started the last friendly, into the back three at right centre-back. Enzo Fernández goes back into the XI after Manchester City let Chelsea's 14 August bid deadline pass, and left wing-back is the least settled call, with Palestra favoured ahead of Jorrel Hato and new signing Pep Chavarría.",
+    "lastUpdated": "August 20, 2026",
     "lineupConfirmedAt": null
   },
   {
