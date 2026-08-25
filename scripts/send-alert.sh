@@ -1,24 +1,56 @@
 #!/bin/bash
-# send-alert.sh — sends a short iMessage via Messages.app (must run ON the Mac, Messages.app signed in)
+# send-alert.sh — sends an iMessage via Messages.app.
+# Hardened for launchd: launches Messages first (the -1712 AppleEvent timeout
+# happens when Messages is closed and the implicit launch hangs), uses a long
+# explicit timeout, retries once, and returns an HONEST exit code.
 #
-# Usage:
-#   ./send-alert.sh "+13129618960" "Chelsea alert: GW9 vs Man Utd — lineup confirmed."
-#
-# Requires:
-#   - macOS, Messages.app open and signed into iMessage
-#   - Automation permission granted the first time (System Settings > Privacy & Security >
-#     Automation > [whatever app is running this: Terminal / Claude Desktop] > Messages, checked on)
-#   - The recipient's number in E.164 format (e.g. +13129618960), no spaces or dashes
-
-set -euo pipefail
+# Usage: ./send-alert.sh "+13129618960" "message text"
 
 NUMBER="$1"
 MESSAGE="$2"
 
-osascript <<EOF
-tell application "Messages"
-    set targetService to 1st service whose service type = iMessage
-    set targetBuddy to buddy "${NUMBER}" of targetService
+if [ -z "$NUMBER" ] || [ -z "$MESSAGE" ]; then
+  echo "send-alert: missing number or message" >&2
+  exit 2
+fi
+
+# 1. Make sure Messages is actually up before we try to talk to it.
+if ! pgrep -x Messages >/dev/null 2>&1; then
+  open -g -a Messages 2>/dev/null
+  for i in $(seq 1 20); do
+    pgrep -x Messages >/dev/null 2>&1 && break
+    sleep 1
+  done
+  sleep 3   # let it finish connecting to iMessage
+fi
+
+# 2. Send, with an explicit generous timeout. Retry once on failure.
+send_once() {
+  osascript <<EOF 2>&1
+with timeout of 120 seconds
+  tell application "Messages"
+    set targetService to 1st account whose service type = iMessage
+    set targetBuddy to participant "${NUMBER}" of targetService
     send "${MESSAGE}" to targetBuddy
-end tell
+  end tell
+end timeout
 EOF
+}
+
+OUT="$(send_once)"
+RC=$?
+
+if [ $RC -ne 0 ]; then
+  echo "send-alert: attempt 1 failed for ${NUMBER}: ${OUT}" >&2
+  sleep 5
+  OUT="$(send_once)"
+  RC=$?
+fi
+
+if [ $RC -ne 0 ]; then
+  echo "SMS_FAILED ${NUMBER}: ${OUT}" >&2
+  exit 1
+fi
+
+echo "SMS_SENT ${NUMBER}"
+exit 0

@@ -1,11 +1,30 @@
-You are updating the Chelsea 2026/27 briefing site. Work in /Users/christopherbarnett/Projects/chelsea-2026-27
+You are updating the Chelsea 2026/27 briefing site (PREP run — match info and
+projected lineup, a couple of days out).
+Work in /Users/christopherbarnett/Projects/chelsea-2026-27
 
 Start with: git pull
+
+## ABSOLUTE RULE — NO SPOILERS
+Chris and Evan record matches and watch them hours or days later.
+NEVER mention, record, or publish: scores, goals, goalscorers, results, who won,
+red cards, or any in-match or post-match event. Not on the site, not in a text,
+not in your summary. If a source headline contains a score, do not repeat it.
+This site is a PRE-GAME information set only.
+
+## ALWAYS: RE-ARM THE OFFICIAL-XI CHECK
+Before anything else, run:
+  python3 scripts/schedule-lineup-check.py
+This reads kickoff times and schedules the T-70 official-XI job. Run it every
+time, even if nothing else changes — it is what makes matchday alerts fire.
 
 Read fixtures.json. Determine today's date.
 
 ## STEP 1 — ANYTHING TO DO?
-Is any Chelsea Premier League match within the next 4 days? If no: stop immediately. No commit, no text, no changes.
+Is any Chelsea Premier League match within the next 4 days? If no: stop (you have
+already re-armed the check above). No commit, no text, no other changes.
+
+NEVER touch a fixture whose kickoff time has already passed. Past matches are
+frozen as previews permanently.
 
 ## STEP 2 — PREP (match is 1-4 days away)
 Web-search that fixture. Fill ONLY fields still null or "TBD":
@@ -40,21 +59,39 @@ Only official team sheets count: the club's own account, the Premier League matc
 Only touch fields that are null, "TBD", or a supersedable projection. Never overwrite confirmed data. Never invent a number, name, or source. If you found nothing new, make no changes at all.
 
 ## STEP 4 — PUBLISH
-If and only if something changed:
+If something changed:
   node generate.js
   git add -A
   git commit -m "GW[n] vs [opponent]: [what changed]"
   git push
 
-## STEP 5 — ALERT
-If and only if you made a real change, run the alert script once per recipient:
+IMPORTANT TRAP: generate.js deliberately SKIPS matchweek 1 (`if (fx.gw === 1)
+continue`) because gw01-fulham.html is hand-built. For GW1 you MUST hand-edit
+that .html yourself and verify the change landed before committing.
+
+## STEP 5 — THE BRIEFING TEXT
+Send a briefing text when the match is 2 OR 3 DAYS AWAY — every time, whether or
+not anything changed. This is the guaranteed pre-match briefing, not a
+change-notification. Send once per match, not on both days: if lastBriefingSent
+for this fixture is already set, skip it.
+
+Contents: opponent, home/away, kickoff in Central time, US channel, odds, and the
+headline of the projected XI. Under 300 chars, no double quotes, NO SPOILERS.
+Example:
+"Chelsea briefing: Sat v Brighton (H), 9am CT on USA. Chelsea -140. Projected XI
+has Lavia alongside Caicedo, Palmer + Rogers behind Joao Pedro.
+chelsea-fc-2026-27.netlify.app/gw02-brighton-and-hove-albion"
+
+Send to BOTH:
   ./scripts/send-alert.sh "+13129618960" "MESSAGE"
   ./scripts/send-alert.sh "+18168764088" "MESSAGE"
 
-MESSAGE must be under 300 characters: what changed, which match, and the page link.
-Example: "Chelsea: GW9 vs Man Utd - lineup confirmed, Enzo starts. chelsea-fc-2026-27.netlify.app/gw09-manchester-united"
+Then set lastBriefingSent on that fixture to today's date and commit it.
 
-Do not include double quotes inside MESSAGE. If nothing changed, do not run the script.
+The script prints SMS_SENT or SMS_FAILED and returns an honest exit code. Report
+exactly which recipients succeeded. NEVER claim a text was sent if the script
+returned non-zero — a previous version of this system silently failed for weeks.
 
 ## FINISH
-Print one line: what you did, or "no updates this run".
+One line: what you did and whether both texts sent, or "no updates this run".
+No scores, ever.

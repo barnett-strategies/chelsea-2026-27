@@ -11,43 +11,88 @@
     "kickoffCT": "2:00 PM",
     "broadcastUS": "USA Network",
     "broadcastConfirmed": true,
-    "oddsChe": "+120",
+    "oddsChe": "-115",
     "oddsDraw": "+260",
-    "oddsOpp": "+190",
-    "fairChe": 42,
+    "oddsOpp": "+290",
+    "fairChe": 50,
     "fairDraw": 26,
-    "fairOpp": 32,
+    "fairOpp": 24,
     "lineupReady": true,
     "notes": "Xabi Alonso's first competitive match as Chelsea manager. Sky's first Monday Night Football of the season.",
     "lineupStatus": "projected",
     "lineupXI": [
-      { "pos": "GK", "name": "Robert Sánchez", "stat": "9 clean sheets, 32 apps (2025-26, Chelsea)" },
-      { "pos": "RCB", "name": "Reece James", "stat": "27 apps, 4 assists (2025-26, Chelsea)" },
-      { "pos": "CB", "name": "Maxence Lacroix", "stat": "35 apps, 11 clean sheets (2025-26, Crystal Palace)" },
-      { "pos": "LCB", "name": "Levi Colwill", "stat": "4 apps (2025-26, Chelsea) — ACL recovery" },
-      { "pos": "RWB", "name": "Pedro Neto", "stat": "5 goals, 6 assists (2025-26, Chelsea)" },
-      { "pos": "CM", "name": "Moisés Caicedo", "stat": "31 apps, 3 goals (2025-26, Chelsea)" },
-      { "pos": "CM", "name": "Enzo Fernández", "stat": "10 goals, 4 assists (2025-26, Chelsea)" },
-      { "pos": "LWB", "name": "Marco Palestra", "stat": "37 Serie A apps, 4 assists (2025-26, Cagliari, loan)" },
-      { "pos": "AM", "name": "Cole Palmer", "stat": "10 goals, 1 assist (2025-26, Chelsea)" },
-      { "pos": "AM", "name": "Morgan Rogers", "stat": "10 goals, 6 assists (2025-26, Aston Villa)" },
-      { "pos": "ST", "name": "João Pedro", "stat": "15 goals, 5 assists (2025-26, Chelsea)" }
+      {
+        "pos": "GK",
+        "name": "Robert S\u00e1nchez",
+        "stat": "9 clean sheets, 32 apps (2025-26, Chelsea)"
+      },
+      {
+        "pos": "RCB",
+        "name": "Reece James",
+        "stat": "27 apps, 4 assists (2025-26, Chelsea)"
+      },
+      {
+        "pos": "CB",
+        "name": "Maxence Lacroix",
+        "stat": "35 apps, 11 clean sheets (2025-26, Crystal Palace)"
+      },
+      {
+        "pos": "LCB",
+        "name": "Levi Colwill",
+        "stat": "4 apps (2025-26, Chelsea) \u2014 ACL recovery"
+      },
+      {
+        "pos": "RWB",
+        "name": "Pedro Neto",
+        "stat": "5 goals, 6 assists (2025-26, Chelsea)"
+      },
+      {
+        "pos": "CM",
+        "name": "Mois\u00e9s Caicedo",
+        "stat": "31 apps, 3 goals (2025-26, Chelsea)"
+      },
+      {
+        "pos": "CM",
+        "name": "Enzo Fern\u00e1ndez",
+        "stat": "10 goals, 4 assists (2025-26, Chelsea)"
+      },
+      {
+        "pos": "LWB",
+        "name": "Marco Palestra",
+        "stat": "37 Serie A apps, 4 assists (2025-26, Cagliari, loan)"
+      },
+      {
+        "pos": "AM",
+        "name": "Cole Palmer",
+        "stat": "10 goals, 1 assist (2025-26, Chelsea)"
+      },
+      {
+        "pos": "AM",
+        "name": "Morgan Rogers",
+        "stat": "10 goals, 6 assists (2025-26, Aston Villa)"
+      },
+      {
+        "pos": "ST",
+        "name": "Jo\u00e3o Pedro",
+        "stat": "15 goals, 5 assists (2025-26, Chelsea)"
+      }
     ],
-    "lineupSource": "Yahoo Sport UK / Roundtable projected XI, 20 August 2026, cross-checked on 21 August against Fantasy Football Scout's Friday predicted line-ups and Chelsea's own report of Xabi Alonso's 20 August press conference, and re-checked on 22 August directly against Goal's 21 August Fulham v Chelsea preview, the Evening Standard / Yahoo Chelsea XI piece of 20 August, Sports Mole's 21 August Chelsea injury and suspension list and The Pride of London's predicted XI. Still a projection, not team news — no official sheet exists until roughly an hour before Monday's 20:00 BST kickoff.",
-    "lineupNote": "Still a projection, and Friday's crop of previews widened the spread rather than narrowing it. This 3-4-2-1 remains the modal call — Yahoo Sport and Roundtable both keep Reece James in a back three with Pedro Neto and Marco Palestra as the wing-backs — but Goal's 21 August preview keeps the same back three and reads the front as a 3-4-3 — João Pedro flanked by Palmer and Morgan Rogers rather than playing off a lone striker — with Romeo Lavia in the midfield two ahead of Enzo Fernández; the Evening Standard goes to a 4-3-3 with Jorrel Hato at left-back and James at right-back; and The Pride of London keeps James at right wing-back and promotes Josh Acheampong into the back three alongside Colwill and Lacroix. Four previews, four different answers on the back three, which with the left wing-back slot remains the least settled call here. Wesley Fofana is suspended, a ban carried over from his final-day red card at Sunderland that pre-season friendlies do not clear, and that is what pushes James from midfield into the back three. How long that ban runs is genuinely unclear: it has been reported as a single match, but the Sunderland dismissal was his second two-yellow red of 2025-26 after the one against Burnley, and at least one outlet has him banned for Alonso's first two games — Fulham and Brighton. No mainstream preview commits to a length, and none of it changes Monday: he is out at Craven Cottage either way. Enzo Fernández is staying — Alonso said flatly that Enzo is a Chelsea player once Manchester City let Chelsea's 14 August bid deadline pass — and is expected to feature. Palestra, the £43m signing from Atalanta and Serie A Defender of the Year after 37 loan appearances at Cagliari, can play either flank, so the left wing-back call still turns on whether Alonso wants his attacking edge there ahead of Hato or of Pep Chavarría, the £16.3m arrival from Rayo Vallecano signed to replace Marc Cucurella. The absence list hardened since Thursday: Goal now lists Caleb Wiley, Jordan Henderson, Aaron Anselmino, Mamadou Sarr, Emanuel Emegha and Geovany Quenda as ruled out, though the Standard the same day still files Henderson (wrist) and Emegha (hamstring) as doubts rather than definite absentees. Alonso reported no fresh injury concerns and said Danny Welbeck, managed through a minor problem, returns to team training on Saturday and can be involved. The standing caveat is unchanged: James, Fernández, Maxence Lacroix and Morgan Rogers all reported back late from the World Cup and are selectable but may be eased in, so any of the four could start on the bench.",
+    "lineupSource": "Yahoo Sport UK / Roundtable projected XI, 20 August 2026, cross-checked on 21 August against Fantasy Football Scout's Friday predicted line-ups and Chelsea's own report of Xabi Alonso's 20 August press conference, re-checked on 22 August against Goal's 21 August preview, the Evening Standard / Yahoo Chelsea XI piece of 20 August, Sports Mole's 21 August injury and suspension list and The Pride of London's predicted XI, and re-checked again on 23 August against Rotowire's 22 August predicted line-ups, Sports Illustrated's 23 August Chelsea predicted XI, Football365's 23 August match preview and Sky Sports' 23 August team-news page. Still a projection, not team news \u2014 Sky confirmed on 23 August that no official sheet exists for either side, and none will until roughly an hour before Monday's 20:00 BST kickoff.",
+    "lineupNote": "Still a projection, and Friday's crop of previews widened the spread rather than narrowing it. This 3-4-2-1 remains the modal call \u2014 Yahoo Sport and Roundtable both keep Reece James in a back three with Pedro Neto and Marco Palestra as the wing-backs \u2014 but Goal's 21 August preview keeps the same back three and reads the front as a 3-4-3 \u2014 Jo\u00e3o Pedro flanked by Palmer and Morgan Rogers rather than playing off a lone striker \u2014 with Romeo Lavia in the midfield two ahead of Enzo Fern\u00e1ndez; the Evening Standard goes to a 4-3-3 with Jorrel Hato at left-back and James at right-back; and The Pride of London keeps James at right wing-back and promotes Josh Acheampong into the back three alongside Colwill and Lacroix. Four previews, four different answers on the back three, which with the left wing-back slot remains the least settled call here. Wesley Fofana is suspended, a ban carried over from his final-day red card at Sunderland that pre-season friendlies do not clear, and that is what pushes James from midfield into the back three. How long that ban runs is genuinely unclear: it has been reported as a single match, but the Sunderland dismissal was his second two-yellow red of 2025-26 after the one against Burnley, and at least one outlet has him banned for Alonso's first two games \u2014 Fulham and Brighton. No mainstream preview commits to a length, and none of it changes Monday: he is out at Craven Cottage either way. Enzo Fern\u00e1ndez is staying \u2014 Alonso said flatly that Enzo is a Chelsea player once Manchester City let Chelsea's 14 August bid deadline pass \u2014 and is expected to feature. Palestra, the \u00a343m signing from Atalanta and Serie A Defender of the Year after 37 loan appearances at Cagliari, can play either flank, so the left wing-back call still turns on whether Alonso wants his attacking edge there ahead of Hato or of Pep Chavarr\u00eda, the \u00a316.3m arrival from Rayo Vallecano signed to replace Marc Cucurella. The absence list hardened since Thursday: Goal now lists Caleb Wiley, Jordan Henderson, Aaron Anselmino, Mamadou Sarr, Emanuel Emegha and Geovany Quenda as ruled out, though the Standard the same day still files Henderson (wrist) and Emegha (hamstring) as doubts rather than definite absentees. Alonso reported no fresh injury concerns and said Danny Welbeck, managed through a minor problem, returns to team training on Saturday and can be involved. The standing caveat is unchanged: James, Fern\u00e1ndez, Maxence Lacroix and Morgan Rogers all reported back late from the World Cup and are selectable but may be eased in, so any of the four could start on the bench.",
     "lastUpdated": "August 22, 2026",
-    "lineupConfirmedAt": null
+    "lineupConfirmedAt": null,
+    "lastBriefingSent": null
   },
   {
     "gw": 2,
-    "date": "2026-08-29",
-    "day": "Saturday",
+    "date": "2026-08-30",
+    "day": "Sunday",
     "opponent": "Brighton & Hove Albion",
     "homeAway": "H",
     "venue": "Stamford Bridge",
     "venueCity": "London",
-    "kickoffUK": "TBD",
-    "kickoffCT": "TBD",
+    "kickoffUK": "14:00",
+    "kickoffCT": "8:00 AM",
     "broadcastUS": null,
     "oddsChe": null,
     "oddsDraw": null,
@@ -58,18 +103,19 @@
     "lineupSource": null,
     "lineupNote": null,
     "lastUpdated": null,
-    "lineupConfirmedAt": null
+    "lineupConfirmedAt": null,
+    "lastBriefingSent": null
   },
   {
     "gw": 3,
-    "date": "2026-09-05",
-    "day": "Saturday",
+    "date": "2026-09-06",
+    "day": "Sunday",
     "opponent": "Arsenal",
     "homeAway": "A",
     "venue": "Emirates Stadium",
     "venueCity": "London",
-    "kickoffUK": "TBD",
-    "kickoffCT": "TBD",
+    "kickoffUK": "16:30",
+    "kickoffCT": "10:30 AM",
     "broadcastUS": null,
     "oddsChe": null,
     "oddsDraw": null,
@@ -80,7 +126,8 @@
     "lineupSource": null,
     "lineupNote": null,
     "lastUpdated": null,
-    "lineupConfirmedAt": null
+    "lineupConfirmedAt": null,
+    "lastBriefingSent": null
   },
   {
     "gw": 4,
@@ -102,18 +149,19 @@
     "lineupSource": null,
     "lineupNote": null,
     "lastUpdated": null,
-    "lineupConfirmedAt": null
+    "lineupConfirmedAt": null,
+    "lastBriefingSent": null
   },
   {
     "gw": 5,
-    "date": "2026-09-19",
-    "day": "Saturday",
+    "date": "2026-09-18",
+    "day": "Friday",
     "opponent": "Brentford",
     "homeAway": "A",
     "venue": "Gtech Community Stadium",
     "venueCity": "London",
-    "kickoffUK": "TBD",
-    "kickoffCT": "TBD",
+    "kickoffUK": "20:00",
+    "kickoffCT": "2:00 PM",
     "broadcastUS": null,
     "oddsChe": null,
     "oddsDraw": null,
@@ -124,7 +172,8 @@
     "lineupSource": null,
     "lineupNote": null,
     "lastUpdated": null,
-    "lineupConfirmedAt": null
+    "lineupConfirmedAt": null,
+    "lastBriefingSent": null
   },
   {
     "gw": 6,
@@ -146,7 +195,8 @@
     "lineupSource": null,
     "lineupNote": null,
     "lastUpdated": null,
-    "lineupConfirmedAt": null
+    "lineupConfirmedAt": null,
+    "lastBriefingSent": null
   },
   {
     "gw": 7,
@@ -168,7 +218,8 @@
     "lineupSource": null,
     "lineupNote": null,
     "lastUpdated": null,
-    "lineupConfirmedAt": null
+    "lineupConfirmedAt": null,
+    "lastBriefingSent": null
   },
   {
     "gw": 8,
@@ -190,7 +241,8 @@
     "lineupSource": null,
     "lineupNote": null,
     "lastUpdated": null,
-    "lineupConfirmedAt": null
+    "lineupConfirmedAt": null,
+    "lastBriefingSent": null
   },
   {
     "gw": 9,
@@ -212,7 +264,8 @@
     "lineupSource": null,
     "lineupNote": null,
     "lastUpdated": null,
-    "lineupConfirmedAt": null
+    "lineupConfirmedAt": null,
+    "lastBriefingSent": null
   },
   {
     "gw": 10,
@@ -234,7 +287,8 @@
     "lineupSource": null,
     "lineupNote": null,
     "lastUpdated": null,
-    "lineupConfirmedAt": null
+    "lineupConfirmedAt": null,
+    "lastBriefingSent": null
   },
   {
     "gw": 11,
@@ -256,7 +310,8 @@
     "lineupSource": null,
     "lineupNote": null,
     "lastUpdated": null,
-    "lineupConfirmedAt": null
+    "lineupConfirmedAt": null,
+    "lastBriefingSent": null
   },
   {
     "gw": 12,
@@ -278,7 +333,8 @@
     "lineupSource": null,
     "lineupNote": null,
     "lastUpdated": null,
-    "lineupConfirmedAt": null
+    "lineupConfirmedAt": null,
+    "lastBriefingSent": null
   },
   {
     "gw": 13,
@@ -300,7 +356,8 @@
     "lineupSource": null,
     "lineupNote": null,
     "lastUpdated": null,
-    "lineupConfirmedAt": null
+    "lineupConfirmedAt": null,
+    "lastBriefingSent": null
   },
   {
     "gw": 14,
@@ -322,7 +379,8 @@
     "lineupSource": null,
     "lineupNote": null,
     "lastUpdated": null,
-    "lineupConfirmedAt": null
+    "lineupConfirmedAt": null,
+    "lastBriefingSent": null
   },
   {
     "gw": 15,
@@ -344,7 +402,8 @@
     "lineupSource": null,
     "lineupNote": null,
     "lastUpdated": null,
-    "lineupConfirmedAt": null
+    "lineupConfirmedAt": null,
+    "lastBriefingSent": null
   },
   {
     "gw": 16,
@@ -366,7 +425,8 @@
     "lineupSource": null,
     "lineupNote": null,
     "lastUpdated": null,
-    "lineupConfirmedAt": null
+    "lineupConfirmedAt": null,
+    "lastBriefingSent": null
   },
   {
     "gw": 17,
@@ -388,7 +448,8 @@
     "lineupSource": null,
     "lineupNote": null,
     "lastUpdated": null,
-    "lineupConfirmedAt": null
+    "lineupConfirmedAt": null,
+    "lastBriefingSent": null
   },
   {
     "gw": 18,
@@ -410,7 +471,8 @@
     "lineupSource": null,
     "lineupNote": null,
     "lastUpdated": null,
-    "lineupConfirmedAt": null
+    "lineupConfirmedAt": null,
+    "lastBriefingSent": null
   },
   {
     "gw": 19,
@@ -432,7 +494,8 @@
     "lineupSource": null,
     "lineupNote": null,
     "lastUpdated": null,
-    "lineupConfirmedAt": null
+    "lineupConfirmedAt": null,
+    "lastBriefingSent": null
   },
   {
     "gw": 20,
@@ -454,7 +517,8 @@
     "lineupSource": null,
     "lineupNote": null,
     "lastUpdated": null,
-    "lineupConfirmedAt": null
+    "lineupConfirmedAt": null,
+    "lastBriefingSent": null
   },
   {
     "gw": 21,
@@ -476,7 +540,8 @@
     "lineupSource": null,
     "lineupNote": null,
     "lastUpdated": null,
-    "lineupConfirmedAt": null
+    "lineupConfirmedAt": null,
+    "lastBriefingSent": null
   },
   {
     "gw": 22,
@@ -498,7 +563,8 @@
     "lineupSource": null,
     "lineupNote": null,
     "lastUpdated": null,
-    "lineupConfirmedAt": null
+    "lineupConfirmedAt": null,
+    "lastBriefingSent": null
   },
   {
     "gw": 23,
@@ -520,7 +586,8 @@
     "lineupSource": null,
     "lineupNote": null,
     "lastUpdated": null,
-    "lineupConfirmedAt": null
+    "lineupConfirmedAt": null,
+    "lastBriefingSent": null
   },
   {
     "gw": 24,
@@ -542,7 +609,8 @@
     "lineupSource": null,
     "lineupNote": null,
     "lastUpdated": null,
-    "lineupConfirmedAt": null
+    "lineupConfirmedAt": null,
+    "lastBriefingSent": null
   },
   {
     "gw": 25,
@@ -564,7 +632,8 @@
     "lineupSource": null,
     "lineupNote": null,
     "lastUpdated": null,
-    "lineupConfirmedAt": null
+    "lineupConfirmedAt": null,
+    "lastBriefingSent": null
   },
   {
     "gw": 26,
@@ -586,7 +655,8 @@
     "lineupSource": null,
     "lineupNote": null,
     "lastUpdated": null,
-    "lineupConfirmedAt": null
+    "lineupConfirmedAt": null,
+    "lastBriefingSent": null
   },
   {
     "gw": 27,
@@ -608,7 +678,8 @@
     "lineupSource": null,
     "lineupNote": null,
     "lastUpdated": null,
-    "lineupConfirmedAt": null
+    "lineupConfirmedAt": null,
+    "lastBriefingSent": null
   },
   {
     "gw": 28,
@@ -630,7 +701,8 @@
     "lineupSource": null,
     "lineupNote": null,
     "lastUpdated": null,
-    "lineupConfirmedAt": null
+    "lineupConfirmedAt": null,
+    "lastBriefingSent": null
   },
   {
     "gw": 29,
@@ -652,7 +724,8 @@
     "lineupSource": null,
     "lineupNote": null,
     "lastUpdated": null,
-    "lineupConfirmedAt": null
+    "lineupConfirmedAt": null,
+    "lastBriefingSent": null
   },
   {
     "gw": 30,
@@ -674,7 +747,8 @@
     "lineupSource": null,
     "lineupNote": null,
     "lastUpdated": null,
-    "lineupConfirmedAt": null
+    "lineupConfirmedAt": null,
+    "lastBriefingSent": null
   },
   {
     "gw": 31,
@@ -696,7 +770,8 @@
     "lineupSource": null,
     "lineupNote": null,
     "lastUpdated": null,
-    "lineupConfirmedAt": null
+    "lineupConfirmedAt": null,
+    "lastBriefingSent": null
   },
   {
     "gw": 32,
@@ -718,7 +793,8 @@
     "lineupSource": null,
     "lineupNote": null,
     "lastUpdated": null,
-    "lineupConfirmedAt": null
+    "lineupConfirmedAt": null,
+    "lastBriefingSent": null
   },
   {
     "gw": 33,
@@ -740,7 +816,8 @@
     "lineupSource": null,
     "lineupNote": null,
     "lastUpdated": null,
-    "lineupConfirmedAt": null
+    "lineupConfirmedAt": null,
+    "lastBriefingSent": null
   },
   {
     "gw": 34,
@@ -762,7 +839,8 @@
     "lineupSource": null,
     "lineupNote": null,
     "lastUpdated": null,
-    "lineupConfirmedAt": null
+    "lineupConfirmedAt": null,
+    "lastBriefingSent": null
   },
   {
     "gw": 35,
@@ -784,7 +862,8 @@
     "lineupSource": null,
     "lineupNote": null,
     "lastUpdated": null,
-    "lineupConfirmedAt": null
+    "lineupConfirmedAt": null,
+    "lastBriefingSent": null
   },
   {
     "gw": 36,
@@ -806,7 +885,8 @@
     "lineupSource": null,
     "lineupNote": null,
     "lastUpdated": null,
-    "lineupConfirmedAt": null
+    "lineupConfirmedAt": null,
+    "lastBriefingSent": null
   },
   {
     "gw": 37,
@@ -828,7 +908,8 @@
     "lineupSource": null,
     "lineupNote": null,
     "lastUpdated": null,
-    "lineupConfirmedAt": null
+    "lineupConfirmedAt": null,
+    "lastBriefingSent": null
   },
   {
     "gw": 38,
@@ -850,6 +931,7 @@
     "lineupSource": null,
     "lineupNote": null,
     "lastUpdated": null,
-    "lineupConfirmedAt": null
+    "lineupConfirmedAt": null,
+    "lastBriefingSent": null
   }
 ]
