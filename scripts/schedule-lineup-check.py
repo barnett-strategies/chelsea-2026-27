@@ -98,7 +98,9 @@ def main():
         print("launchctl load FAILED:", r.stderr.strip())
         sys.exit(1)
 
-    print(f"Scheduled official-XI check for GW{fx['gw']} vs {fx['opponent']}")
+    label = (f"GW{fx['gw']}" if fx.get("gw")
+             else f"{fx.get('competition','Cup')} {fx.get('roundLabel','')}".strip())
+    print(f"Scheduled official-XI check for {label} vs {fx['opponent']}")
     print(f"  kickoff  : {ko:%a %b %d %I:%M %p} CT")
     print(f"  check at : {check_at:%a %b %d %I:%M %p} CT  (T-70)")
 

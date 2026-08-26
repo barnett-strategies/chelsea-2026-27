@@ -8,8 +8,17 @@ function slug(name){
   return name.toLowerCase().replace(/&/g,'and').replace(/[^a-z0-9]+/g,'-').replace(/(^-|-$)/g,'');
 }
 function fileFor(fx){
+  if (fx.slug) return `${fx.slug}.html`;          // cup ties carry an explicit slug
   const n = String(fx.gw).padStart(2,'0');
   return `gw${n}-${slug(fx.opponent)}.html`;
+}
+// Date-ordered list drives prev/next nav, so cup ties sit in the right place.
+function ordered(){
+  return [...fixtures].sort((a,b)=> a.date.localeCompare(b.date));
+}
+function isPL(fx){ return (fx.competition || 'Premier League') === 'Premier League'; }
+function compLabel(fx){
+  return isPL(fx) ? `${fx.roundLabel || 'Matchweek '+fx.gw} / 38` : `${fx.competition} &middot; ${fx.roundLabel}`;
 }
 function prettyDate(iso){
   const [y,m,d] = iso.split('-').map(Number);
@@ -44,11 +53,12 @@ const FOOT_CLOSE = `</div>
 `;
 
 function topnav(fx){
-  const prev = fx.gw > 1 ? fixtures.find(f=>f.gw===fx.gw-1) : null;
-  const next = fx.gw < 38 ? fixtures.find(f=>f.gw===fx.gw+1) : null;
+  const seq = ordered();
+  const i = seq.findIndex(f => fileFor(f) === fileFor(fx));
+  const next = i >= 0 && i < seq.length-1 ? seq[i+1] : null;
   return `<div class="topnav">
   <a href="index.html">&larr; Season schedule</a>
-  <span class="crest">Matchweek ${fx.gw} / 38</span>
+  <span class="crest">${compLabel(fx)}</span>
   ${next ? `<a href="${fileFor(next)}">Next: ${next.opponent} &rarr;</a>` : `<span></span>`}
 </div>`;
 }
@@ -57,7 +67,7 @@ function gamePage(fx){
   const vs = fx.homeAway === 'H' ? `Chelsea<span class="v">versus</span>${fx.opponent}` : `${fx.opponent}<span class="v">versus</span>Chelsea`;
   const where = fx.homeAway === 'H' ? `${fx.venue}, ${fx.venueCity}` : `${fx.venue}, ${fx.venueCity}`;
   const haWord = fx.homeAway === 'H' ? 'home' : 'away';
-  const title = `${fx.homeAway==='H' ? 'Chelsea v '+fx.opponent : fx.opponent+' v Chelsea'} — Matchweek ${fx.gw} Briefing`;
+  const title = `${fx.homeAway==='H' ? 'Chelsea v '+fx.opponent : fx.opponent+' v Chelsea'} — ${isPL(fx) ? fx.roundLabel : fx.competition+' '+fx.roundLabel} Briefing`;
   const desc = `Chelsea ${haWord} to ${fx.opponent} on ${prettyDate(fx.date)}. Kickoff time, US broadcast and odds, updated as they're confirmed.`;
 
   const kickBlock = fx.kickoffCT !== 'TBD'
@@ -109,7 +119,7 @@ function gamePage(fx){
   return head(title, desc) + `
 ${topnav(fx)}
 <header class="hero">
-  <p class="eyebrow">Premier League 2026/27 · Matchweek ${fx.gw}</p>
+  <p class="eyebrow">${isPL(fx) ? `Premier League 2026/27 &middot; ${fx.roundLabel}` : `${fx.competition} 2026/27 &middot; ${fx.roundLabel}`}</p>
   <h1 class="fixture">${vs}</h1>
   <p class="subline">${where} · <strong>${prettyDate(fx.date)}${fx.day ? ' ('+fx.day+')' : ''}</strong> · Chelsea ${haWord}</p>
   ${kickBlock}
@@ -140,57 +150,57 @@ ${topnav(fx)}
 ${notes ? `<section>${notes}</section>` : ''}
 
 <footer>
-  <b>Matchweek ${fx.gw} of 38.</b> ${fx.lastUpdated ? `This page last updated <b>${fx.lastUpdated}</b>.` : `No updates to this page yet &mdash; nothing beyond the fixture itself has been confirmed.`} Fixture per the Premier League's official 2026/27 release; subject to change for broadcast selection or cup involvement. Updated automatically as new information is confirmed.
+  <b>${isPL(fx) ? `${fx.roundLabel} of 38.` : `${fx.competition} &mdash; ${fx.roundLabel}.`}</b> ${fx.lastUpdated ? `This page last updated <b>${fx.lastUpdated}</b>.` : `No updates to this page yet &mdash; nothing beyond the fixture itself has been confirmed.`} ${isPL(fx) ? `Fixture per the Premier League's official 2026/27 release; subject to change for broadcast selection or cup involvement.` : `Cup fixture; subject to change for broadcast selection.`} Updated automatically as new information is confirmed.
 </footer>
 ` + FOOT_CLOSE;
 }
 
 // ---------------- Homepage ----------------
 function homePage(){
-  const played = fixtures.filter(f=>f.status==='played');
-  const upcoming = fixtures.filter(f=>f.status!=='played');
-  const next = upcoming[0];
-
   let rows = '';
   let lastMonthKey = '';
-  for (const fx of fixtures){
+  const todayISO = new Date().toISOString().slice(0,10);
+  for (const fx of ordered()){
     const [y,m] = fx.date.split('-').map(Number);
     const monthKey = `${MONTHS[m-1]} ${y}`;
     if (monthKey !== lastMonthKey){
       rows += `<div class="month-head">${monthKey}</div>`;
       lastMonthKey = monthKey;
     }
-    const isGw1 = fx.gw === 1;
-    const href = isGw1 ? 'gw01-fulham.html' : fileFor(fx);
+    const href = fx.gw === 1 ? 'gw01-fulham.html' : fileFor(fx);
     const haBadge = fx.homeAway === 'H' ? '<span class="ha h">H</span>' : '<span class="ha a">A</span>';
     const timeStr = fx.kickoffCT !== 'TBD' ? fx.kickoffCT + ' CT' : 'time TBD';
-    rows += `<a class="gamerow" href="${href}">
-      <div class="gwno">${fx.gw}</div>
-      <div class="mid"><b>${haBadge}${fx.opponent}</b><span>${prettyDateShort(fx.date)}, ${y} · ${fx.venue}</span></div>
+    const marker = isPL(fx) ? String(fx.gw) : '<span class="cupmark">CUP</span>';
+    const compTag = isPL(fx) ? '' : ` &middot; <span class="comptag">${fx.competition}, ${fx.roundLabel}</span>`;
+    rows += `<a class="gamerow${isPL(fx) ? '' : ' cup'}" href="${href}">
+      <div class="gwno">${marker}</div>
+      <div class="mid"><b>${haBadge}${fx.opponent}</b><span>${prettyDateShort(fx.date)}, ${y} · ${fx.venue}${compTag}</span></div>
       <div class="side">${timeStr}</div>
     </a>`;
   }
 
+  // "Up next" = first fixture whose date is today or later.
+  const next = ordered().find(f => f.date >= todayISO) || ordered()[ordered().length-1];
   const nextHref = next.gw === 1 ? 'gw01-fulham.html' : fileFor(next);
   const nextBlock = next ? `<a class="nextup" href="${nextHref}">
-    <div class="tag">Up next &middot; Matchweek ${next.gw}</div>
+    <div class="tag">Up next &middot; ${isPL(next) ? next.roundLabel : next.competition+' '+next.roundLabel}</div>
     <div class="match">${next.homeAway==='H' ? 'Chelsea vs '+next.opponent : next.opponent+' vs Chelsea'}</div>
     <div class="meta">${prettyDate(next.date)} · ${next.venue}, ${next.venueCity} ${next.kickoffCT!=='TBD' ? '· '+next.kickoffCT+' CT' : ''}</div>
     <div class="cta">Open full briefing &rarr;</div>
   </a>` : '';
 
-  return head('Chelsea 2026/27 — Full Season Briefing', 'All 38 Chelsea Premier League fixtures for 2026/27: kickoff times in Central time, US broadcast info, odds and projected lineups, updated through the season.') + `
+  return head('Chelsea 2026/27 — Full Season Briefing', 'Every Chelsea fixture for 2026/27 across the Premier League, Carabao Cup and FA Cup: kickoff times in Central time, US broadcast info, odds and projected lineups.') + `
 <header class="season-hero">
-  <p class="crest">Premier League 2026/27</p>
+  <p class="crest">Chelsea FC 2026/27</p>
   <h1>Chelsea<br>Season Briefing</h1>
-  <p>All 38 matches. Kickoff times in Central time, US broadcast info, odds and the projected lineup — filled in and updated as each matchday approaches. Site last updated ${prettyDate(new Date().toISOString().slice(0,10))}; each match page shows its own last-updated date.</p>
+  <p>Every competitive match — Premier League, Carabao Cup and FA Cup. Kickoff times in Central time, US broadcast info, odds and the projected lineup, filled in as each matchday approaches. Site last updated ${prettyDate(new Date().toISOString().slice(0,10))}; each match page shows its own last-updated date.</p>
   ${nextBlock}
 </header>
 
 <section style="margin-top:8px">
   <p class="kicker">The full schedule</p>
-  <h2>38 matchweeks</h2>
-  <div class="legend"><span><span class="ha h">H</span> Home — Stamford Bridge</span><span><span class="ha a">A</span> Away</span></div>
+  <h2>${fixtures.length} fixtures</h2>
+  <div class="legend"><span><span class="ha h">H</span> Home — Stamford Bridge</span><span><span class="ha a">A</span> Away</span><span><span class="cupmark">CUP</span> Cup tie</span></div>
   <div class="gamelist" style="margin-top:18px">
     ${rows}
   </div>

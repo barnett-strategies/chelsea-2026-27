@@ -19,9 +19,29 @@ time, even if nothing else changes — it is what makes matchday alerts fire.
 
 Read fixtures.json. Determine today's date.
 
+## SCOPE: ALL COMPETITIONS
+This site covers every competitive Chelsea match, not just the league:
+Premier League, Carabao Cup (EFL Cup) and FA Cup. Chelsea have no European
+football this season.
+
+League fixtures have "competition": "Premier League" and a gw number 1-38.
+Cup ties have "gw": null plus "competition", "roundLabel" and an explicit
+"slug" that becomes the filename (e.g. "eflcup-r2-luton-town").
+
+WATCH FOR NEW CUP TIES. Cup opponents only exist after a draw. If Chelsea are
+still in a cup and a round has been drawn but is not in fixtures.json, ADD IT:
+copy the field structure of an existing cup entry, set slug to
+"{eflcup|facup}-r{round}-{opponent-slug}", set gw to null, and fill whatever is
+known (date and kickoff may be TBD at first). Then run node generate.js so the
+page and the homepage row exist.
+
+Key round timing: Carabao Cup third round is drawn in late August and played in
+September; the FA Cup third round is when Premier League clubs enter, in early
+January. Check for draws when Chelsea have progressed.
+
 ## STEP 1 — ANYTHING TO DO?
-Is any Chelsea Premier League match within the next 4 days? If no: stop (you have
-already re-armed the check above). No commit, no text, no other changes.
+Is any Chelsea match in ANY competition within the next 4 days? If no: stop (you
+have already re-armed the check above). No commit, no text, no other changes.
 
 NEVER touch a fixture whose kickoff time has already passed. Past matches are
 frozen as previews permanently.
@@ -29,7 +49,9 @@ frozen as previews permanently.
 ## STEP 2 — PREP (match is 1-4 days away)
 Web-search that fixture. Fill ONLY fields still null or "TBD":
 - confirmed kickoff time (kickoffUK and kickoffCT)
-- broadcastUS: the US channel (NBC, USA Network, or Peacock)
+- broadcastUS: the US channel. Premier League is NBC / USA Network / Peacock.
+  Carabao Cup and FA Cup have DIFFERENT US rights holders — verify per competition
+  rather than assuming NBC, and say "not confirmed" if you cannot source it.
 - odds: oddsChe / oddsDraw / oddsOpp in American format from a mainstream sportsbook, plus fairChe / fairDraw / fairOpp as de-vigged integer percentages
 - if team news or a press conference suggests an XI: set lineupStatus to "projected", fill lineupXI as a list of {"pos","name","stat"} objects, add a 1-2 sentence lineupNote explaining the basis, set lineupSource. This is a guess and must read like one.
 
