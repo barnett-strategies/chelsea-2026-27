@@ -98,21 +98,78 @@
     "venueCity": "London",
     "kickoffUK": "19:30",
     "kickoffCT": "1:30 PM",
-    "broadcastUS": null,
-    "oddsChe": null,
-    "oddsDraw": null,
-    "oddsOpp": null,
-    "fairChe": null,
-    "fairDraw": null,
-    "fairOpp": null,
-    "lineupStatus": "unknown",
-    "lineupXI": [],
-    "lineupSource": null,
-    "lineupNote": null,
+    "broadcastUS": "Paramount+",
+    "broadcastConfirmed": true,
+    "oddsChe": "-769",
+    "oddsDraw": "+700",
+    "oddsOpp": "+1600",
+    "fairChe": 83,
+    "fairDraw": 12,
+    "fairOpp": 5,
+    "lineupStatus": "projected",
+    "lineupXI": [
+      {
+        "pos": "GK",
+        "name": "Mike Penders",
+        "stat": "8 clean sheets, 33 Ligue 1 apps (2025-26, Strasbourg, loan)"
+      },
+      {
+        "pos": "RB",
+        "name": "Malo Gusto",
+        "stat": "34 apps, 3 assists (2025-26, Chelsea)"
+      },
+      {
+        "pos": "CB",
+        "name": "Josh Acheampong",
+        "stat": "17 apps, 8 starts (2025-26, Chelsea)"
+      },
+      {
+        "pos": "CB",
+        "name": "Maxence Lacroix",
+        "stat": "35 apps, 11 clean sheets (2025-26, Crystal Palace)"
+      },
+      {
+        "pos": "LB",
+        "name": "Pep Chavarría",
+        "stat": "33 La Liga apps, 2 assists (2025-26, Rayo Vallecano)"
+      },
+      {
+        "pos": "CM",
+        "name": "Roméo Lavia",
+        "stat": "12 apps, 4 starts (2025-26, Chelsea)"
+      },
+      {
+        "pos": "CM",
+        "name": "Valentín Barco",
+        "stat": "2 goals, 4 assists (2025-26, Strasbourg)"
+      },
+      {
+        "pos": "RW",
+        "name": "Pedro Neto",
+        "stat": "5 goals, 6 assists (2025-26, Chelsea)"
+      },
+      {
+        "pos": "AM",
+        "name": "Geovany Quenda",
+        "stat": ""
+      },
+      {
+        "pos": "LW",
+        "name": "Estêvão",
+        "stat": "8 goals, 36 apps (2025-26, Chelsea)"
+      },
+      {
+        "pos": "ST",
+        "name": "Danny Welbeck",
+        "stat": "13 goals, 1 assist (2025-26, Brighton)"
+      }
+    ],
+    "lineupSource": "Sports Mole's 26 August Chelsea v Luton Town EFL Cup preview, which supplies this exact 4-2-3-1 and is the only preview whose availability list matches Xabi Alonso's own Wednesday press conference. Cross-checked against Sports Illustrated's 26 August Chelsea predicted line-up and 101 Great Goals' preview, plus Chelsea's own match preview for kick-off and UK broadcast, the Sky Sports Carabao Cup 2026-27 fixture listing, and CBS Sports / Paramount+ for the US rights position. Still a projection, not team news — no official sheet exists until roughly an hour before Thursday's 19:30 BST kickoff.",
+    "lineupNote": "A guess, and a lower-confidence one than usual: this is a rotation night, and rotation is the hardest thing to predict. Three previews produced three different shapes — Sports Mole a 4-2-3-1, Sports Illustrated a 3-4-2-1, 101 Great Goals a 4-3-3 — and only seven names appear in all three (Penders, Acheampong, Lacroix, Chavarría, Barco, Estêvão, Welbeck). Sports Mole's XI is used here because its availability list is the only one that squares with what Alonso actually said on Wednesday. Alonso has signalled wholesale changes, so first Chelsea starts are in play for Danny Welbeck, Valentín Barco, Pep Chavarría and goalkeeper Mike Penders, with Penders getting the kind of look that decides whether he pushes Robert Sánchez. Two source conflicts are worth stating plainly rather than smoothing over. First, Wesley Fofana: Sports Mole has him serving the second match of a two-game ban and therefore out tonight, while Sports Illustrated and 101 Great Goals both start him. The two-game reading is the better-supported one and is what this site has used for Sunday's Brighton page — a red-card ban runs across domestic competitions, so the opener plus this tie discharges it and he is clear for Brighton, not for Luton. He is left out here on that basis, but it is a genuine disagreement, not a settled fact. Second, 101 Great Goals starts Marco Palestra, which looks stale: Alonso ruled Palestra out on Wednesday alongside Moisés Caicedo, and was notably less hopeful about Palestra — “Both not for tomorrow. Hopefully Moi can make it for the weekend. Maybe we need to check a little bit more with Marco.” Cole Palmer is not injured; he is expected to be rested with Sunday in mind. Jordan Henderson (wrist) is out and targeting 6 September at Arsenal, Emanuel Emegha's status is reported inconsistently — Sports Mole has him fit and available, 101 Great Goals still lists a hamstring problem — and Aaron Anselmino (hamstring) is a doubt. Enzo Fernández is fit and expected to be involved in some capacity, though Manchester City interest and a 1 September window deadline make him the one selection Alonso may be managing for non-football reasons. Geovany Quenda's key stat is deliberately blank: he moved from Sporting CP this summer and the public 2025-26 numbers for him conflict badly across sources, so nothing is stated rather than guessed.",
     "lineupConfirmedAt": null,
-    "lastUpdated": null,
+    "lastUpdated": "August 26, 2026, 7:20 PM CT",
     "lastBriefingSent": null,
-    "notes": "Xabi Alonso's first competitive home match as Chelsea manager. Luton are a League One side managed by former Arsenal midfielder Jack Wilshere, and arrive having won the EFL Trophy last season. Alonso's Wednesday press conference ruled out Caicedo and Palestra for this tie. Expect heavy rotation."
+    "notes": "Xabi Alonso's first competitive home match as Chelsea manager. Luton are a League One side managed by former Arsenal midfielder Jack Wilshere, and arrive having won the EFL Trophy last season. Alonso's Wednesday press conference ruled out Caicedo and Palestra for this tie. Expect heavy rotation. The third-round draw was made on Wednesday evening, before this tie is played: the winner goes away to Leeds United, in the weeks beginning 7 or 14 September."
   },
   {
     "gw": 2,
