@@ -2,6 +2,20 @@ const fs = require('fs');
 
 const fixtures = JSON.parse(fs.readFileSync('fixtures.json', 'utf8'));
 
+// Squad database — the ONLY source for the six descriptive lineup columns.
+const squad = JSON.parse(fs.readFileSync('players.json', 'utf8')).players;
+const missingPlayers = new Set();
+const norm = s => String(s || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z ]/g, '').trim();
+function playerByName(name){
+  const n = norm(name);
+  let hit = squad.find(p => norm(p.name) === n);
+  if (hit) return hit;
+  // surname fallback, e.g. "Emi Martinez" vs "Emiliano Martínez"
+  const last = n.split(' ').slice(-1)[0];
+  const cands = squad.filter(p => norm(p.name).split(' ').slice(-1)[0] === last);
+  return cands.length === 1 ? cands[0] : null;
+}
+
 const MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December'];
 
 function slug(name){
@@ -94,8 +108,41 @@ function gamePage(fx){
       <p class="bar-key">Fair probability, margin removed: <b>Chelsea ~${fx.fairChe}%</b> · Draw ~${fx.fairDraw}% · ${fx.opponent} ~${fx.fairOpp}%</p>`
     : `<div class="tbd-block"><b>Odds not yet posted.</b><br>Mainstream books generally open markets on a match one to two weeks out. Check back as matchday approaches.</div>`;
 
+  // ---- THE canonical lineup table. Seven columns, identical on every page. ----
   function xiList(xi){
-    return `<div class="xi-list">${xi.map(p => `<div class="xi-row"><div class="xi-pos">${p.pos}</div><div class="xi-name">${p.name}${p.stat ? `<span class="xi-stat">${p.stat}</span>` : ''}</div></div>`).join('')}</div>`;
+    const rows = xi.map(p => {
+      const rec = playerByName(p.name);
+      if (!rec) missingPlayers.add(p.name);
+      const r = rec || {};
+      const [statVal, statLabel] = String(r.stat || '').split('|');
+      const dash = '&mdash;';
+      return `      <tr>
+        <td class="num">${r.number || '&ndash;'}<small>${p.pos || ''}</small></td>
+        <td class="who"><b>${p.name}</b><span>${r.position || p.pos || ''}</span>${r.isNew ? '<span class="new">new signing</span>' : ''}</td>
+        <td data-l="Country">${r.country || dash}</td>
+        <td data-l="At Chelsea">${r.atChelsea || dash}</td>
+        <td data-l="Previously">${r.previously || dash}</td>
+        <td data-l="Playing style">${r.style || dash}</td>
+        <td data-l="Key stats">${statVal ? `${statLabel ? `<span class="stat-season">${statLabel}</span>` : ''}${statVal}` : dash}</td>
+      </tr>`;
+    }).join('\n');
+
+    return `<table>
+    <thead>
+      <tr>
+        <th scope="col">No.</th>
+        <th scope="col">Player / position</th>
+        <th scope="col">From</th>
+        <th scope="col">At Chelsea</th>
+        <th scope="col">Previously</th>
+        <th scope="col">Playing style</th>
+        <th scope="col">Key stats</th>
+      </tr>
+    </thead>
+    <tbody>
+${rows}
+    </tbody>
+  </table>`;
   }
 
   let lineupSection;
@@ -219,3 +266,7 @@ for (const fx of fixtures){
 }
 fs.writeFileSync('index.html', homePage());
 console.log('Generated', fixtures.length - 1, 'template pages + index.html');
+if (missingPlayers.size){
+  console.log('\n*** WARNING: no players.json record for: ' + [...missingPlayers].join(', '));
+  console.log('*** Those rows rendered with em dashes. Add them to players.json.\n');
+}
