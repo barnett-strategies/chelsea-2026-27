@@ -153,7 +153,7 @@ ${rows}
       ${fx.lineupSource ? `<p class="lineup-source">Source: ${fx.lineupSource}</p>` : ''}`;
   } else if (fx.lineupStatus === 'projected' && fx.lineupXI && fx.lineupXI.length){
     lineupSection = `<div class="lineup-head"><span class="badge-projected">Projected</span><span style="font-family:'Roboto Mono',monospace;font-size:12px;color:var(--muted)">Not yet officially confirmed</span></div>
-      <div class="lineup-caveat">This is a projection built from team news and press-conference hints — not the official lineup. It will be replaced automatically with the confirmed XI once the club announces it, typically 60&ndash;75 minutes before kickoff.</div>
+      <div class="lineup-caveat">This is a projection built from team news and press-conference hints — not the official lineup. It will be replaced automatically with the confirmed XI once the club announces it, typically 60–75 minutes before kickoff.</div>
       ${xiList(fx.lineupXI)}
       ${fx.lineupNote ? `<div class="verdict">${fx.lineupNote}</div>` : ''}
       ${fx.lineupSource ? `<p class="lineup-source">Basis: ${fx.lineupSource}</p>` : ''}`;

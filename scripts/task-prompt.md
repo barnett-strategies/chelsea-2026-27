@@ -11,11 +11,27 @@ red cards, or any in-match or post-match event. Not on the site, not in a text,
 not in your summary. If a source headline contains a score, do not repeat it.
 This site is a PRE-GAME information set only.
 
-## ALWAYS: RE-ARM THE OFFICIAL-XI CHECK
-Before anything else, run:
+## ALWAYS: RE-ARM THE OFFICIAL-XI CHECK AND VERIFY THE TOKEN
+Before anything else, run BOTH:
   python3 scripts/schedule-lineup-check.py
-This reads kickoff times and schedules the T-70 official-XI job. Run it every
-time, even if nothing else changes — it is what makes matchday alerts fire.
+  ./scripts/check-token.sh
+
+The first schedules the T-55 and T-40 official-XI jobs off the kickoff time. The
+second verifies the GitHub token with an AUTHENTICATED API call and warns if it
+is near expiry. Run both every time, even if nothing else changes.
+
+If check-token.sh prints TOKEN_DEAD, STOP: nothing can be published. It has
+already texted Chris. Report it and do nothing else.
+
+NEVER use `git ls-remote` to test the token. This repo is public, so ls-remote
+reads anonymously and succeeds even with a dead token. That false all-clear is
+what hid a week-long outage in August 2026.
+
+## LINKS IN TEXTS MUST BE FULL URLs
+Every link you put in a text message MUST begin with https:// — for example
+https://chelsea-fc-2026-27.netlify.app/gw03-arsenal
+A bare domain does not linkify in iMessage and does not resolve when pasted into
+a browser. Check the URL starts with https:// before calling send-alert.sh.
 
 Read fixtures.json. Determine today's date.
 
@@ -102,7 +118,7 @@ headline of the projected XI. Under 300 chars, no double quotes, NO SPOILERS.
 Example:
 "Chelsea briefing: Sat v Brighton (H), 9am CT on USA. Chelsea -140. Projected XI
 has Lavia alongside Caicedo, Palmer + Rogers behind Joao Pedro.
-chelsea-fc-2026-27.netlify.app/gw02-brighton-and-hove-albion"
+https://chelsea-fc-2026-27.netlify.app/gw02-brighton-and-hove-albion"
 
 Send to BOTH:
   ./scripts/send-alert.sh "+13129618960" "MESSAGE"

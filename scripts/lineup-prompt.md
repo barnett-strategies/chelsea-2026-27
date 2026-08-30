@@ -18,9 +18,12 @@ Search for the confirmed team sheet, e.g. "Chelsea confirmed lineup [opponent]".
 Only official team sheets count: the club's own account, the Premier League match
 centre, or a wire service. A pundit prediction is NOT confirmation.
 
-If the XI is not published yet, wait 5 minutes and try once more. If still not
-available, leave lineupStatus as "projected", change nothing, send no text, and
-report that. Do not guess.
+If the XI is not published yet, do NOT set an in-process timer — the process
+exits and the timer dies with it (this is exactly how the 30 Aug 2026 check
+failed). There are TWO scheduled passes, at T-55 and T-40. If this is the T-55
+pass and the sheet is not out, simply report that and stop; the T-40 pass will
+catch it. Leave lineupStatus as "projected", change nothing, send no text.
+Never guess an XI.
 
 When found, in fixtures.json for that fixture:
 - set lineupStatus to "confirmed"
@@ -51,7 +54,7 @@ Send to BOTH numbers, one call each:
 MESSAGE: under 300 chars, no double quotes, NO SPOILERS. Cover what changed from
 the projection and the link. Example:
 "Chelsea: official XI in for GW2 v Brighton. Lavia starts, Caicedo benched, back
-three confirmed. chelsea-fc-2026-27.netlify.app/gw02-brighton-and-hove-albion"
+three confirmed. https://chelsea-fc-2026-27.netlify.app/gw02-brighton-and-hove-albion"
 
 The script prints SMS_SENT or SMS_FAILED and returns an honest exit code.
 Report exactly which recipients succeeded. Never claim a text was sent if the
