@@ -1,0 +1,63 @@
+/* print.css — light, ink-friendly, US Letter portrait.
+   Used only by the *-print.html teamsheets. Deliberately NOT the dark site theme:
+   white-on-navy wastes toner and prints muddy. */
+
+@page { size: letter portrait; margin: 0.5in; }
+
+*{ box-sizing:border-box; }
+html,body{ background:#fff; margin:0; padding:0; }
+body{
+  color:#111;
+  font-family:-apple-system,"Helvetica Neue",Arial,sans-serif;
+  font-size:9.5pt;
+  line-height:1.35;
+}
+.sheet{ max-width:7.5in; margin:0 auto; padding:0.25in 0; }
+
+/* header */
+.ph{ border-bottom:3px solid #111; padding-bottom:8pt; margin-bottom:10pt; }
+.ph .comp{
+  font-size:7.5pt; letter-spacing:.14em; text-transform:uppercase;
+  color:#555; margin:0 0 3pt;
+}
+.ph h1{ font-size:19pt; margin:0 0 4pt; letter-spacing:-.01em; }
+.ph .meta{ font-size:9pt; color:#333; margin:0; }
+.ph .status{
+  display:inline-block; border:1.5pt solid #111; padding:1.5pt 6pt;
+  font-size:7.5pt; letter-spacing:.1em; text-transform:uppercase; font-weight:700;
+  margin-top:6pt;
+}
+.ph .status.proj{ border-style:dashed; color:#555; border-color:#777; }
+
+/* teamsheet table */
+table{ width:100%; border-collapse:collapse; margin:0; }
+thead{ display:table-header-group; }          /* repeat header on page 2 */
+thead th{
+  font-size:7pt; letter-spacing:.1em; text-transform:uppercase;
+  text-align:left; padding:4pt 5pt; border-bottom:1.5pt solid #111;
+  background:#f0f0f0; color:#111; font-weight:700;
+}
+tbody tr{ page-break-inside:avoid; break-inside:avoid; }
+tbody td{
+  padding:5pt; border-bottom:0.5pt solid #bbb;
+  vertical-align:top; font-size:8.5pt;
+}
+tbody tr:nth-child(even){ background:#fafafa; }
+
+col.c-no{ width:6%; }  col.c-pl{ width:16%; } col.c-fr{ width:9%; }
+col.c-ch{ width:15%; } col.c-pv{ width:14%; } col.c-st{ width:28%; }
+col.c-ks{ width:12%; }
+
+td.p-no{ font-weight:700; font-size:12pt; }
+td.p-no small{ display:block; font-size:6.5pt; font-weight:400; color:#666; letter-spacing:.06em; }
+td.p-name b{ display:block; font-size:9.5pt; }
+td.p-name span{ display:block; font-size:7pt; color:#666; text-transform:uppercase; letter-spacing:.04em; }
+td.p-ks .lbl{ display:block; font-size:6.5pt; color:#666; text-transform:uppercase; letter-spacing:.04em; }
+
+.pfoot{ margin-top:10pt; padding-top:6pt; border-top:1pt solid #999; font-size:7.5pt; color:#555; }
+
+.noprint{ margin:14pt 0 0; }
+.noprint button{
+  font:inherit; padding:6pt 14pt; border:1.5pt solid #111; background:#111; color:#fff; cursor:pointer;
+}
+@media print { .noprint{ display:none !important; } }

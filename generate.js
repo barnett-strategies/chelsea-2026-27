@@ -5,6 +5,7 @@ const fixtures = JSON.parse(fs.readFileSync('fixtures.json', 'utf8'));
 // Squad database — the ONLY source for the six descriptive lineup columns.
 const squad = JSON.parse(fs.readFileSync('players.json', 'utf8')).players;
 const missingPlayers = new Set();
+let printCount = 0;
 const norm = s => String(s || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z ]/g, '').trim();
 function playerByName(name){
   const n = norm(name);
@@ -217,6 +218,7 @@ ${topnav(fx)}
 <section>
   <p class="kicker">The likely XI</p>
   <h2>Projected lineup</h2>
+  ${(fx.lineupXI && fx.lineupXI.length) ? `<p class="printlink"><a href="${(fx.gw===1?'gw01-fulham':fileFor(fx).replace(/\.html$/,''))}-print.html">Printable teamsheet (8.5 &times; 11) &rarr;</a></p>` : ''}
   ${lineupSection}
 </section>
 
@@ -296,3 +298,88 @@ if (missingPlayers.size){
   console.log('\n*** WARNING: no players.json record for: ' + [...missingPlayers].join(', '));
   console.log('*** Those rows rendered with em dashes. Add them to players.json.\n');
 }
+
+// ---- Printable teamsheet: US Letter portrait, black on white. ----
+function printPage(fx){
+  const xi = fx.lineupXI || [];
+  if (!xi.length) return null;
+
+  const confirmed = fx.lineupStatus === 'confirmed';
+  const vs = fx.homeAway === 'H'
+    ? `Chelsea v ${fx.opponent}`
+    : `${fx.opponent} v Chelsea`;
+  const compLine = isPL(fx)
+    ? `Premier League 2026/27 &middot; ${fx.roundLabel}`
+    : `${fx.competition} 2026/27 &middot; ${fx.roundLabel}`;
+
+  const rows = xi.map(p => {
+    const r = playerByName(p.name) || {};
+    const [statVal, statLabel] = String(r.stat || '').split('|');
+    const dash = '&mdash;';
+    return `      <tr>
+        <td class="p-no">${r.number && r.number !== 'TBC' ? r.number : '&ndash;'}<small>${p.pos || ''}</small></td>
+        <td class="p-name"><b>${p.name}</b><span>${r.position || p.pos || ''}</span></td>
+        <td>${r.country || dash}</td>
+        <td>${r.atChelsea || dash}</td>
+        <td>${r.previously || dash}</td>
+        <td>${r.style || dash}</td>
+        <td class="p-ks">${statVal ? `${statLabel ? `<span class="lbl">${statLabel}</span>` : ''}${statVal}` : dash}</td>
+      </tr>`;
+  }).join('\n');
+
+  return `<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>${vs} — printable teamsheet</title>
+<link rel="stylesheet" href="print.css">
+</head>
+<body>
+<div class="sheet">
+  <div class="ph">
+    <p class="comp">${compLine}</p>
+    <h1>${vs}</h1>
+    <p class="meta">${fx.venue}, ${fx.venueCity} &middot; ${prettyDate(fx.date)}${fx.day ? ' ('+fx.day+')' : ''} &middot; Kickoff ${fx.kickoffCT !== 'TBD' ? fx.kickoffCT + ' Central' : 'TBD'}${fx.kickoffUK && fx.kickoffUK !== 'TBD' ? ' / ' + fx.kickoffUK + ' UK' : ''}</p>
+    <span class="status${confirmed ? '' : ' proj'}">${confirmed ? 'Official starting XI' : 'Projected XI — not confirmed'}</span>
+  </div>
+
+  <table>
+    <colgroup>
+      <col class="c-no"><col class="c-pl"><col class="c-fr"><col class="c-ch">
+      <col class="c-pv"><col class="c-st"><col class="c-ks">
+    </colgroup>
+    <thead>
+      <tr>
+        <th>No.</th><th>Player / position</th><th>From</th><th>At Chelsea</th>
+        <th>Previously</th><th>Playing style</th><th>Key stats</th>
+      </tr>
+    </thead>
+    <tbody>
+${rows}
+    </tbody>
+  </table>
+
+  <p class="pfoot">${confirmed
+      ? `Official starting XI${fx.lineupConfirmedAt ? `, confirmed ${fx.lineupConfirmedAt}` : ''}.`
+      : `Projection only — the official XI is published 60&ndash;75 minutes before kickoff.`}
+    ${fx.lastUpdated ? `Last updated ${fx.lastUpdated}.` : ''}
+    chelsea-fc-2026-27.netlify.app</p>
+
+  <div class="noprint"><button onclick="window.print()">Print / Save as PDF</button></div>
+</div>
+</body>
+</html>
+`;
+}
+
+// ---- Emit printable teamsheets (must run after printPage is defined) ----
+for (const fx of fixtures){
+  const html = printPage(fx);
+  if (!html) continue;
+  const base = (fx.gw === 1) ? 'gw01-fulham' : fileFor(fx).replace(/\.html$/, '');
+  fs.writeFileSync(base + '-print.html', html);
+  printCount++;
+}
+console.log('Printable teamsheets:', printCount);
