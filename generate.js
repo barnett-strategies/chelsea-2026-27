@@ -299,6 +299,22 @@ if (missingPlayers.size){
   console.log('*** Those rows rendered with em dashes. Add them to players.json.\n');
 }
 
+
+// Print-only truncation: keeps the sheet to a single page.
+function firstSentence(t, max){
+  if (!t) return '';
+  const s = String(t).trim();
+  const m = s.match(/^(.*?[.!?])(\s|$)/);
+  let out = m ? m[1] : s;
+  if (out.length > max) out = out.slice(0, max - 1).replace(/[\s,;:]+\S*$/, '') + '\u2026';
+  return out;
+}
+function clip(t, max){
+  if (!t) return '';
+  const s = String(t).trim();
+  return s.length <= max ? s : s.slice(0, max - 1).replace(/[\s,;:]+\S*$/, '') + '\u2026';
+}
+
 // ---- Printable teamsheet: US Letter portrait, black on white. ----
 function printPage(fx){
   const xi = fx.lineupXI || [];
@@ -320,9 +336,9 @@ function printPage(fx){
         <td class="p-no">${r.number && r.number !== 'TBC' ? r.number : '&ndash;'}<small>${p.pos || ''}</small></td>
         <td class="p-name"><b>${p.name}</b><span>${r.position || p.pos || ''}</span></td>
         <td>${r.country || dash}</td>
-        <td>${r.atChelsea || dash}</td>
-        <td>${r.previously || dash}</td>
-        <td>${r.style || dash}</td>
+        <td>${clip(r.atChelsea, 58) || dash}</td>
+        <td>${clip(r.previously, 62) || dash}</td>
+        <td>${firstSentence(r.style, 150) || dash}</td>
         <td class="p-ks">${statVal ? `${statLabel ? `<span class="lbl">${statLabel}</span>` : ''}${statVal}` : dash}</td>
       </tr>`;
   }).join('\n');
