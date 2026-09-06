@@ -108,7 +108,33 @@ function gamePage(fx){
       <p class="bar-key">Fair probability, margin removed: <b>Chelsea ~${fx.fairChe}%</b> · Draw ~${fx.fairDraw}% · ${fx.opponent} ~${fx.fairOpp}%</p>`
     : `<div class="tbd-block"><b>Odds not yet posted.</b><br>Mainstream books generally open markets on a match one to two weeks out. Check back as matchday approaches.</div>`;
 
-  // ---- THE canonical lineup table. Seven columns, identical on every page. ----
+  // Report sections render as headed blocks. A single blob is not an option.
+  function reportBlocks(fx){
+    const secs = [
+      ['Team news',                 fx.reportTeamNews],
+      ['What changed from the projection', fx.reportChanges],
+      ['The tactical read',         fx.reportTactical],
+      ['What to watch',             fx.reportWatch],
+    ].filter(([,v]) => v && String(v).trim());
+
+    if (secs.length){
+      return secs.map(([h,body]) =>
+        `<div class="report-sec"><h3>${h}</h3>${
+          String(body).split(/\n\s*\n/).map(p=>`<p>${p.trim()}</p>`).join('')
+        }</div>`).join('');
+    }
+    // Fallback: split legacy single-blob notes into paragraphs so it is never a wall.
+    if (fx.lineupNote){
+      const t = String(fx.lineupNote).trim();
+      const paras = t.split(/\n\s*\n/).length > 1
+        ? t.split(/\n\s*\n/)
+        : t.split(/(?<=\.)\s+(?=[A-Z])/).reduce((acc,s,i)=>{
+            const g = Math.floor(i/3); (acc[g] ||= []).push(s); return acc;
+          },[]).map(g=>g.join(' '));
+      return `<div class="report-sec">${paras.map(p=>`<p>${p.trim()}</p>`).join('')}</div>`;
+    }
+    return '';
+  }
   function xiList(xi){
     const rows = xi.map(p => {
       const rec = playerByName(p.name);
@@ -149,13 +175,13 @@ ${rows}
   if (fx.lineupStatus === 'confirmed' && fx.lineupXI && fx.lineupXI.length){
     lineupSection = `<div class="lineup-head"><span class="badge-confirmed">Confirmed</span><span style="font-family:'Roboto Mono',monospace;font-size:12px;color:var(--muted)">Official starting XI${fx.lineupConfirmedAt ? ` &middot; replaced the projection at ${fx.lineupConfirmedAt}` : ''}</span></div>
       ${xiList(fx.lineupXI)}
-      ${fx.lineupNote ? `<div class="verdict">${fx.lineupNote}</div>` : ''}
+      ${reportBlocks(fx)}
       ${fx.lineupSource ? `<p class="lineup-source">Source: ${fx.lineupSource}</p>` : ''}`;
   } else if (fx.lineupStatus === 'projected' && fx.lineupXI && fx.lineupXI.length){
     lineupSection = `<div class="lineup-head"><span class="badge-projected">Projected</span><span style="font-family:'Roboto Mono',monospace;font-size:12px;color:var(--muted)">Not yet officially confirmed</span></div>
       <div class="lineup-caveat">This is a projection built from team news and press-conference hints — not the official lineup. It will be replaced automatically with the confirmed XI once the club announces it, typically 60–75 minutes before kickoff.</div>
       ${xiList(fx.lineupXI)}
-      ${fx.lineupNote ? `<div class="verdict">${fx.lineupNote}</div>` : ''}
+      ${reportBlocks(fx)}
       ${fx.lineupSource ? `<p class="lineup-source">Basis: ${fx.lineupSource}</p>` : ''}`;
   } else {
     lineupSection = `<div class="tbd-block"><b>Lineup not yet projected.</b><br>Team news, injuries and Xabi Alonso's selection pattern will come into focus in the days before kickoff — this section will be filled in as matchday nears, then replaced with the confirmed XI shortly before kickoff.</div>`;

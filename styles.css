@@ -312,3 +312,9 @@ footer b{color:#C3D0E6}
   display:block;font-family:"Roboto Mono",monospace;font-size:9.5px;letter-spacing:.06em;
   text-transform:uppercase;color:var(--muted);margin-bottom:2px;
 }
+
+/* ---------- structured match report ---------- */
+.report-sec{background:var(--panel);border:1px solid var(--rule);border-left:4px solid var(--amber);padding:16px 18px;margin:16px 0 0}
+.report-sec h3{font-family:"Big Shoulders Display",sans-serif;text-transform:uppercase;letter-spacing:.05em;font-size:20px;color:var(--amber);margin:0 0 10px}
+.report-sec p{font-size:15.5px;line-height:1.65;margin:0 0 11px}
+.report-sec p:last-child{margin:0}
