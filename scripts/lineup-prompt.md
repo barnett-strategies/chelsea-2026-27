@@ -62,3 +62,34 @@ script returned non-zero.
 
 ## FINISH
 One line: what you published and whether both texts sent. No scores, ever.
+
+## THE MATCH REPORT — FOUR NAMED FIELDS, NEVER A BLOB
+`lineupNote` is DEPRECATED. Do not write to it. If you put prose there it
+renders as an unformatted wall with no headings, which has been reported as a
+defect twice.
+
+Write these four fields on the fixture instead. Each renders on the page as its
+own headed section:
+
+- `reportTeamNews`  — who is in, out, injured, suspended, rested; availability
+                      confirmed or contradicted by omission.
+- `reportChanges`   — what differs from the projection this page carried, and
+                      what the projection got right. Both directions, honestly.
+- `reportTactical`  — shape, roles, who moved position, what the setup implies.
+- `reportWatch`     — 1-3 things to watch. PRE-MATCH ONLY. Never a result.
+
+Rules for all four:
+- Separate paragraphs with a BLANK LINE. Each blank-line-separated chunk becomes
+  its own <p>. A single unbroken chunk defeats the whole point.
+- Use **double asterisks** for emphasis on names and key facts. Inline markdown
+  bold is rendered.
+- Do NOT write your own headings, all-caps labels, or "SECTION:" prefixes inside
+  the text — the four headings are generated for you. Writing "TEAM NEWS:" or
+  "WHAT WE GOT WRONG:" inside a field duplicates the heading and looks broken.
+- 2-4 short paragraphs per field. If a field has nothing to say, leave it empty
+  rather than padding it.
+- Keep the same four fields on every match. This is a fixed format, not a
+  writing exercise.
+
+After you write them, run `node generate.js`. It FAILS the build if `lineupNote`
+is set on a fixture that has a lineup, so a blob cannot reach the site.

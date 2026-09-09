@@ -119,9 +119,10 @@ function gamePage(fx){
     ].filter(([,v]) => v && String(v).trim());
 
     if (secs.length){
+      const md = t => String(t).replace(/\*\*(.+?)\*\*/g, '<b>$1</b>');
       return secs.map(([h,body]) =>
         `<div class="report-sec"><h3>${h}</h3>${
-          String(body).split(/\n\s*\n/).map(p=>`<p>${p.trim()}</p>`).join('')
+          String(body).split(/\n\s*\n/).map(p=>`<p>${md(p.trim())}</p>`).join('')
         }</div>`).join('');
     }
     // Fallback: split legacy single-blob notes into paragraphs so it is never a wall.
@@ -292,6 +293,19 @@ for (const fx of fixtures){
   if (fx.gw === 1) continue; // gw1 is hand-built separately (gw01-fulham.html)
   fs.writeFileSync(fileFor(fx), gamePage(fx));
 }
+const blobOffenders = fixtures.filter(f => (f.lineupNote && String(f.lineupNote).trim())
+                                        && (f.lineupXI && f.lineupXI.length));
+if (blobOffenders.length){
+  console.error('\n*** BUILD FAILED — deprecated lineupNote used instead of the four report fields:');
+  for (const f of blobOffenders){
+    const who = f.gw ? `GW${f.gw}` : `${f.competition} ${f.roundLabel}`;
+    console.error(`      ${who} vs ${f.opponent}  (${String(f.lineupNote).length} chars)`);
+  }
+  console.error('*** Move that prose into reportTeamNews / reportChanges / reportTactical /');
+  console.error('*** reportWatch and clear lineupNote. See the end of scripts/lineup-prompt.md.\n');
+  process.exit(1);
+}
+
 fs.writeFileSync('index.html', homePage());
 console.log('Generated', fixtures.length - 1, 'template pages + index.html');
 if (missingPlayers.size){
