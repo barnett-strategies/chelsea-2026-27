@@ -217,8 +217,8 @@ ${topnav(fx)}
 </section>
 
 <section>
-  <p class="kicker">The likely XI</p>
-  <h2>Projected lineup</h2>
+  <p class="kicker">${fx.lineupStatus === 'confirmed' ? 'The official XI' : 'The likely XI'}</p>
+  <h2>${fx.lineupStatus === 'confirmed' ? 'Confirmed lineup' : 'Projected lineup'}</h2>
   ${(fx.lineupXI && fx.lineupXI.length) ? `<p class="printlink"><a href="${(fx.gw===1?'gw01-fulham':fileFor(fx).replace(/\.html$/,''))}-print.html">Printable teamsheet (8.5 &times; 11) &rarr;</a></p>` : ''}
   ${lineupSection}
 </section>
