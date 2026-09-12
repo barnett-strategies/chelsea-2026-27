@@ -25,13 +25,31 @@ pass and the sheet is not out, simply report that and stop; the T-40 pass will
 catch it. Leave lineupStatus as "projected", change nothing, send no text.
 Never guess an XI.
 
-ALREADY DONE? If this fixture's lineupStatus is already "confirmed" and
-lineupConfirmedAt is set, the XI has already been recorded and Chris has already
-been told — by the earlier pass or by a manual run. Do NOT re-commit and do NOT
-send a second text; a duplicate alert is a defect. Still do the search, compare
-the published sheet against the recorded XI, and if they DIFFER, report the
-discrepancy in your summary and stop without editing — never overwrite confirmed
-data. If they match, say so in one line and stop.
+ALREADY DONE? Publishing and alerting are SEPARATE. Judge them separately, and
+never infer one from the other.
+
+- PUBLISHED is lineupStatus "confirmed" with lineupConfirmedAt set. If so, do NOT
+  re-record and do NOT re-commit the XI. Still search, compare the published
+  sheet against the recorded XI, and if they DIFFER report the discrepancy in
+  your summary and stop without editing — never overwrite confirmed data.
+- ALERTED is lineupAlertSent set on that fixture. ONLY that field means Chris has
+  been told. lineupStatus and lineupConfirmedAt are written by the publish step
+  and say NOTHING about whether a text went out.
+
+So if the XI is published but lineupAlertSent is empty, the alert is still owed:
+SEND IT. That is not a duplicate. This exact trap cost a real alert on 12 Sep
+2026 — a guard keyed off publish state would have silently suppressed the only
+text for that fixture. If both are set, send nothing and say so in one line.
+
+After send-alert.sh returns 0 for BOTH numbers, set lineupAlertSent on that
+fixture to the time you sent, e.g. "8:11 AM CT", and commit it. Never set it on a
+non-zero exit.
+
+CONCURRENT PASSES CAN CLOBBER EACH OTHER. The T-55 and T-40 passes, and a manual
+run, can overlap. Immediately before you write fixtures.json, re-read it from
+disk and re-check `git log --oneline -3` — if another pass has recorded the XI
+since you started, you are working from stale data. Discard your version
+(`git checkout -- fixtures.json`) rather than overwriting theirs.
 
 When found, in fixtures.json for that fixture:
 - set lineupStatus to "confirmed"
