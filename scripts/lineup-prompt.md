@@ -25,6 +25,14 @@ pass and the sheet is not out, simply report that and stop; the T-40 pass will
 catch it. Leave lineupStatus as "projected", change nothing, send no text.
 Never guess an XI.
 
+ALREADY DONE? If this fixture's lineupStatus is already "confirmed" and
+lineupConfirmedAt is set, the XI has already been recorded and Chris has already
+been told — by the earlier pass or by a manual run. Do NOT re-commit and do NOT
+send a second text; a duplicate alert is a defect. Still do the search, compare
+the published sheet against the recorded XI, and if they DIFFER, report the
+discrepancy in your summary and stop without editing — never overwrite confirmed
+data. If they match, say so in one line and stop.
+
 When found, in fixtures.json for that fixture:
 - set lineupStatus to "confirmed"
 - replace lineupXI with the real XI as [{"pos","name","stat"}] objects, carrying
