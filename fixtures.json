@@ -525,20 +525,83 @@
     "venueCity": "London",
     "kickoffUK": "20:00",
     "kickoffCT": "2:00 PM",
-    "broadcastUS": null,
-    "oddsChe": null,
-    "oddsDraw": null,
-    "oddsOpp": null,
+    "broadcastUS": "USA Network",
+    "oddsChe": "+135",
+    "oddsDraw": "+280",
+    "oddsOpp": "+180",
     "notes": "West London derby number two of the season.",
-    "lineupStatus": "unknown",
-    "lineupXI": [],
-    "lineupSource": null,
+    "lineupStatus": "projected",
+    "lineupXI": [
+      {
+        "pos": "GK",
+        "name": "Emiliano Martínez",
+        "stat": "95 saves, 32 apps (2025-26, Aston Villa)"
+      },
+      {
+        "pos": "RCB",
+        "name": "Wesley Fofana",
+        "stat": "26 apps (2025-26, Chelsea) — most in a season since 2022"
+      },
+      {
+        "pos": "CB",
+        "name": "Levi Colwill",
+        "stat": "4 apps (2025-26, Chelsea) — ACL layoff"
+      },
+      {
+        "pos": "LCB",
+        "name": "Jorrel Hato",
+        "stat": "22 apps (12 starts) (2025-26, Chelsea)"
+      },
+      {
+        "pos": "RWB",
+        "name": "Malo Gusto",
+        "stat": "48 apps, 4 assists (2025-26, Chelsea)"
+      },
+      {
+        "pos": "CM",
+        "name": "Reece James",
+        "stat": "27 apps, 4 assists (2025-26, Chelsea)"
+      },
+      {
+        "pos": "CM",
+        "name": "Romeo Lavia",
+        "stat": "8 apps (2025-26, Chelsea) — injury-hit"
+      },
+      {
+        "pos": "LWB",
+        "name": "Pedro Neto",
+        "stat": "5 goals, 6 assists (2025-26, Chelsea)"
+      },
+      {
+        "pos": "AM",
+        "name": "Cole Palmer",
+        "stat": "10 goals, 1 assist (2025-26, Chelsea)"
+      },
+      {
+        "pos": "AM",
+        "name": "Morgan Rogers",
+        "stat": "10 goals, 6 assists (2025-26, Aston Villa)"
+      },
+      {
+        "pos": "ST",
+        "name": "João Pedro",
+        "stat": "15 goals, 5 assists (2025-26, Chelsea)"
+      }
+    ],
+    "lineupSource": "Projected, not official — this is a guess. Built from four sources read first-hand on the evening of Wednesday 16 September 2026: Sports Mole and OneFootball predicted XIs (both published 16 September), a KhelNow preview, and The Chelsea Chronicle's 15 September training report. OneFootball and KhelNow both name the same eleven that started matchweek 4; Sports Mole differs at left centre-back (Lacroix for Hato) and left wing-back (Chavarría, pushing Neto right). Alonso's press conference on Thursday 17 September had not happened when this was written, and three of these eleven are fitness doubts. Read 8:05 PM CT, Wednesday 16 September 2026.",
     "lineupNote": null,
-    "lastUpdated": null,
+    "lastUpdated": "September 16, 2026",
     "lineupConfirmedAt": null,
     "lastBriefingSent": null,
     "competition": "Premier League",
-    "roundLabel": "Matchweek 5"
+    "roundLabel": "Matchweek 5",
+    "fairChe": 41,
+    "fairDraw": 25,
+    "fairOpp": 34,
+    "reportTeamNews": "**Three of the projected eleven missed the open portion of Tuesday's training session** — **Reece James**, **João Pedro** and **Moisés Caicedo**. Only the media-visible part of the session was observed, so this is not confirmation that any of them is injured, but it is the reason this projection carries a health warning.\n\n**Caicedo is the longest-running absence.** He has a calf problem and has now sat out several fixtures. Alonso's public line before matchweek 4 was that he was not yet willing to take a risk — *\"Let's see for Brentford, but unluckily not at the moment to take risks with him. Not yet, we are not there yet.\"* Most previews still list him as out.\n\n**The genuinely good news is at the other end of the squad.** **Jordan Henderson** has returned to full training after his World Cup injury and **Marco Palestra** is back as well; both are described as closing in on a Chelsea debut, and Friday is a realistic date for one or both off the bench. **Emmanuel Emegha** and **Dastan Satpaev** remain unavailable.\n\n**Brentford are missing a chunk of their defence.** **Nathan Collins**, **Sepp van den Berg**, **Josh Dasilva** and **Antoni Milambo** are all listed out, with **Mathias Jensen** a doubt, and Keith Andrews' side played a midweek cup tie on Tuesday — so some rotation is likely.",
+    "reportChanges": "**This projection is the matchweek 4 eleven, repeated.** That is a deliberate call rather than laziness: two of the three current previews name exactly that side, and Alonso has not signalled a change. It also means the page is carrying the same back three — **Fofana**, **Colwill**, **Hato** — that Alonso picked ahead of Lacroix and Acheampong last time out, after this page spent a week arguing about the wrong defenders.\n\n**The contested spots are both on the left.** Sports Mole projects **Maxence Lacroix** back into the back three for **Hato**, and **Pep Chavarría** at left wing-back, which would push **Pedro Neto** over to the right and **Malo Gusto** out. The other two sources keep Gusto at right wing-back with Neto on the left. Call that a 2-1 split, not a settled question.\n\n**The largest risk to this eleven is fitness, not selection.** If James or João Pedro does not recover, the shape stays but the personnel move — the Chelsea Chronicle floats **Valentín Barco** in midfield and **Danny Welbeck** through the middle. Treat the front three as the most secure part of the projection and the midfield pair as the least.",
+    "reportTactical": "**Expect the 3-4-3 that Alonso used at Stamford Bridge last time**, with **Palmer** and **Rogers** tucked in behind **João Pedro** rather than holding width. KhelNow frames the same personnel as a 4-2-3-1, which is less a disagreement than a description of what the shape becomes in possession when one wing-back pushes on and the other holds.\n\n**The midfield pair is the pressure point.** With Caicedo still out, **Lavia** and **James** are being asked to screen a back three away from home against a side that plays fast, direct football. Lavia has an injury history and James is a converted full-back in that role — Chelsea have no natural third holder available if either fades.\n\n**Set pieces are the tactical subplot.** Chelsea recruited set-piece coach **Austin MacPhee** specifically to address a known defensive weakness, and Brentford are the single worst possible opponent to still be working on it — the long throw into the box remains a core part of how they generate chances. A taller back three of Fofana, Colwill and Hato helps.",
+    "reportWatch": "**Whether James and João Pedro are actually on the team sheet.** Both missed Tuesday's visible training. The official XI lands an hour before kickoff and will settle it — if either is absent, this whole projection shifts.\n\n**Which side Pedro Neto starts on.** He switched to the left in matchweek 4 when Gusto came in at wing-back. If Chavarría starts instead, Neto goes back to the right. It is the quickest read on which of the two competing projections Alonso agreed with.\n\n**Brentford's long throws and second balls.** This is the clearest test yet of whether the MacPhee appointment has changed anything about how Chelsea defend a crowded box."
   },
   {
     "gw": 6,
