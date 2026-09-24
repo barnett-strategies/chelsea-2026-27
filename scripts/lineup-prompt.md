@@ -79,8 +79,7 @@ Send to BOTH numbers, one call each:
 
 MESSAGE: under 300 chars, no double quotes, NO SPOILERS. Cover what changed from
 the projection and the link. Example:
-"Chelsea: official XI in for GW2 v Brighton. Lavia starts, Caicedo benched, back
-three confirmed. https://chelsea-fc-2026-27.netlify.app/gw02-brighton-and-hove-albion"
+"Chelsea v Brighton, Sun Aug 30, 8:00 AM CT / 9:00 AM ET. Official XI in: Lavia starts, Caicedo benched, back three. https://chelsea-fc-2026-27.netlify.app/gw02-brighton-and-hove-albion"
 
 The script prints SMS_SENT or SMS_FAILED and returns an honest exit code.
 Report exactly which recipients succeeded. Never claim a text was sent if the
@@ -119,3 +118,37 @@ Rules for all four:
 
 After you write them, run `node generate.js`. It FAILS the build if `lineupNote`
 is set on a fixture that has a lineup, so a blob cannot reach the site.
+
+## FIELD DISCIPLINE — SUPERSEDE, NEVER APPEND
+Three fields have hard caps enforced by `node generate.js`, which EXITS NONZERO
+if you exceed them. A failed build publishes nothing.
+
+- `notes`        — max 420 chars. Short, stable context: what this fixture IS.
+                   Rewrite it when it changes. NEVER append to it.
+- `lineupSource` — max 240 chars. ONE citation line: outlet, time seen. Nothing more.
+- `researchLog`  — uncapped. Everything else goes here.
+
+`notes` became a 21,000-character running diary because runs appended to it
+instead of replacing it. Do not repeat that. If today's context differs from
+what `notes` says, REWRITE the field. Old readings belong in `researchLog`.
+
+Put in `researchLog` (blank line between entries, newest first):
+- superseded projections and why they changed
+- odds checks that found no market, or that failed corroboration
+- sourcing traps — stale articles, wrong season, wrong manager named
+- availability readings that were later revised
+- anything you want a future run to know but a reader does not need up front
+
+It renders as a collapsed "Sourcing and verification log" block, so it stays
+useful without taking over the page. Being thorough there is good — that
+reasoning is the most valuable thing the automation produces.
+
+## TEXT MESSAGES — ALWAYS INCLUDE DAY, DATE AND BOTH TIME ZONES
+Chris is Central, Evan is Eastern. Every text must open with the fixture and
+when it is, in BOTH zones, before anything else:
+
+  Chelsea v Brentford, Fri Sep 18, 2:00 PM CT / 3:00 PM ET. <rest>
+
+Format: `<Chelsea v Opponent or Opponent v Chelsea>, <Day Mon D>, <h:MM AM/PM> CT
+/ <h:MM AM/PM> ET.` Eastern is always Central plus one hour. Then the substance,
+then the full https:// link. Keep the whole message under 300 characters.

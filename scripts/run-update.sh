@@ -30,6 +30,16 @@ for i in $(seq 1 18); do
   sleep 10
 done
 
+# Auth pre-flight. A dead OAuth session costs three wasted attempts and, worse,
+# can go unnoticed until a matchday — which is exactly what happened 12-16 Sep.
+AUTH="$("$REPO/scripts/check-auth.sh" 2>&1)"
+if [ $? -eq 1 ]; then
+  log "!!! $AUTH — Claude Code is logged out. Aborting; you have been texted."
+  log "--- final exit: 1 ---"
+  exit 1
+fi
+log "auth: $AUTH"
+
 # Run Claude, retrying on transient failures (529 overloaded, ENOTFOUND, sleep).
 ATTEMPTS=3
 RC=1

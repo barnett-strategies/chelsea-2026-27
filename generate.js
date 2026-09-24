@@ -109,7 +109,34 @@ function gamePage(fx){
       <p class="bar-key">Fair probability, margin removed: <b>Chelsea ~${fx.fairChe}%</b> · Draw ~${fx.fairDraw}% · ${fx.opponent} ~${fx.fairOpp}%</p>`
     : `<div class="tbd-block"><b>Odds not yet posted.</b><br>Mainstream books generally open markets on a match one to two weeks out. Check back as matchday approaches.</div>`;
 
-  // Report sections render as headed blocks. A single blob is not an option.
+  
+// Collapsed sourcing/verification log. Valuable audit trail, but it must not be
+// the bottom half of the page — that is what the 21k-char notes blob became.
+function researchBlock(fx){
+  const t = (fx.researchLog || '').trim();
+  if (!t) return '';
+  let paras = t.split(/\n\s*\n/).filter(p => p.trim());
+  // Legacy entries arrived as one run-on block. Chunk long ones on sentence
+  // boundaries so the log is skimmable when opened.
+  paras = paras.flatMap(p => {
+    if (p.length <= 1400) return [p];
+    const sents = p.split(/(?<=[.!?])\s+(?=[A-Z])/);
+    const out = []; let buf = '';
+    for (const sen of sents){
+      if (buf && (buf + ' ' + sen).length > 1200){ out.push(buf); buf = sen; }
+      else buf = buf ? buf + ' ' + sen : sen;
+    }
+    if (buf) out.push(buf);
+    return out;
+  });
+  const md = x => String(x).replace(/\*\*(.+?)\*\*/g, '<b>$1</b>');
+  return `<details class="reslog">
+    <summary>Sourcing and verification log (${paras.length} ${paras.length === 1 ? 'entry' : 'entries'})</summary>
+    ${paras.map(p => `<p>${md(p.trim())}</p>`).join('')}
+  </details>`;
+}
+
+// Report sections render as headed blocks. A single blob is not an option.
   function reportBlocks(fx){
     const secs = [
       ['Team news',                 fx.reportTeamNews],
@@ -177,13 +204,13 @@ ${rows}
   if (fx.lineupStatus === 'confirmed' && fx.lineupXI && fx.lineupXI.length){
     lineupSection = `<div class="lineup-head"><span class="badge-confirmed">Confirmed</span><span style="font-family:'Roboto Mono',monospace;font-size:12px;color:var(--muted)">Official starting XI${fx.lineupConfirmedAt ? ` &middot; replaced the projection at ${fx.lineupConfirmedAt}` : ''}</span></div>
       ${xiList(fx.lineupXI)}
-      ${reportBlocks(fx)}
+      ${reportBlocks(fx)}${researchBlock(fx)}
       ${fx.lineupSource ? `<p class="lineup-source">Source: ${fx.lineupSource}</p>` : ''}`;
   } else if (fx.lineupStatus === 'projected' && fx.lineupXI && fx.lineupXI.length){
     lineupSection = `<div class="lineup-head"><span class="badge-projected">Projected</span><span style="font-family:'Roboto Mono',monospace;font-size:12px;color:var(--muted)">Not yet officially confirmed</span></div>
       <div class="lineup-caveat">This is a projection built from team news and press-conference hints — not the official lineup. It will be replaced automatically with the confirmed XI once the club announces it, typically 60–75 minutes before kickoff.</div>
       ${xiList(fx.lineupXI)}
-      ${reportBlocks(fx)}
+      ${reportBlocks(fx)}${researchBlock(fx)}
       ${fx.lineupSource ? `<p class="lineup-source">Basis: ${fx.lineupSource}</p>` : ''}`;
   } else {
     lineupSection = `<div class="tbd-block"><b>Lineup not yet projected.</b><br>Team news, injuries and Xabi Alonso's selection pattern will come into focus in the days before kickoff — this section will be filled in as matchday nears, then replaced with the confirmed XI shortly before kickoff.</div>`;
@@ -293,6 +320,23 @@ for (const fx of fixtures){
   if (fx.gw === 1) continue; // gw1 is hand-built separately (gw01-fulham.html)
   fs.writeFileSync(fileFor(fx), gamePage(fx));
 }
+const NOTES_CAP = 420, SOURCE_CAP = 240;
+const tooLong = [];
+for (const f of fixtures){
+  const who = f.gw ? `GW${f.gw}` : `${f.competition} ${f.roundLabel}`;
+  if ((f.notes || '').length > NOTES_CAP)
+    tooLong.push(`${who} v ${f.opponent}: notes ${f.notes.length} chars (cap ${NOTES_CAP})`);
+  if ((f.lineupSource || '').length > SOURCE_CAP)
+    tooLong.push(`${who} v ${f.opponent}: lineupSource ${f.lineupSource.length} chars (cap ${SOURCE_CAP})`);
+}
+if (tooLong.length){
+  console.error('\n*** BUILD FAILED — a field grew into a wall of text:');
+  for (const l of tooLong) console.error('      ' + l);
+  console.error('*** notes = short stable context only. lineupSource = one citation line.');
+  console.error('*** Move the overflow into researchLog, which renders collapsed.\n');
+  process.exit(1);
+}
+
 const blobOffenders = fixtures.filter(f => (f.lineupNote && String(f.lineupNote).trim())
                                         && (f.lineupXI && f.lineupXI.length));
 if (blobOffenders.length){
