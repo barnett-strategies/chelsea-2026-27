@@ -204,13 +204,13 @@ ${rows}
   if (fx.lineupStatus === 'confirmed' && fx.lineupXI && fx.lineupXI.length){
     lineupSection = `<div class="lineup-head"><span class="badge-confirmed">Confirmed</span><span style="font-family:'Roboto Mono',monospace;font-size:12px;color:var(--muted)">Official starting XI${fx.lineupConfirmedAt ? ` &middot; replaced the projection at ${fx.lineupConfirmedAt}` : ''}</span></div>
       ${xiList(fx.lineupXI)}
-      ${reportBlocks(fx)}${researchBlock(fx)}
+      ${reportBlocks(fx)}
       ${fx.lineupSource ? `<p class="lineup-source">Source: ${fx.lineupSource}</p>` : ''}`;
   } else if (fx.lineupStatus === 'projected' && fx.lineupXI && fx.lineupXI.length){
     lineupSection = `<div class="lineup-head"><span class="badge-projected">Projected</span><span style="font-family:'Roboto Mono',monospace;font-size:12px;color:var(--muted)">Not yet officially confirmed</span></div>
       <div class="lineup-caveat">This is a projection built from team news and press-conference hints — not the official lineup. It will be replaced automatically with the confirmed XI once the club announces it, typically 60–75 minutes before kickoff.</div>
       ${xiList(fx.lineupXI)}
-      ${reportBlocks(fx)}${researchBlock(fx)}
+      ${reportBlocks(fx)}
       ${fx.lineupSource ? `<p class="lineup-source">Basis: ${fx.lineupSource}</p>` : ''}`;
   } else {
     lineupSection = `<div class="tbd-block"><b>Lineup not yet projected.</b><br>Team news, injuries and Xabi Alonso's selection pattern will come into focus in the days before kickoff — this section will be filled in as matchday nears, then replaced with the confirmed XI shortly before kickoff.</div>`;
@@ -251,6 +251,7 @@ ${topnav(fx)}
 </section>
 
 ${notes ? `<section>${notes}</section>` : ''}
+${researchBlock(fx) ? `<section>${researchBlock(fx)}</section>` : ''}
 
 <footer>
   <b>${isPL(fx) ? `${fx.roundLabel} of 38.` : `${fx.competition} &mdash; ${fx.roundLabel}.`}</b> ${fx.lastUpdated ? `This page last updated <b>${fx.lastUpdated}</b>.` : `No updates to this page yet &mdash; nothing beyond the fixture itself has been confirmed.`} ${isPL(fx) ? `Fixture per the Premier League's official 2026/27 release; subject to change for broadcast selection or cup involvement.` : `Cup fixture; subject to change for broadcast selection.`} Updated automatically as new information is confirmed.
