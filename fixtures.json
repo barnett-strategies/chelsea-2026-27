@@ -620,21 +620,84 @@
     "venueCity": "London",
     "kickoffUK": "15:00",
     "kickoffCT": "9:00 AM",
-    "broadcastUS": null,
-    "oddsChe": null,
-    "oddsDraw": null,
-    "oddsOpp": null,
-    "notes": "First match after the September international break.",
-    "lineupStatus": "unknown",
-    "lineupXI": [],
-    "lineupSource": null,
+    "broadcastUS": "Peacock",
+    "oddsChe": "-150",
+    "oddsDraw": "+300",
+    "oddsOpp": "+333",
+    "notes": "First match after the merged September–October international break, and Chelsea's first game in any competition since 18 September. Saturday 3pm UK slot, so it is a Peacock stream in the US rather than a linear channel.",
+    "lineupStatus": "projected",
+    "lineupXI": [
+      {
+        "pos": "GK",
+        "name": "Emiliano Martínez",
+        "stat": "95 saves, 32 apps (2025-26, Aston Villa)"
+      },
+      {
+        "pos": "RCB",
+        "name": "Wesley Fofana",
+        "stat": "26 apps (2025-26, Chelsea) — most in a season since 2022"
+      },
+      {
+        "pos": "CB",
+        "name": "Maxence Lacroix",
+        "stat": "35 apps (all starts), 11 clean sheets (2025-26, Crystal Palace)"
+      },
+      {
+        "pos": "LCB",
+        "name": "Levi Colwill",
+        "stat": "4 apps (2025-26, Chelsea) — ACL layoff"
+      },
+      {
+        "pos": "RWB",
+        "name": "Pedro Neto",
+        "stat": "5 goals, 6 assists (2025-26, Chelsea)"
+      },
+      {
+        "pos": "CM",
+        "name": "Reece James",
+        "stat": "27 apps, 4 assists (2025-26, Chelsea)"
+      },
+      {
+        "pos": "CM",
+        "name": "Romeo Lavia",
+        "stat": "8 apps (2025-26, Chelsea) — injury-hit"
+      },
+      {
+        "pos": "LWB",
+        "name": "Pep Chavarría",
+        "stat": "2 assists, 33 apps (2025-26, Rayo Vallecano)"
+      },
+      {
+        "pos": "AM",
+        "name": "Cole Palmer",
+        "stat": "10 goals, 1 assist (2025-26, Chelsea)"
+      },
+      {
+        "pos": "AM",
+        "name": "Morgan Rogers",
+        "stat": "10 goals, 6 assists (2025-26, Aston Villa)"
+      },
+      {
+        "pos": "ST",
+        "name": "Danny Welbeck",
+        "stat": "14 goals, 40 apps (2025-26, Brighton)"
+      }
+    ],
+    "lineupSource": "Projection, written 8:00 AM CT Tue 6 Oct 2026 from Yahoo Sports injury table (1 Oct) and Chelsea Chronicle (1 and 5 Oct). Alonso's pre-match press conference, expected Thu 8 Oct, had not happened yet.",
     "lineupNote": null,
-    "lastUpdated": null,
+    "lastUpdated": "October 6, 2026",
     "lineupConfirmedAt": null,
     "lastBriefingSent": null,
     "competition": "Premier League",
     "roundLabel": "Matchweek 6",
-    "researchLog": "Kick-off time appeared on the ESPN fixture feed as 14:00Z for Saturday 10 October, which is 9:00 AM Central and 3:00 PM UK. Worth re-confirming against the Premier League's own listing before the briefing text goes out."
+    "researchLog": "6 Oct 2026, 8:00 AM CT, PREP pass, first write on this fixture.\n\n**Odds.** Recorded bet365 at 1.67 / 4.00 / 4.33, which in American odds is -150 / +300 / +333. This came from a WebSearch summary, not a page read. It is corroborated first-hand by OddsPortal's bookmaker average of 1.67 / 4.00 / 4.31, though OddsPortal listed the date as 16 October, which looks like a display bug. Once the bookmaker margin is stripped out, Chelsea are 56%, the draw 23% and Bournemouth 21%. Polymarket, read first-hand, priced the match at 57¢ / 23¢ / 21¢, which also comes to 56 / 23 / 21 once the margin is removed. That is an exact match. US books are softer on Chelsea: Fanatics -130 (read first-hand on Dimers, which was published 1 Oct) and FanDuel -130 / +320 / +280 (search summary only). FanDuel's Bournemouth price is shorter than its draw price, which disagrees with every other source, so it was not used. 403s on this run: livesoccertv and squawka. The picksandparlays fetch returned nothing usable.\n\n**Broadcast.** Sports Media Watch, read first-hand, lists Peacock. A search summary also mentioned NBCSN, which has not been verified. NBC's own schedule page served a 2020 cached schedule. Kickoff is 10am ET, so 9am CT, confirmed by NBC's 2026-27 schedule summary and Polymarket's 2:00 PM UTC.\n\n**Sourcing traps.** Lineup searches returned Maresca-era Chelsea v Bournemouth predicted XIs from 2025 (SI, OneFootball). They were discarded. One LiveScore piece is undated and its summary garbled João Pedro's name, so it was used only as a 'doubt' signal. The Starting11 predicted XI put Gusto at striker and Caicedo in midfield, and it was not used. Several injury and odds pages carried result and form content from recent matches. None of it was carried forward.\n\n**Spoiler hold.** Player stats remain on 2025-26 numbers. Search snippets surfaced current-season goal tallies, and they were discarded.",
+    "fairChe": 56,
+    "fairDraw": 23,
+    "fairOpp": 21,
+    "reportTeamNews": "**Six of Chelsea's eight absentees are targeting this match for their return.** A Yahoo Sports injury table dated 1 October lists **João Pedro** (knee), **Cole Palmer** (muscle), **Moisés Caicedo** (calf), **Reece James** (hamstring), **Marco Palestra** (quad), **Emmanuel Emegha** (hamstring) and **Mike Penders** (quad) all with a 10 October target. Targets are not availability, and Chelsea will assess everyone in the final days of the week.\n\n**Palmer withdrew from the England squad with a muscle problem** and has been working with a rehab coach at Cobham. A 5 October report says he and Palestra are expected to be fit for selection, and that **James** is expected back after what was thought to be a minor issue.\n\n**Caicedo is the one going the wrong way.** That same 5 October report calls him increasingly unlikely to start and possibly not in the squad. He has managed only minutes this season. **Jamie Gittens** has an ankle injury from England Under-21 duty, was seen on crutches and has no return date. **Romeo Lavia** played for Belgium during the break and came off late with cramp only.\n\n**João Pedro is the open question.** He withdrew from the Brazil squad and the 1 October table targets this match. A separate, undated report says late October, so this page treats him as a doubt rather than a starter.",
+    "reportChanges": "",
+    "reportTactical": "**The same 3-4-2-1 Alonso has used all season, with the returners slotted back into their usual places.** **Fofana**, **Lacroix** and **Colwill** stay as the back three. **Neto** and **Chavarría** stay at wing-back, and **Palmer** and **Rogers** sit behind a lone striker.\n\n**The midfield is where the returns matter most.** Last time out Alonso had to move **Valentín Barco**, a natural left-back, into the centre next to **Henderson** because he had run out of midfielders. With **James** back and **Lavia** fit, Chelsea have a recognised central pair again. That is the biggest structural improvement on offer this week.\n\n**The striker slot is the least secure call on this page.** If **João Pedro** passes his fitness checks he goes straight in. Until there is evidence that he will, **Welbeck** is the projection.",
+    "reportWatch": "**João Pedro's fitness.** He is the difference between a recognised centre-forward and a stand-in. Watch Alonso's Thursday press conference for the steer.\n\n**Whether Palmer starts or is eased in.** He has just pulled out of an international squad with a muscle problem, so a place on the bench would not be a surprise.\n\n**James back in midfield.** If he starts there alongside Lavia, Chelsea finally have the central pairing their projections have been built around."
   },
   {
     "gw": 7,
