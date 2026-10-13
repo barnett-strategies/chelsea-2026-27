@@ -707,23 +707,86 @@
     "homeAway": "A",
     "venue": "Hill Dickinson Stadium",
     "venueCity": "Liverpool",
-    "kickoffUK": "TBD",
-    "kickoffCT": "TBD",
-    "broadcastUS": null,
-    "oddsChe": null,
-    "oddsDraw": null,
-    "oddsOpp": null,
-    "notes": "Chelsea's first visit to Everton's new riverfront stadium at Bramley-Moore Dock, which opened for the 2025/26 season.",
-    "lineupStatus": "unknown",
-    "lineupXI": [],
-    "lineupSource": null,
+    "kickoffUK": "12:30",
+    "kickoffCT": "6:30 AM",
+    "broadcastUS": "USA Network",
+    "oddsChe": "+115",
+    "oddsDraw": "+280",
+    "oddsOpp": "+220",
+    "notes": "Chelsea's first visit to Everton's new riverfront stadium at Bramley-Moore Dock, which opened for the 2025/26 season. Saturday 12:30 UK early kick-off moved for TV, so it is 6:30 AM Central and on USA Network in the US.",
+    "lineupStatus": "projected",
+    "lineupXI": [
+      {
+        "pos": "GK",
+        "name": "Emiliano Martínez",
+        "stat": "95 saves, 32 apps (2025-26, Aston Villa)"
+      },
+      {
+        "pos": "RCB",
+        "name": "Wesley Fofana",
+        "stat": "26 apps (2025-26, Chelsea) — most in a season since 2022"
+      },
+      {
+        "pos": "CB",
+        "name": "Maxence Lacroix",
+        "stat": "35 apps (all starts), 11 clean sheets (2025-26, Crystal Palace)"
+      },
+      {
+        "pos": "LCB",
+        "name": "Levi Colwill",
+        "stat": "4 apps (2025-26, Chelsea) — ACL layoff"
+      },
+      {
+        "pos": "RWB",
+        "name": "Marco Palestra",
+        "stat": "4 assists, 36 apps (2025-26, Cagliari, Serie A)"
+      },
+      {
+        "pos": "CM",
+        "name": "Roméo Lavia",
+        "stat": "12 apps (2025-26, Chelsea, PL)"
+      },
+      {
+        "pos": "CM",
+        "name": "Moisés Caicedo",
+        "stat": "76 tackles, 33 apps (2025-26, Chelsea, PL)"
+      },
+      {
+        "pos": "LWB",
+        "name": "Jorrel Hato",
+        "stat": "20 apps, 10 starts (2025-26, Chelsea, PL)"
+      },
+      {
+        "pos": "AM",
+        "name": "Cole Palmer",
+        "stat": "10 goals, 1 assist (2025-26, Chelsea)"
+      },
+      {
+        "pos": "AM",
+        "name": "Morgan Rogers",
+        "stat": "10 goals, 6 assists (2025-26, Aston Villa)"
+      },
+      {
+        "pos": "ST",
+        "name": "João Pedro",
+        "stat": "15 goals, 5 assists (2025-26, Chelsea, PL)"
+      }
+    ],
+    "lineupSource": "Projection, 8:03 AM CT Tue 13 Oct 2026: GW6 post-presser XI with Lavia for the injured James (James news via Chelsea.news 12 Oct, LiveScore). Alonso's pre-Everton presser not yet held.",
     "lineupNote": null,
-    "lastUpdated": null,
+    "lastUpdated": "October 13, 2026",
     "lineupConfirmedAt": null,
     "lastBriefingSent": null,
     "competition": "Premier League",
     "roundLabel": "Matchweek 7",
-    "researchLog": null
+    "researchLog": "13 Oct 2026, 8:03 AM CT, PREP pass, 4 days out. Mac clock is CDT. **No briefing text today**: the match is 4 days away; the text is due 14 or 15 Oct.\n\n**Kickoff verified first-hand** on premierleague.com 'Fixture amendments for Premier League matches in October and November' (17 Aug 2026): Sat 17 Oct, 12:30 BST, TNT Sports in the UK. Corroborated by tntsports.co.uk. UK is on BST until 25 Oct and the US is on CDT, so 12:30 BST = 6:30 AM CT / 7:30 AM ET. Older sources (Sky fixture list, a futboltotal page) still show the original 3pm Saturday date, which the amendment superseded.\n\n**US channel: USA Network, 7:30 AM ET**, read first-hand on worldsoccertalk.com's Premier League TV schedule and matched by a second schedule search. Universo carries the Spanish-language feed.\n\n**Odds, three converging readings.** OddsPortal comparison page, read first-hand: Everton 3.20, Draw 3.80, Chelsea 2.15 (recorded: Chelsea +115, Draw +280, Everton +220). Sports Interaction 3.20 / 3.75 / 2.10 via search snippet (direct fetch 403). Robinhood/Polymarket prediction market, read first-hand: Chelsea 46, Tie 25, Everton 30 (not a line, used only as a cross-check). De-vigged OddsPortal = 45 / 25 / 30, matching the market. Outliers ignored: Bet365 2.30 and Unibet 2.45 on Chelsea, both via search snippet and possibly early prices. Squawka US preview 403.\n\n**Sourcing traps.** Searches for a predicted XI returned last season's previews (SI and Sports Mole, March 2026, naming **Rosenior** as manager, with a 4-2-3-1 of Sánchez; Gusto, Fofana, Hato, Cucurella...). Ignored as stale. thefalse9.com's 7 Oct predicted XI (Neto, James, Lavia, Hato; Caicedo out) predates Alonso's 9 Oct presser and is superseded. chelseafc.com's preview article redirects to a login page.\n\n**Lavia stat conflict resolved.** Earlier fixtures carried '12 apps, 4 starts' (Luton) and '8 apps, injury-hit' (GW3, GW4). Opta's theanalyst.com player page states he played 12 Premier League games for Chelsea last season, so '12 apps (2025-26, Chelsea, PL)' is used. The 8 apps reading looks wrong.\n\n**Stats still 2025-26.** The switch to 2026-27 stats remains deferred because of the spoiler rule (current-season goal tallies leak goalscorers).\n\n**Next pass: check Alonso's pre-Everton press conference** (likely Thu 15 or Fri 16 Oct). James's status is the key read.",
+    "fairChe": 45,
+    "fairDraw": 25,
+    "fairOpp": 30,
+    "reportTeamNews": "**Reece James is a doubt with a new knee problem.** He felt something in training last week, and Alonso said the club will **assess it week by week**. Chelsea.news lists the home game against Tottenham on 24 October as his more realistic return.\n\n**Jamie Gittens is still out** with the ankle injury from England Under-21 duty, expected back around the end of October.\n\n**Emmanuel Emegha is back in first-team training** after his pre-season hamstring injury and could be in the squad for the first time.\n\n**Caicedo, Joao Pedro, Palmer and Palestra** were all cleared by Alonso before the weekend and carry no new fitness concern.",
+    "reportChanges": "**One change from the Bournemouth projection: Roméo Lavia in for Reece James.** Lavia was the starter in this page's earlier projections and is the natural like-for-like replacement in the double pivot.\n\n**This is an early guess, made before Alonso has spoken.** His pre-Everton press conference is expected Thursday or Friday, and this projection will be revised after it.",
+    "reportTactical": "**Still the 3-4-2-1.** **Fofana**, **Lacroix** and **Colwill** at the back, with **Palestra** and **Hato** as wing-backs, and **Palmer** and **Rogers** behind **Joao Pedro**.\n\n**Lavia beside Caicedo is the softest pick.** It is a more defensive pairing than Caicedo with James. Enzo Fernández or Andrey Santos are the alternatives if Alonso wants more passing range.",
+    "reportWatch": "**Whether James is fit.** If Alonso says on Friday that he trained, James likely comes straight back in for Lavia.\n\n**The early kick-off.** A 12:30 UK start a week after the international break leaves little recovery time, so watch for rotation at wing-back.\n\n**Emegha's first involvement.** A place on the bench would be his first matchday squad since his hamstring injury."
   },
   {
     "gw": 8,
