@@ -5,6 +5,9 @@
 # errors, and reports an HONEST exit code.
 
 export PATH="/Users/christopherbarnett/.local/bin:/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin"
+# Long-lived auth token (outside the repo; repo is public).
+[ -f "$HOME/.config/chelsea/env" ] && . "$HOME/.config/chelsea/env"
+
 
 MODE="${1:-prep}"
 REPO="/Users/christopherbarnett/Projects/chelsea-2026-27"
