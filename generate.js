@@ -247,7 +247,7 @@ ${topnav(fx)}
 <section>
   <p class="kicker">${fx.lineupStatus === 'confirmed' ? 'The official XI' : 'The likely XI'}</p>
   <h2>${fx.lineupStatus === 'confirmed' ? 'Confirmed lineup' : 'Projected lineup'}</h2>
-  ${(fx.lineupXI && fx.lineupXI.length) ? `<p class="printlink"><a href="${(fx.gw===1?'gw01-fulham':fileFor(fx).replace(/\.html$/,''))}-print.html">Printable teamsheet (8.5 &times; 11) &rarr;</a> <a href="${(fx.gw===1?'gw01-fulham':fileFor(fx).replace(/\.html$/,''))}-pitch.html">Pitch map (landscape) &rarr;</a></p>` : ''}
+  ${(fx.lineupXI && fx.lineupXI.length) ? `<p class="printlink"><a href="pdf/${(fx.gw===1?'gw01-fulham':fileFor(fx).replace(/\.html$/,''))}-print.pdf">Teamsheet PDF (8.5 &times; 11) &darr;</a> <a href="pdf/${(fx.gw===1?'gw01-fulham':fileFor(fx).replace(/\.html$/,''))}-pitch.pdf">Pitch map PDF (landscape, 2pp) &darr;</a></p>` : ''}
   ${lineupSection}
 </section>
 

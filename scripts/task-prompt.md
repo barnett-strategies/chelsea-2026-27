@@ -48,7 +48,7 @@ WATCH FOR NEW CUP TIES. Cup opponents only exist after a draw. If Chelsea are
 still in a cup and a round has been drawn but is not in fixtures.json, ADD IT:
 copy the field structure of an existing cup entry, set slug to
 "{eflcup|facup}-r{round}-{opponent-slug}", set gw to null, and fill whatever is
-known (date and kickoff may be TBD at first). Then run node generate.js so the
+known (date and kickoff may be TBD at first). Then run node generate.js && ./scripts/make-pdfs.sh so the
 page and the homepage row exist.
 
 Key round timing: Carabao Cup third round is drawn in late August and played in
@@ -98,7 +98,7 @@ Only touch fields that are null, "TBD", or a supersedable projection. Never over
 
 ## STEP 4 — PUBLISH
 If something changed:
-  node generate.js
+  node generate.js && ./scripts/make-pdfs.sh
   git add -A
   git commit -m "GW[n] vs [opponent]: [what changed]"
   git push
@@ -160,11 +160,11 @@ Rules for all four:
 - Keep the same four fields on every match. This is a fixed format, not a
   writing exercise.
 
-After you write them, run `node generate.js`. It FAILS the build if `lineupNote`
+After you write them, run `node generate.js && ./scripts/make-pdfs.sh`. It FAILS the build if `lineupNote`
 is set on a fixture that has a lineup, so a blob cannot reach the site.
 
 ## FIELD DISCIPLINE — SUPERSEDE, NEVER APPEND
-Three fields have hard caps enforced by `node generate.js`, which EXITS NONZERO
+Three fields have hard caps enforced by `node generate.js && ./scripts/make-pdfs.sh`, which EXITS NONZERO
 if you exceed them. A failed build publishes nothing.
 
 - `notes`        — max 420 chars. Short, stable context: what this fixture IS.

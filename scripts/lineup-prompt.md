@@ -63,7 +63,7 @@ When found, in fixtures.json for that fixture:
   surprise inclusions, who dropped out). Tactical only — never results.
 
 ## STEP 3 — PUBLISH
-Run: node generate.js
+Run: node generate.js  then  ./scripts/make-pdfs.sh
 
 IMPORTANT TRAP: generate.js deliberately SKIPS matchweek 1 (`if (fx.gw === 1)
 continue`) because gw01-fulham.html is hand-built. If the fixture is GW1, you
@@ -116,11 +116,11 @@ Rules for all four:
 - Keep the same four fields on every match. This is a fixed format, not a
   writing exercise.
 
-After you write them, run `node generate.js`. It FAILS the build if `lineupNote`
+After you write them, run `node generate.js && ./scripts/make-pdfs.sh`. It FAILS the build if `lineupNote`
 is set on a fixture that has a lineup, so a blob cannot reach the site.
 
 ## FIELD DISCIPLINE — SUPERSEDE, NEVER APPEND
-Three fields have hard caps enforced by `node generate.js`, which EXITS NONZERO
+Three fields have hard caps enforced by `node generate.js && ./scripts/make-pdfs.sh`, which EXITS NONZERO
 if you exceed them. A failed build publishes nothing.
 
 - `notes`        — max 420 chars. Short, stable context: what this fixture IS.
