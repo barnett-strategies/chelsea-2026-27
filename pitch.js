@@ -20,11 +20,14 @@ const DEPTH = {           // 0 = own goal line, 100 = opponent goal line
 const LANE = {
   GK: 50, SW: 50, CB: 50, DM: 50, CDM: 50, CM: 50, AM: 50, CAM: 50,
   SS: 50, CF: 50, ST: 50,
-  RCB: 27, LCB: 73,
-  RB: 14, LB: 86,
-  RWB: 9, LWB: 91,
-  RM: 18, LM: 82,
-  RW: 14, LW: 86,
+  // Attacking RIGHT (page 1): the player faces east, so their right hand points
+  // SOUTH. Right-sided players therefore sit at the BOTTOM (high lane number),
+  // left-sided at the TOP. The mirrored page inverts this automatically.
+  RCB: 73, LCB: 27,
+  RB: 86, LB: 14,
+  RWB: 91, LWB: 9,
+  RM: 82, LM: 18,
+  RW: 86, LW: 14,
 };
 
 function layout(xi){
