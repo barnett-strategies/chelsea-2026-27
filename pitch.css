@@ -1,0 +1,45 @@
+/* pitch.css — landscape US Letter, two pages, black on white for printing. */
+@page { size: letter landscape; margin: 0.4in; }
+
+*{box-sizing:border-box}
+html,body{background:#fff;margin:0;padding:0}
+body{color:#111;font-family:-apple-system,"Helvetica Neue",Arial,sans-serif}
+
+.page{
+  width:10.2in; height:7.7in;
+  page-break-after:always; break-after:page;
+  display:flex; flex-direction:column;
+}
+.page:last-child{page-break-after:auto; break-after:auto}
+
+.hd{display:flex;align-items:baseline;gap:14pt;border-bottom:2pt solid #111;padding-bottom:4pt;margin-bottom:6pt}
+.hd h1{font-size:15pt;margin:0;letter-spacing:-.01em}
+.hd .meta{font-size:8.5pt;color:#444}
+.hd .dir{margin-left:auto;font-size:8pt;letter-spacing:.12em;text-transform:uppercase;color:#666}
+
+/* the pitch */
+.pitch{
+  position:relative; flex:1;
+  border:1.5pt solid #333; border-radius:3pt;
+  background:#fff;
+}
+/* halfway line + centre circle + boxes, drawn plainly so they print clean */
+.pitch .halfway{position:absolute;left:50%;top:0;bottom:0;border-left:1pt solid #bbb}
+.pitch .circle{position:absolute;left:50%;top:50%;width:1.5in;height:1.5in;margin:-0.75in 0 0 -0.75in;border:1pt solid #bbb;border-radius:50%}
+.pitch .box{position:absolute;top:50%;width:1.25in;height:3.1in;margin-top:-1.55in;border:1pt solid #bbb}
+.pitch .box.l{left:0;border-left:none}
+.pitch .box.r{right:0;border-right:none}
+.pitch .six{position:absolute;top:50%;width:0.55in;height:1.6in;margin-top:-0.8in;border:1pt solid #ccc}
+.pitch .six.l{left:0;border-left:none}
+.pitch .six.r{right:0;border-right:none}
+
+/* a player marker */
+.pl{position:absolute;transform:translate(-50%,-50%);text-align:center;width:1.25in}
+.pl .num{font-size:17pt;font-weight:700;line-height:1}
+.pl .nm{font-size:9.5pt;font-weight:600;line-height:1.15;margin-top:1pt}
+.pl .ps{font-size:7.5pt;letter-spacing:.09em;text-transform:uppercase;color:#555;margin-top:1pt}
+
+.ft{margin-top:5pt;font-size:7.5pt;color:#555;display:flex;gap:16pt}
+.noprint{margin-top:8pt}
+.noprint button{font:inherit;padding:5pt 12pt;border:1.5pt solid #111;background:#111;color:#fff;cursor:pointer}
+@media print{.noprint{display:none !important}}

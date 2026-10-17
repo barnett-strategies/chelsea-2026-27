@@ -6,6 +6,7 @@ const fixtures = JSON.parse(fs.readFileSync('fixtures.json', 'utf8'));
 const squad = JSON.parse(fs.readFileSync('players.json', 'utf8')).players;
 const missingPlayers = new Set();
 let printCount = 0;
+let pitchCount = 0;
 const norm = s => String(s || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z ]/g, '').trim();
 function playerByName(name){
   const n = norm(name);
@@ -246,7 +247,7 @@ ${topnav(fx)}
 <section>
   <p class="kicker">${fx.lineupStatus === 'confirmed' ? 'The official XI' : 'The likely XI'}</p>
   <h2>${fx.lineupStatus === 'confirmed' ? 'Confirmed lineup' : 'Projected lineup'}</h2>
-  ${(fx.lineupXI && fx.lineupXI.length) ? `<p class="printlink"><a href="${(fx.gw===1?'gw01-fulham':fileFor(fx).replace(/\.html$/,''))}-print.html">Printable teamsheet (8.5 &times; 11) &rarr;</a></p>` : ''}
+  ${(fx.lineupXI && fx.lineupXI.length) ? `<p class="printlink"><a href="${(fx.gw===1?'gw01-fulham':fileFor(fx).replace(/\.html$/,''))}-print.html">Printable teamsheet (8.5 &times; 11) &rarr;</a> <a href="${(fx.gw===1?'gw01-fulham':fileFor(fx).replace(/\.html$/,''))}-pitch.html">Pitch map (landscape) &rarr;</a></p>` : ''}
   ${lineupSection}
 </section>
 
@@ -458,3 +459,76 @@ for (const fx of fixtures){
   printCount++;
 }
 console.log('Printable teamsheets:', printCount);
+
+// ---- Landscape pitch map, two pages (GK left, then GK right) ----
+const { layout: pitchLayout } = require('./pitch.js');
+
+function pitchPage(fx){
+  const xi = fx.lineupXI || [];
+  if (!xi.length) return null;
+
+  const spots = pitchLayout(xi);
+  const vs = fx.homeAway === 'H' ? `Chelsea v ${fx.opponent}` : `${fx.opponent} v Chelsea`;
+  const compLine = isPL(fx) ? `Premier League &middot; ${fx.roundLabel}`
+                            : `${fx.competition} &middot; ${fx.roundLabel}`;
+  const confirmed = fx.lineupStatus === 'confirmed';
+
+  // mirror=false -> GK on the left; mirror=true -> GK on the right
+  const page = (mirror) => {
+    const markers = spots.map(s => {
+      const left = mirror ? (100 - s.depth) : s.depth;
+      const top  = mirror ? (100 - s.lane) : s.lane;
+      const rec  = playerByName(s.name) || {};
+      const num  = rec.number && rec.number !== 'TBC' ? rec.number : '&ndash;';
+      return `      <div class="pl" style="left:${left}%;top:${top}%">
+        <div class="num">${num}</div>
+        <div class="nm">${s.name}</div>
+        <div class="ps">${s.pos}</div>
+      </div>`;
+    }).join('\n');
+
+    return `  <div class="page">
+    <div class="hd">
+      <h1>${vs}</h1>
+      <span class="meta">${compLine} &middot; ${prettyDate(fx.date)} &middot; ${fx.kickoffCT !== 'TBD' ? fx.kickoffCT + ' CT' : 'TBD'} &middot; ${fx.venue}</span>
+      <span class="dir">${mirror ? 'Attacking &larr; left' : 'Attacking right &rarr;'}</span>
+    </div>
+    <div class="pitch">
+      <div class="halfway"></div><div class="circle"></div>
+      <div class="box l"></div><div class="box r"></div>
+      <div class="six l"></div><div class="six r"></div>
+${markers}
+    </div>
+    <div class="ft">
+      <span>${confirmed ? 'Official starting XI' : 'Projected XI — not confirmed'}${fx.lineupConfirmedAt ? ', ' + fx.lineupConfirmedAt : ''}</span>
+      <span>chelsea-fc-2026-27.netlify.app</span>
+    </div>
+  </div>`;
+  };
+
+  return `<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>${vs} — pitch map</title>
+<link rel="stylesheet" href="pitch.css">
+</head>
+<body>
+${page(false)}
+${page(true)}
+  <div class="noprint"><button onclick="window.print()">Print / Save as PDF</button></div>
+</body>
+</html>
+`;
+}
+
+for (const fx of fixtures){
+  const html = pitchPage(fx);
+  if (!html) continue;
+  const base = (fx.gw === 1) ? 'gw01-fulham' : fileFor(fx).replace(/\.html$/, '');
+  fs.writeFileSync(base + '-pitch.html', html);
+  pitchCount++;
+}
+console.log('Pitch maps:', pitchCount);
