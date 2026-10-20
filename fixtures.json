@@ -797,23 +797,85 @@
     "homeAway": "H",
     "venue": "Stamford Bridge",
     "venueCity": "London",
-    "kickoffUK": "TBD",
-    "kickoffCT": "TBD",
-    "broadcastUS": null,
-    "oddsChe": null,
-    "oddsDraw": null,
-    "oddsOpp": null,
-    "notes": "North vs south London derby, always one of the fixtures of the season.",
-    "lineupStatus": "unknown",
-    "lineupXI": [],
-    "lineupSource": null,
+    "kickoffUK": "17:30",
+    "kickoffCT": "11:30 AM",
+    "broadcastUS": "NBC",
+    "oddsChe": "-147",
+    "oddsDraw": "+320",
+    "oddsOpp": "+330",
+    "notes": "North vs south London derby at Stamford Bridge. Moved to Saturday 17:30 UK for Sky Sports, so it is 11:30 AM Central / 12:30 PM Eastern and on NBC in the US. UK clocks go back the next day; on this date the gap to Central is still six hours.",
+    "lineupStatus": "projected",
+    "lineupXI": [
+      {
+        "pos": "GK",
+        "name": "Emiliano Martínez",
+        "stat": "95 saves, 32 apps (2025-26, Aston Villa)"
+      },
+      {
+        "pos": "RCB",
+        "name": "Josh Acheampong",
+        "stat": "30 apps, 2 goals (2025-26, Chelsea)"
+      },
+      {
+        "pos": "CB",
+        "name": "Maxence Lacroix",
+        "stat": "35 apps (all starts), 11 clean sheets (2025-26, Crystal Palace)"
+      },
+      {
+        "pos": "LCB",
+        "name": "Levi Colwill",
+        "stat": "4 apps (2025-26, Chelsea) — ACL layoff"
+      },
+      {
+        "pos": "RWB",
+        "name": "Pedro Neto",
+        "stat": "5 goals, 6 assists (2025-26, Chelsea)"
+      },
+      {
+        "pos": "CM",
+        "name": "Moisés Caicedo",
+        "stat": "76 tackles, 33 apps (2025-26, Chelsea, PL)"
+      },
+      {
+        "pos": "CM",
+        "name": "Jordan Henderson",
+        "stat": "34 apps (2025-26, Brentford)"
+      },
+      {
+        "pos": "LWB",
+        "name": "Jorrel Hato",
+        "stat": "20 apps, 10 starts (2025-26, Chelsea, PL)"
+      },
+      {
+        "pos": "AM",
+        "name": "Cole Palmer",
+        "stat": "10 goals, 1 assist (2025-26, Chelsea)"
+      },
+      {
+        "pos": "AM",
+        "name": "Morgan Rogers",
+        "stat": "10 goals, 6 assists (2025-26, Aston Villa)"
+      },
+      {
+        "pos": "ST",
+        "name": "João Pedro",
+        "stat": "15 goals, 5 assists (2025-26, Chelsea, PL)"
+      }
+    ],
+    "lineupSource": "Projection only: the Everton XI the club confirmed on 17 Oct 2026, carried forward. No GW8 team news or presser yet as of 20 Oct, 8:00 AM CT.",
     "lineupNote": null,
-    "lastUpdated": null,
+    "lastUpdated": "October 20, 2026",
     "lineupConfirmedAt": null,
     "lastBriefingSent": null,
     "competition": "Premier League",
     "roundLabel": "Matchweek 8",
-    "researchLog": null
+    "researchLog": "20 Oct 2026, 8:00 AM CT, PREP pass, 4 days out. Mac clock is CDT. No briefing text this pass; it is due 21-22 Oct.\n\n**Kick-off verified:** premierleague.com 'Fixture amendments for Premier League matches in October and November' (published 17 Aug 2026) lists Sat 24 Oct 17:30 BST, Sky Sports. UK clocks go back 25 Oct, so 17:30 BST = 11:30 AM CDT / 12:30 PM EDT. The chelseafc.com 'three October fixtures moved for TV' article hit the club login redirect.\n\n**US channel: NBC.** World Soccer Talk's schedule (NBC, 12:30 PM ET), theScore's event page (NBC) and an NBC-listing search summary (NBC, Telemundo, Peacock) agree. **Outlier:** Sports Media Watch lists Peacock/NBCSN. Recorded NBC on 3-vs-1. Re-check on matchday if a later source disagrees.\n\n**Odds, three converging readings:** DraftKings -147 / +320 / +330 via gainblers (recorded); OddsPortal 1.70 / 4.20 / 4.40; bet365 1.66-1.67 / 4.00 / 4.38 via search summary. De-vig of DraftKings: 59.5 / 23.8 / 23.3 implied (overround 6.6%), so fair 56 / 22 / 22. **Discarded:** oddscalendar's Megapari 1.177 / 4.21 / 2.473, an incoherent book (implied 147%), probably a parse error.\n\n**Projection basis:** no GW8 team news yet. XI carried forward from the confirmed GW7 Everton XI, with stats copied from it unchanged (the 2026-27 stats switch is still held by the spoiler rule).\n\n**Sourcing traps:** chelseafc.com 'chelsea-injury-update-ahead-of-tottenham' surfaces in search but is a prior-season article (names Thiago Silva, Chilwell, Nkunku, Sterling; a sibling result names Maresca). Ignored. SI's 'Chelsea XI vs Tottenham' (19 May 2026) and the pre-season friendly previews are also prior fixtures.",
+    "fairChe": 56,
+    "fairDraw": 22,
+    "fairOpp": 22,
+    "reportTeamNews": "**Reece James** is out until around the new year after knee surgery. **Emegha** and **Gittens** were also out for Everton, and there is no fresh word on either yet.\n\n**Fofana, Palestra and Lavia** were all on the bench last weekend, so all three are fit and in contention. **Pep Chavarria** missed that matchday squad entirely, for a reason that hasn't been reported.\n\n**Alonso's pre-Spurs press conference** should land Thursday or Friday. This page will be updated from it.",
+    "reportTactical": "**Projected as an unchanged XI** in the same back three: **Acheampong**, **Lacroix** and **Colwill**, with **Neto** and **Hato** at wing-back, **Caicedo** and **Henderson** in midfield, and **Palmer** and **Rogers** behind **João Pedro**.\n\nThis is a guess built from the last confirmed team sheet, not from any steer for this match. The likeliest changes are **Fofana** for Acheampong, **Palestra** for Neto, or **Lavia** for Henderson.",
+    "reportWatch": "**Who partners Caicedo.** Henderson got the nod at Everton. A second straight start would say he is Alonso's answer while James is out.\n\n**Neto's defensive shift at right wing-back** in a derby. The question is whether Alonso keeps the attacking option or goes back to Palestra."
   },
   {
     "gw": 9,
