@@ -979,21 +979,84 @@
     "venueCity": "Sunderland",
     "kickoffUK": "14:00",
     "kickoffCT": "8:00 AM",
-    "broadcastUS": null,
-    "oddsChe": null,
-    "oddsDraw": null,
-    "oddsOpp": null,
+    "broadcastUS": "USA Network",
+    "oddsChe": "+100",
+    "oddsDraw": "+260",
+    "oddsOpp": "+250",
     "notes": "Away at the Stadium of Light. Moved from Saturday 7 Nov to Sunday 8 Nov, 14:00 UK, live on Sky Sports, because Sunderland play in the Europa League that Thursday. US clocks went back on 1 Nov, so it is 8:00 AM Central / 9:00 AM Eastern.",
-    "lineupStatus": "unknown",
-    "lineupXI": [],
-    "lineupSource": null,
+    "lineupStatus": "projected",
+    "lineupXI": [
+      {
+        "pos": "GK",
+        "name": "Mike Penders",
+        "stat": "33 apps (2025-26, Strasbourg, Ligue 1, on loan)"
+      },
+      {
+        "pos": "RCB",
+        "name": "Josh Acheampong",
+        "stat": "30 apps, 2 goals (2025-26, Chelsea)"
+      },
+      {
+        "pos": "CB",
+        "name": "Wesley Fofana",
+        "stat": ""
+      },
+      {
+        "pos": "LCB",
+        "name": "Levi Colwill",
+        "stat": "4 apps (2025-26, Chelsea) — ACL layoff"
+      },
+      {
+        "pos": "RWB",
+        "name": "Marco Palestra",
+        "stat": "37 Serie A apps, 4 assists (2025-26, Cagliari, loan)"
+      },
+      {
+        "pos": "CM",
+        "name": "Moisés Caicedo",
+        "stat": "76 tackles, 33 apps (2025-26, Chelsea, PL)"
+      },
+      {
+        "pos": "CM",
+        "name": "Roméo Lavia",
+        "stat": "12 apps, 4 starts (2025-26, Chelsea)"
+      },
+      {
+        "pos": "LWB",
+        "name": "Pedro Neto",
+        "stat": "5 goals, 6 assists (2025-26, Chelsea)"
+      },
+      {
+        "pos": "AM",
+        "name": "Estêvão",
+        "stat": "8 goals, 36 apps (2025-26, Chelsea)"
+      },
+      {
+        "pos": "AM",
+        "name": "Morgan Rogers",
+        "stat": "10 goals, 6 assists (2025-26, Aston Villa)"
+      },
+      {
+        "pos": "ST",
+        "name": "Cole Palmer",
+        "stat": "10 goals, 1 assist (2025-26, Chelsea)"
+      }
+    ],
+    "lineupSource": "Projection: last official XI, adjusted for availability per Yahoo Sports/EPL Index and AfricaSoccer team news, both 3 Nov 2026; seen 8:03 AM CT 4 Nov. Alonso presser not yet held.",
     "lineupNote": null,
-    "lastUpdated": "November 3, 2026",
+    "lastUpdated": "November 4, 2026",
     "lineupConfirmedAt": null,
     "lastBriefingSent": null,
     "competition": "Premier League",
     "roundLabel": "Matchweek 10",
-    "researchLog": "3 Nov 2026, 8:00 AM CT: the season fixture list had this on Saturday 7 Nov with kickoff TBD. The Premier League's November fixture amendments (premierleague.com, published 21 Sep 2026) moved it to **Sunday 8 Nov, 14:00 GMT, Sky Sports**, because Sunderland are in the Europa League. Date, day and kickoff were corrected here. Trap: several aggregator pages (starting11, macmyths) still show the original Saturday 3pm slot, and one search summary gave Friday 6 Nov 14:00, which is wrong. US clocks went back on 1 Nov, so 14:00 GMT is 8:00 AM CT. The corrected date puts the match 5 days out, so odds, the US channel and a projected XI are left for the next run."
+    "researchLog": "4 Nov 2026, 8:03 AM CT, PREP pass, 4 days out. Mac clock is CDT. No briefing text this pass; it is due 5-6 Nov.\n\n**US channel: USA Network.** World Soccer Talk's PL TV schedule (fetched first-hand) lists Sunday 8 Nov, 9:00 AM ET, on USA Network and Telemundo. That date reflects the 2026 move to Sunday, so the listing is current. An extended-search summary of Live Soccer TV agrees (its page 403s). **Trap:** Sports Media Watch still shows the old Saturday TBD slot, and an NBC Connecticut 'Matchweek 10' article is from the 2025-26 season.\n\n**Odds recorded: FanDuel Sunderland +250 / Draw +260 / Chelsea +100**, from a search summary, so not fetched first-hand. Three other readings converge on it: the OddsPortal average (fetched) of 3.60/3.65/2.05, or +260/+265/+105; Betr on Rotowire (fetched) with Chelsea at -106; and Polymarket (fetched) at 27/27/48. De-vigged FanDuel comes to 27/26/47, which matches the OddsPortal average exactly.\n\n**Projection basis:** the GW9 official XI carried over unchanged. Two team-news pieces dated 3 Nov 2026 name Alonso as manager and agree with each other: Yahoo Sports/EPL Index and AfricaSoccer. Neither reports a new problem for any GW9 starter. Fofana's stat is still blank (not verified). Alonso's pre-match presser should be on Fri 6 Nov. The next pass should check it, recording availability only.\n\n**Sourcing trap:** the extended team-news search summary and one fetched article both carried current-season match events and league-table information. All of it was discarded and none of it is recorded here.\n\n3 Nov 2026, 8:00 AM CT: the season fixture list had this on Saturday 7 Nov with kickoff TBD. The Premier League's November fixture amendments (premierleague.com, published 21 Sep 2026) moved it to **Sunday 8 Nov, 14:00 GMT, Sky Sports**, because Sunderland are in the Europa League. Date, day and kickoff were corrected here. Trap: several aggregator pages (starting11, macmyths) still show the original Saturday 3pm slot, and one search summary gave Friday 6 Nov 14:00, which is wrong. US clocks went back on 1 Nov, so 14:00 GMT is 8:00 AM CT. The corrected date puts the match 5 days out, so odds, the US channel and a projected XI are left for the next run.",
+    "fairChe": 47,
+    "fairDraw": 26,
+    "fairOpp": 27,
+    "reportTeamNews": "**João Pedro is out** with a thigh injury and is expected back after the November international break. **Reece James** (knee) and **Maxence Lacroix** (hamstring) are both out until around January. **Jamie Gittens** (ankle) and **Aaron Anselmino** are also unavailable.\n\n**Three doubts could still be fit.** **Emi Martínez** is recovering from a broken jaw, and Alonso says there is a chance he plays in a protective mask. **Jorrel Hato** has a back problem. **Jordan Henderson** missed the Manchester United match with illness, not an injury, and is expected back.",
+    "reportChanges": "**This is the first projection for this match.** It repeats the eleven Alonso picked against Manchester United, because no new injury has been reported for any of those players.\n\n**The most likely changes are in goal and midfield.** If **Martínez** is cleared, he would take back the gloves from **Penders**. **Henderson** could return in place of **Lavia**.",
+    "reportTactical": "**We expect a 3-4-2-1 again.** The back three would be **Acheampong**, **Fofana** and **Colwill**. **Palestra** and **Neto** would play as wing-backs either side of **Caicedo** and **Lavia**.\n\n**Palmer would play as a false nine** while João Pedro is out, with **Estêvão** and **Rogers** just behind him. With no fit senior striker in the projection, Chelsea's attack depends on movement rather than a fixed target man.",
+    "reportWatch": "**Who starts in goal.** If Martínez plays in a mask this soon after a broken jaw, that shows how stretched Alonso thinks the squad is.\n\n**The Europa League hangover.** Sunderland play in Europe on Thursday. Watch whether their legs go in the second half.\n\n**Henderson or Lavia.** Henderson would give a calmer, slower midfield. Lavia gives one that presses harder."
   },
   {
     "gw": 11,
