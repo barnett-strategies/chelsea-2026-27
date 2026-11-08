@@ -984,7 +984,7 @@
     "oddsDraw": "+260",
     "oddsOpp": "+250",
     "notes": "Away at the Stadium of Light. Moved from Saturday 7 Nov to Sunday 8 Nov, 14:00 UK, live on Sky Sports, because Sunderland play in the Europa League that Thursday. US clocks went back on 1 Nov, so it is 8:00 AM Central / 9:00 AM Eastern.",
-    "lineupStatus": "projected",
+    "lineupStatus": "confirmed",
     "lineupXI": [
       {
         "pos": "GK",
@@ -992,9 +992,9 @@
         "stat": "33 apps (2025-26, Strasbourg, Ligue 1, on loan)"
       },
       {
-        "pos": "RCB",
-        "name": "Josh Acheampong",
-        "stat": "30 apps, 2 goals (2025-26, Chelsea)"
+        "pos": "RB",
+        "name": "Marco Palestra",
+        "stat": "37 Serie A apps, 4 assists (2025-26, Cagliari, loan)"
       },
       {
         "pos": "CB",
@@ -1002,14 +1002,19 @@
         "stat": ""
       },
       {
-        "pos": "LCB",
+        "pos": "CB",
         "name": "Levi Colwill",
         "stat": "4 apps (2025-26, Chelsea) — ACL layoff"
       },
       {
-        "pos": "RWB",
-        "name": "Marco Palestra",
-        "stat": "37 Serie A apps, 4 assists (2025-26, Cagliari, loan)"
+        "pos": "LB",
+        "name": "Pep Chavarría",
+        "stat": "33 La Liga apps, 2 assists (2025-26, Rayo Vallecano)"
+      },
+      {
+        "pos": "CM",
+        "name": "Jordan Henderson",
+        "stat": "34 apps (2025-26, Brentford)"
       },
       {
         "pos": "CM",
@@ -1022,14 +1027,9 @@
         "stat": "12 apps, 4 starts (2025-26, Chelsea)"
       },
       {
-        "pos": "LWB",
-        "name": "Pedro Neto",
-        "stat": "5 goals, 6 assists (2025-26, Chelsea)"
-      },
-      {
         "pos": "AM",
-        "name": "Estêvão",
-        "stat": "8 goals, 36 apps (2025-26, Chelsea)"
+        "name": "Cole Palmer",
+        "stat": "10 goals, 1 assist (2025-26, Chelsea)"
       },
       {
         "pos": "AM",
@@ -1038,25 +1038,25 @@
       },
       {
         "pos": "ST",
-        "name": "Cole Palmer",
-        "stat": "10 goals, 1 assist (2025-26, Chelsea)"
+        "name": "Pedro Neto",
+        "stat": "5 goals, 6 assists (2025-26, Chelsea)"
       }
     ],
-    "lineupSource": "Projection: last official XI, kept after Alonso's 6 Nov presser (Yahoo Sports team-news article, 14:46 UTC, fetched) left Caicedo and Martinez to a Sunday call; seen 6:05 PM CT 6 Nov.",
+    "lineupSource": "ESPN lineups page (gameId 401879239, dated 8 Nov 2026), corroborated by WhoScored confirmed-lineups listing; seen 7:06 AM CT 8 Nov.",
     "lineupNote": null,
-    "lastUpdated": "November 6, 2026",
-    "lineupConfirmedAt": null,
+    "lastUpdated": "November 8, 2026, 7:06 AM CT",
+    "lineupConfirmedAt": "7:06 AM CT",
     "lastBriefingSent": "2026-11-05",
     "competition": "Premier League",
     "roundLabel": "Matchweek 10",
-    "researchLog": "6 Nov 2026, 6:00 PM CT, PREP pass, 2 days out. Mac clock is CST. Briefing already sent on 5 Nov, so no text. **Checked Alonso's Friday presser, as the morning pass asked.** Yahoo Sports team-news article (fetched first-hand, published 6 Nov 14:46 UTC): Caicedo has 'discomfort, more than the calf', checked Saturday, final call Sunday; Martínez ahead of schedule, decision Sunday; Hato 'not fit yet', some more weeks; Henderson available; Anselmino doubtful; João Pedro, James, Lacroix and Gittens out. An extended-search summary of the chelseafc.com article agrees (club page itself redirects to login). **XI left unchanged:** Caicedo is not ruled out, so removing him would be a guess on top of a guess. **Next pass (matchday T-55):** if Caicedo is absent, expect Henderson in.\n\n**Trap.** Search summaries and one presser write-up describe Caicedo's knock with wording that reveals the previous match's result. Not recorded anywhere here or on the page; the page says 'after the last game' only.\n\n6 Nov 2026, 8:10 AM CT, PREP pass, 2 days out. Mac clock is CST. The briefing was already sent on 5 Nov, so no text this pass. Alonso's presser was at 1:30 PM UK (7:30 AM CT), but no write-up was indexed by 8:10 AM CT. FFS's Friday live page (fetched) listed only the time, and chelseafc.com's press-conference tag redirects to a login page.\n\n**Training reports (Wed 4 Nov session).** Rotowire (fetched, 4 Nov) says Caicedo was not seen in the first 15 minutes of open training, and no injury has been confirmed. Roundtable via Yahoo (fetched, 4 Nov) lists Caicedo, Gittens, Hato, Quenda, Lacroix, James and João Pedro as missing all or part of the session, and Martínez, Anselmino and Henderson as back. Evening Standard via Yahoo (fetched, 5 Nov 16:58 UTC) agrees; it predicts Penders and keeps Caicedo in a 3-4-2-1. The XI was left unchanged because Caicedo's status is unconfirmed. **The next pass must check the presser on Caicedo first.**\n\n**Traps.** (1) An extended-search summary said João Pedro was back in training. The first-hand Roundtable article says he was not, so it was discarded. (2) The fetch of the Standard article also returned the names 'Nicolas Jackson' (fit) and 'Chavarria' (a wing-back in its XI). Neither was verified, so neither was used. (3) Two search summaries included old Chelsea match results. They were discarded and are not recorded here.\n\n5 Nov 2026, 6:00 PM CT, PREP pass, 3 days out. Mac clock is CST (correct after 1 Nov). Briefing text sent to both recipients (SMS_SENT, exit 0 each). All prep fields were already filled on 4 Nov, so nothing was re-searched: Alonso's presser is Fri 6 Nov, and a Thursday team-news search would only add spoiler risk. Next pass should check the presser for availability only.\n\n4 Nov 2026, 8:03 AM CT, PREP pass, 4 days out. Mac clock is CDT. No briefing text this pass; it is due 5-6 Nov.\n\n**US channel: USA Network.** World Soccer Talk's PL TV schedule (fetched first-hand) lists Sunday 8 Nov, 9:00 AM ET, on USA Network and Telemundo. That date reflects the 2026 move to Sunday, so the listing is current. An extended-search summary of Live Soccer TV agrees (its page 403s). **Trap:** Sports Media Watch still shows the old Saturday TBD slot, and an NBC Connecticut 'Matchweek 10' article is from the 2025-26 season.\n\n**Odds recorded: FanDuel Sunderland +250 / Draw +260 / Chelsea +100**, from a search summary, so not fetched first-hand. Three other readings converge on it: the OddsPortal average (fetched) of 3.60/3.65/2.05, or +260/+265/+105; Betr on Rotowire (fetched) with Chelsea at -106; and Polymarket (fetched) at 27/27/48. De-vigged FanDuel comes to 27/26/47, which matches the OddsPortal average exactly.\n\n**Projection basis:** the GW9 official XI carried over unchanged. Two team-news pieces dated 3 Nov 2026 name Alonso as manager and agree with each other: Yahoo Sports/EPL Index and AfricaSoccer. Neither reports a new problem for any GW9 starter. Fofana's stat is still blank (not verified). Alonso's pre-match presser should be on Fri 6 Nov. The next pass should check it, recording availability only.\n\n**Sourcing trap:** the extended team-news search summary and one fetched article both carried current-season match events and league-table information. All of it was discarded and none of it is recorded here.\n\n3 Nov 2026, 8:00 AM CT: the season fixture list had this on Saturday 7 Nov with kickoff TBD. The Premier League's November fixture amendments (premierleague.com, published 21 Sep 2026) moved it to **Sunday 8 Nov, 14:00 GMT, Sky Sports**, because Sunderland are in the Europa League. Date, day and kickoff were corrected here. Trap: several aggregator pages (starting11, macmyths) still show the original Saturday 3pm slot, and one search summary gave Friday 6 Nov 14:00, which is wrong. US clocks went back on 1 Nov, so 14:00 GMT is 8:00 AM CT. The corrected date puts the match 5 days out, so odds, the US channel and a projected XI are left for the next run.",
+    "researchLog": "8 Nov 2026, 7:06 AM CT (T-55 pass): official XI recorded from ESPN lineups page gameId 401879239 (dated 8 Nov 2026), matching the WhoScored confirmed-lineups listing. TRAP: ESPN gameId 740973 (\"chelsea-sunderland\") is the 24 May 2026 fixture from last season, so it shows the wrong XI. Get the current ID from ESPN Chelsea fixtures page. A SportsMole predicted XI naming Maresca also surfaced in search, from a prior season. Search-summary predicted XIs (Martínez/James/Welbeck/Pedro) were stale and ignored. Formation reads differ: ESPN 4-3-2-1, WhoScored 4-2-3-1; both put Neto at centre-forward.\n\n6 Nov 2026, 6:00 PM CT, PREP pass, 2 days out. Mac clock is CST. Briefing already sent on 5 Nov, so no text. **Checked Alonso's Friday presser, as the morning pass asked.** Yahoo Sports team-news article (fetched first-hand, published 6 Nov 14:46 UTC): Caicedo has 'discomfort, more than the calf', checked Saturday, final call Sunday; Martínez ahead of schedule, decision Sunday; Hato 'not fit yet', some more weeks; Henderson available; Anselmino doubtful; João Pedro, James, Lacroix and Gittens out. An extended-search summary of the chelseafc.com article agrees (club page itself redirects to login). **XI left unchanged:** Caicedo is not ruled out, so removing him would be a guess on top of a guess. **Next pass (matchday T-55):** if Caicedo is absent, expect Henderson in.\n\n**Trap.** Search summaries and one presser write-up describe Caicedo's knock with wording that reveals the previous match's result. Not recorded anywhere here or on the page; the page says 'after the last game' only.\n\n6 Nov 2026, 8:10 AM CT, PREP pass, 2 days out. Mac clock is CST. The briefing was already sent on 5 Nov, so no text this pass. Alonso's presser was at 1:30 PM UK (7:30 AM CT), but no write-up was indexed by 8:10 AM CT. FFS's Friday live page (fetched) listed only the time, and chelseafc.com's press-conference tag redirects to a login page.\n\n**Training reports (Wed 4 Nov session).** Rotowire (fetched, 4 Nov) says Caicedo was not seen in the first 15 minutes of open training, and no injury has been confirmed. Roundtable via Yahoo (fetched, 4 Nov) lists Caicedo, Gittens, Hato, Quenda, Lacroix, James and João Pedro as missing all or part of the session, and Martínez, Anselmino and Henderson as back. Evening Standard via Yahoo (fetched, 5 Nov 16:58 UTC) agrees; it predicts Penders and keeps Caicedo in a 3-4-2-1. The XI was left unchanged because Caicedo's status is unconfirmed. **The next pass must check the presser on Caicedo first.**\n\n**Traps.** (1) An extended-search summary said João Pedro was back in training. The first-hand Roundtable article says he was not, so it was discarded. (2) The fetch of the Standard article also returned the names 'Nicolas Jackson' (fit) and 'Chavarria' (a wing-back in its XI). Neither was verified, so neither was used. (3) Two search summaries included old Chelsea match results. They were discarded and are not recorded here.\n\n5 Nov 2026, 6:00 PM CT, PREP pass, 3 days out. Mac clock is CST (correct after 1 Nov). Briefing text sent to both recipients (SMS_SENT, exit 0 each). All prep fields were already filled on 4 Nov, so nothing was re-searched: Alonso's presser is Fri 6 Nov, and a Thursday team-news search would only add spoiler risk. Next pass should check the presser for availability only.\n\n4 Nov 2026, 8:03 AM CT, PREP pass, 4 days out. Mac clock is CDT. No briefing text this pass; it is due 5-6 Nov.\n\n**US channel: USA Network.** World Soccer Talk's PL TV schedule (fetched first-hand) lists Sunday 8 Nov, 9:00 AM ET, on USA Network and Telemundo. That date reflects the 2026 move to Sunday, so the listing is current. An extended-search summary of Live Soccer TV agrees (its page 403s). **Trap:** Sports Media Watch still shows the old Saturday TBD slot, and an NBC Connecticut 'Matchweek 10' article is from the 2025-26 season.\n\n**Odds recorded: FanDuel Sunderland +250 / Draw +260 / Chelsea +100**, from a search summary, so not fetched first-hand. Three other readings converge on it: the OddsPortal average (fetched) of 3.60/3.65/2.05, or +260/+265/+105; Betr on Rotowire (fetched) with Chelsea at -106; and Polymarket (fetched) at 27/27/48. De-vigged FanDuel comes to 27/26/47, which matches the OddsPortal average exactly.\n\n**Projection basis:** the GW9 official XI carried over unchanged. Two team-news pieces dated 3 Nov 2026 name Alonso as manager and agree with each other: Yahoo Sports/EPL Index and AfricaSoccer. Neither reports a new problem for any GW9 starter. Fofana's stat is still blank (not verified). Alonso's pre-match presser should be on Fri 6 Nov. The next pass should check it, recording availability only.\n\n**Sourcing trap:** the extended team-news search summary and one fetched article both carried current-season match events and league-table information. All of it was discarded and none of it is recorded here.\n\n3 Nov 2026, 8:00 AM CT: the season fixture list had this on Saturday 7 Nov with kickoff TBD. The Premier League's November fixture amendments (premierleague.com, published 21 Sep 2026) moved it to **Sunday 8 Nov, 14:00 GMT, Sky Sports**, because Sunderland are in the Europa League. Date, day and kickoff were corrected here. Trap: several aggregator pages (starting11, macmyths) still show the original Saturday 3pm slot, and one search summary gave Friday 6 Nov 14:00, which is wrong. US clocks went back on 1 Nov, so 14:00 GMT is 8:00 AM CT. The corrected date puts the match 5 days out, so odds, the US channel and a projected XI are left for the next run.",
     "fairChe": 47,
     "fairDraw": 26,
     "fairOpp": 27,
-    "reportTeamNews": "**Moisés Caicedo is a genuine doubt.** Alonso said on Friday that Caicedo had \"little problems\" after the last game, describing it as \"a discomfort, more than the calf.\" He will be checked on Saturday and the final call comes on Sunday.\n\n**Emi Martínez could return.** He is back in training in protective headgear after jaw surgery and is ahead of schedule. Alonso: \"Tomorrow we will check, Sunday final decision.\"\n\n**Jorrel Hato is out.** Alonso: \"He is not fit yet. It will take some more weeks.\" **João Pedro** (thigh), **Reece James** (knee), **Maxence Lacroix** (hamstring) and **Jamie Gittens** (ankle) are also out.\n\n**Jordan Henderson is available** again after illness. **Aaron Anselmino** is back in training but has not played this season and is listed as doubtful.",
-    "reportChanges": "**The projection still repeats the eleven Alonso picked against Manchester United**, Caicedo included. Alonso has not ruled him out, and the call will not be made until Sunday, so he stays in for now. Treat that pick as a coin flip.\n\n**If Caicedo misses out, Henderson is the likeliest replacement.** He is fit again after illness, so the midfield would become **Henderson** and **Lavia**. Henderson could also replace Lavia even if Caicedo plays.\n\n**Penders stays in goal in the projection.** Martínez is ahead of schedule, but a Sunday decision on a player returning from jaw surgery points to Penders starting and Martínez on the bench at most.",
-    "reportTactical": "**We expect a 3-4-2-1 again.** The back three would be **Acheampong**, **Fofana** and **Colwill**. **Palestra** and **Neto** would play as wing-backs either side of **Caicedo** and **Lavia**.\n\n**Palmer would play as a false nine** while João Pedro is out, with **Estêvão** and **Rogers** just behind him. With no fit senior striker in the projection, Chelsea's attack depends on movement rather than a fixed target man.",
-    "reportWatch": "**Whether Caicedo starts.** Alonso called it a discomfort, not an injury, and left the decision until matchday. If he is missing, Chelsea lose their best tackler on a ground where they could be under pressure.\n\n**Who starts in goal.** If Martínez plays in a mask this soon after jaw surgery, that shows how stretched Alonso thinks the squad is.\n\n**The Europa League hangover.** Sunderland play in Europe on Thursday. Watch whether their legs go in the second half."
+    "reportTeamNews": "**Caicedo passed his Sunday check and starts.** The discomfort Alonso described on Friday has not kept him out.\n\n**Emi Martínez is not in the matchday squad.** **Mike Penders** keeps the gloves, with **Teddy Sharman-Lowe** as the back-up goalkeeper.\n\n**Josh Acheampong is not in the matchday squad.** He was in the projected back three, and no reason has been given yet. **Estêvão** drops to the bench.\n\n**Bench:** Emegha, Gusto, Quenda, Anselmino, Nicoll-Jazuli, Welbeck, Barco, Estêvão, Sharman-Lowe. **Anselmino** is in a matchday squad for the first time this season.",
+    "reportChanges": "**The shape is the big miss.** We projected a back three; Alonso has gone to a **back four**, with **Palestra** at right-back and **Pep Chavarría** in at left-back.\n\n**Henderson starts alongside Caicedo and Lavia**, not instead of one of them, so the midfield is a three. **Estêvão** and **Acheampong** are the two who drop out of the projected eleven.\n\n**What we got right:** Penders in goal, Caicedo fit, Fofana and Colwill at centre-back, and Palmer and Rogers in the attacking roles. Nine of the eleven names were correct.",
+    "reportTactical": "**ESPN lists it as a 4-3-2-1; WhoScored has it as a 4-2-3-1.** In both versions **Pedro Neto leads the line** instead of Palmer playing as a false nine.\n\n**Neto moves from wing-back to centre-forward**, so his speed is now aimed at the space behind Sunderland's centre-backs. **Palmer** and **Rogers** play just behind him.\n\n**Three central midfielders** suggest Alonso wants control and protection away from home, with Henderson's experience next to Caicedo and Lavia.",
+    "reportWatch": "**Neto as a striker.** It is a new role for him. Watch whether he runs in behind or drops deep to link play.\n\n**Chavarría and Palestra as full-backs.** With no wing-backs, watch how high they push and who covers behind them.\n\n**Caicedo's fitness.** He was a doubt until this morning. Watch whether he lasts the full ninety minutes."
   },
   {
     "gw": 11,
