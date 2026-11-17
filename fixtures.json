@@ -1067,23 +1067,86 @@
     "homeAway": "H",
     "venue": "Stamford Bridge",
     "venueCity": "London",
-    "kickoffUK": "TBD",
-    "kickoffCT": "TBD",
-    "broadcastUS": null,
-    "oddsChe": null,
-    "oddsDraw": null,
-    "oddsOpp": null,
-    "notes": "First match after the November international break.",
-    "lineupStatus": "unknown",
-    "lineupXI": [],
-    "lineupSource": null,
+    "kickoffUK": "15:00",
+    "kickoffCT": "9:00 AM",
+    "broadcastUS": "NBCSN / Peacock",
+    "oddsChe": "-116",
+    "oddsDraw": "+280",
+    "oddsOpp": "+300",
+    "notes": "Home to Leeds at Stamford Bridge, the first match after the November international break. Saturday 21 Nov, 15:00 UK, which is 9:00 AM Central / 10:00 AM Eastern.",
+    "lineupStatus": "projected",
+    "lineupXI": [
+      {
+        "pos": "GK",
+        "name": "Mike Penders",
+        "stat": "33 apps (2025-26, Strasbourg, Ligue 1, on loan)"
+      },
+      {
+        "pos": "RB",
+        "name": "Marco Palestra",
+        "stat": "37 Serie A apps, 4 assists (2025-26, Cagliari, loan)"
+      },
+      {
+        "pos": "CB",
+        "name": "Wesley Fofana",
+        "stat": ""
+      },
+      {
+        "pos": "CB",
+        "name": "Levi Colwill",
+        "stat": "4 apps (2025-26, Chelsea) — ACL layoff"
+      },
+      {
+        "pos": "LB",
+        "name": "Pep Chavarría",
+        "stat": "33 La Liga apps, 2 assists (2025-26, Rayo Vallecano)"
+      },
+      {
+        "pos": "CM",
+        "name": "Jordan Henderson",
+        "stat": "34 apps (2025-26, Brentford)"
+      },
+      {
+        "pos": "CM",
+        "name": "Moisés Caicedo",
+        "stat": "76 tackles, 33 apps (2025-26, Chelsea, PL)"
+      },
+      {
+        "pos": "CM",
+        "name": "Roméo Lavia",
+        "stat": "12 apps, 4 starts (2025-26, Chelsea)"
+      },
+      {
+        "pos": "AM",
+        "name": "Cole Palmer",
+        "stat": "10 goals, 1 assist (2025-26, Chelsea)"
+      },
+      {
+        "pos": "AM",
+        "name": "Morgan Rogers",
+        "stat": "10 goals, 6 assists (2025-26, Aston Villa)"
+      },
+      {
+        "pos": "ST",
+        "name": "Pedro Neto",
+        "stat": "5 goals, 6 assists (2025-26, Chelsea)"
+      }
+    ],
+    "lineupSource": "Projection by this site: GW10 official XI carried forward, adjusted for team news from Yahoo Sports injury report (16 Nov) and AOL/Standard (17 Nov); seen 8:02 AM CT 17 Nov.",
     "lineupNote": null,
-    "lastUpdated": null,
+    "lastUpdated": "November 17, 2026",
     "lineupConfirmedAt": null,
     "lastBriefingSent": null,
     "competition": "Premier League",
     "roundLabel": "Matchweek 11",
-    "researchLog": null
+    "researchLog": "17 Nov 2026, 8:02 AM CT, PREP pass, 4 days out. Mac clock is CST. No briefing text this pass; it is due 18-19 Nov.\n\n**Kickoff 15:00 UK / 9:00 AM CT.** World Soccer Talk's PL TV schedule (fetched first-hand, covering 21-23 Nov) lists 10:00 AM ET. Dimers (fetched) and a search summary agree. **US channel: NBCSN, with Peacock.** This comes from World Soccer Talk only, and a search summary says 'NBC Sports'. The next pass should corroborate it if possible.\n\n**Odds.** The OddsPortal average (fetched) is 1.86 / 3.80 / 4.00, which converts to -116 / +280 / +300 in American odds. De-vigged, that is 51 / 25 / 24. Polymarket (fetched) is 52 / 26 / 24¢, and Dimers' model gives 51.1 / 23.5 / 25.4. Three readings converge. **Trap:** Dimers printed Chelsea at '-208' next to '52¢ implied'. Those two figures contradict each other, so the -208 was discarded.\n\n**Sourcing trap: 'Caicedo suspension'.** A Chelsea Chronicle headline about Opta odds 'after Moises Caicedo suspension' surfaced for this fixture. The suspension stories (Sports Mole, SI, Sports Digest) all name Maresca and are about December 2025, last season's Leeds fixture. They were discarded. Caicedo is not suspended. His issue is fitness (Sports Mole, published 12 Nov and updated 16 Nov, fetched).\n\n**Projection basis.** The GW10 official XI was carried forward unchanged, so player stats carry over too (Fofana's stays blank, unverified). A Squawka predicted XI (only via a search summary, because the page 403s) has Martínez; Acheampong, Colwill, Fofana; Henderson, Caicedo, Barco, Chavarría; Rogers, Palmer; Welbeck. It was not adopted because it could not be read first-hand. The same summary carried 2026-27 goal tallies, which were not recorded (see the spoiler rule on stats). The Yorkshire Evening Post preview 403'd.\n\n**Next pass:** Alonso's pre-Leeds presser is probably Thu 19 or Fri 20 Nov. Check Martínez vs Penders, Caicedo, João Pedro, Hato and Acheampong. Use availability only, because press-conference write-ups can mention the previous match's result.",
+    "fairChe": 51,
+    "fairDraw": 25,
+    "fairOpp": 24,
+    "reportTeamNews": "**Emi Martínez is fit again.** He has been out since jaw surgery in October, and Argentina picked him for a friendly this break. That makes goalkeeper a real choice between him and **Mike Penders**, who has kept the shirt.\n\n**Moisés Caicedo is a fitness doubt.** He told Ecuadorian reporters he is tired and has some problems. Ecuador play Bolivia on 17 Nov, so he faces a long flight and only about three days before kickoff.\n\n**Out:** **Reece James** (knee, mid-January), **Maxence Lacroix** (hamstring, January) and **Jamie Gittens** (ankle). **João Pedro**, **Jorrel Hato** and **Josh Acheampong** are all listed as possible returns for Leeds. Alonso has said he will give a fuller update before the game.",
+    "reportChanges": "",
+    "reportTactical": "**This is a guess.** It repeats the XI that started the last league match: a back four, **Caicedo**, **Henderson** and **Lavia** in midfield, **Palmer** and **Rogers** behind **Pedro Neto** up front.\n\n**Pre-match predictions disagree on the shape.** At least one preview has Alonso going back to a back three, with **Acheampong** returning and **Danny Welbeck** up front. If João Pedro is passed fit, he would probably lead the line instead.",
+    "reportWatch": "**Martínez or Penders.** It is the first selection call since Martínez was cleared, so it shows who Alonso sees as his number one.\n\n**Caicedo after the trip home from Ecuador.** Watch whether he starts. If he does not, **Barco**, on the bench last time, is the obvious midfield alternative.\n\n**Who plays up front.** Neto, Welbeck or a returning João Pedro. The Friday press conference should settle it."
   },
   {
     "gw": 12,
